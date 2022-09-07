@@ -26,32 +26,32 @@ type Css =
     ///     Rolls back the cascade to the user level, so that the specified values are calculated as if no author-level rules were specified for the element. For purposes of revert, the Author origin includes the Override and Animation origins.
     static member inline allRevert: JSX.Style = "all", "revert"
 
-    static member inline boxShadow(value: string): JSX.Style = "box-shadow", value
+    static member inline boxShadow(value: string): JSX.Style = "boxShadow", value
 
     static member inline boxShadow(horizontalOffset: int, verticalOffset: int, color: string): JSX.Style =
-        "box-shadow", (
+        "boxShadow", (
             (asString horizontalOffset) + "px " +
             (asString verticalOffset) + "px " +
             color
         )
     static member inline boxShadow(horizontalOffset: int, verticalOffset: int, blur: int, color: string): JSX.Style =
-        "box-shadow", (
+        "boxShadow", (
             (asString horizontalOffset) + "px " +
             (asString verticalOffset) + "px " +
             (asString blur) + "px " +
             color
         )
     static member inline boxShadow(horizontalOffset: int, verticalOffset: int, blur: int, spread: int, color: string): JSX.Style =
-        "box-shadow", (
+        "boxShadow", (
             (asString horizontalOffset) + "px " +
             (asString verticalOffset) + "px " +
             (asString blur) + "px " +
             (asString spread) + "px " +
             color
         )
-    static member inline boxShadowNone: JSX.Style = "box-shadow", "none"
+    static member inline boxShadowNone: JSX.Style = "boxShadow", "none"
     /// Inherits this property from its parent element.
-    static member inline boxShadowInheritFromParent: JSX.Style = "box-shadow", "inherit"
+    static member inline boxShadowInheritFromParent: JSX.Style = "boxShadow", "inherit"
 
     static member inline height(value: int): JSX.Style = "height", (asString value + "px")
     static member inline height(value: ICssUnit): JSX.Style = "height", (asString value)
@@ -60,81 +60,81 @@ type Css =
     /// Sets this property to its default value.
     static member inline heightInitial: JSX.Style = "height", "initial"
     /// The intrinsic preferred height.
-    static member inline heightMaxContent: JSX.Style = "height", "max-content"
+    static member inline heightMaxContent: JSX.Style = "height", "maxContent"
     /// The intrinsic minimum height.
-    static member inline heightMinContent: JSX.Style = "height", "min-content"
+    static member inline heightMinContent: JSX.Style = "height", "minContent"
 
-    static member inline maxHeight(value: int): JSX.Style = "max-height", (asString value + "px")
-    static member inline maxHeight(value: ICssUnit): JSX.Style = "max-height", (asString value)
+    static member inline maxHeight(value: int): JSX.Style = "maxHeight", (asString value + "px")
+    static member inline maxHeight(value: ICssUnit): JSX.Style = "maxHeight", (asString value)
     /// Inherits this property from its parent element.
-    static member inline maxHeightInheritFromParent: JSX.Style = "max-height", "inherit"
+    static member inline maxHeightInheritFromParent: JSX.Style = "maxHeight", "inherit"
     /// Sets this property to its default value.
-    static member inline maxHeightInitial: JSX.Style = "max-height", "initial"
+    static member inline maxHeightInitial: JSX.Style = "maxHeight", "initial"
     /// The intrinsic preferred height.
-    static member inline maxHeightMaxContent: JSX.Style = "height", "max-content"
+    static member inline maxHeightMaxContent: JSX.Style = "height", "maxContent"
     /// The intrinsic minimum height.
-    static member inline maxHeightMinContent: JSX.Style = "height", "min-content"
+    static member inline maxHeightMinContent: JSX.Style = "height", "minContent"
 
-    static member inline minHeight(value: int): JSX.Style = "min-height", (asString value + "px")
-    static member inline minHeight(value: ICssUnit): JSX.Style = "min-height", (asString value)
+    static member inline minHeight(value: int): JSX.Style = "minHeight", (asString value + "px")
+    static member inline minHeight(value: ICssUnit): JSX.Style = "minHeight", (asString value)
     /// Inherits this property from its parent element.
-    static member inline minHeightInheritFromParent: JSX.Style = "min-height", "inherit"
+    static member inline minHeightInheritFromParent: JSX.Style = "minHeight", "inherit"
     /// Sets this property to its default value.
-    static member inline minHeightInitial: JSX.Style = "min-height", "initial"
+    static member inline minHeightInitial: JSX.Style = "minHeight", "initial"
     /// The intrinsic preferred height.
-    static member inline minHeightMaxContent: JSX.Style = "height", "max-content"
+    static member inline minHeightMaxContent: JSX.Style = "height", "maxContent"
     /// The intrinsic minimum height.
-    static member inline minHeightMinContent: JSX.Style = "height", "min-content"
+    static member inline minHeightMinContent: JSX.Style = "height", "minContent"
 
     /// The browser determines the justification algorithm
-    static member inline textJustifyAuto: JSX.Style = "text-justify", "auto"
+    static member inline textJustifyAuto: JSX.Style = "textJustify", "auto"
     /// Increases/Decreases the space between words
-    static member inline textJustifyInterWord: JSX.Style = "text-justify", "inter-word"
+    static member inline textJustifyInterWord: JSX.Style = "textJustify", "interWord"
     /// Increases/Decreases the space between characters
-    static member inline textJustifyInterCharacter: JSX.Style = "text-justify", "inter-character"
+    static member inline textJustifyInterCharacter: JSX.Style = "textJustify", "interCharacter"
     /// Disables justification methods
-    static member inline textJustifyNone: JSX.Style = "text-justify", "none"
-    static member inline textJustifyInitial: JSX.Style = "text-justify", "initial"
+    static member inline textJustifyNone: JSX.Style = "textJustify", "none"
+    static member inline textJustifyInitial: JSX.Style = "textJustify", "initial"
     /// Inherits this property from its parent element.
-    static member inline textJustifyInheritFromParent: JSX.Style = "text-justify", "inherit"
+    static member inline textJustifyInheritFromParent: JSX.Style = "textJustify", "inherit"
 
     /// Sequences of whitespace will collapse into a single whitespace. Text will wrap when necessary. This is default.
-    static member inline  whiteSpaceNormal: JSX.Style = "white-space", "normal"
+    static member inline  whiteSpaceNormal: JSX.Style = "whiteSpace", "normal"
     /// Sequences of whitespace will collapse into a single whitespace. Text will never wrap to the next line.
     /// The text continues on the same line until a `<br> ` tag is encountered.
-    static member inline  whiteSpaceNowrap: JSX.Style = "white-space", "nowrap"
+    static member inline  whiteSpaceNowrap: JSX.Style = "whiteSpace", "nowrap"
     /// Whitespace is preserved by the browser. Text will only wrap on line breaks. Acts like the <pre> tag in HTML.
-    static member inline  whiteSpacePre: JSX.Style = "white-space", "pre"
+    static member inline  whiteSpacePre: JSX.Style = "whiteSpace", "pre"
     /// Sequences of whitespace will collapse into a single whitespace. Text will wrap when necessary, and on line breaks
-    static member inline  whiteSpacePreLine: JSX.Style = "white-space", "pre-line"
+    static member inline  whiteSpacePreLine: JSX.Style = "whiteSpace", "preLine"
     /// Whitespace is preserved by the browser. Text will wrap when necessary, and on line breaks
-    static member inline  whiteSpacePreWrap: JSX.Style = "white-space", "pre-wrap"
+    static member inline  whiteSpacePreWrap: JSX.Style = "whiteSpace", "preWrap"
     /// Sets this property to its default value.
-    static member inline  whiteSpaceInitial: JSX.Style = "white-space", "initial"
+    static member inline  whiteSpaceInitial: JSX.Style = "whiteSpace", "initial"
     /// Inherits this property from its parent element.
-    static member inline  whiteSpaceInheritFromParent: JSX.Style = "white-space", "inherit"
+    static member inline  whiteSpaceInheritFromParent: JSX.Style = "whiteSpace", "inherit"
 
     /// Default value. Uses default line break rules.
-    static member inline wordbreakNormal: JSX.Style = "word-break", "normal"
+    static member inline wordbreakNormal: JSX.Style = "wordBreak", "normal"
     /// To prevent overflow, word may be broken at any character
-    static member inline wordbreakBreakAll: JSX.Style = "word-break", "break-all"
+    static member inline wordbreakBreakAll: JSX.Style = "wordBreak", "breakAll"
     /// Word breaks should not be used for Chinese/Japanese/Korean (CJK) text. Non-CJK text behavior is the same as value "normal"
-    static member inline wordbreakKeepAll: JSX.Style = "word-break", "keep-all"
+    static member inline wordbreakKeepAll: JSX.Style = "wordBreak", "keepAll"
     /// To prevent overflow, word may be broken at arbitrary points.
-    static member inline wordbreakBreakWord: JSX.Style = "word-break", "break-word"
+    static member inline wordbreakBreakWord: JSX.Style = "wordBreak", "breakWord"
     /// Sets this property to its default value.
-    static member inline wordbreakInitial: JSX.Style = "word-break", "initial"
+    static member inline wordbreakInitial: JSX.Style = "wordBreak", "initial"
     /// Inherits this property from its parent element.
-    static member inline wordbreakInheritFromParent: JSX.Style = "word-break", "inherit"
+    static member inline wordbreakInheritFromParent: JSX.Style = "wordBreak", "inherit"
 
     /// Allows a straight jump "scroll effect" between elements within the scrolling box. This is default
-    static member inline scrollBehaviorAuto: JSX.Style = "scroll-behavior", "auto"
+    static member inline scrollBehaviorAuto: JSX.Style = "scrollBehavior", "auto"
     /// Allows a smooth animated "scroll effect" between elements within the scrolling box.
-    static member inline scrollBehaviorSmooth: JSX.Style = "scroll-behavior", "smooth"
+    static member inline scrollBehaviorSmooth: JSX.Style = "scrollBehavior", "smooth"
     /// Sets this property to its default value.
-    static member inline scrollBehaviorInitial: JSX.Style = "scroll-behavior", "initial"
+    static member inline scrollBehaviorInitial: JSX.Style = "scrollBehavior", "initial"
     /// Inherits this property from its parent element.
-    static member inline scrollBehaviorInheritFromParent: JSX.Style = "scroll-behavior", "inherit"
+    static member inline scrollBehaviorInheritFromParent: JSX.Style = "scrollBehavior", "inherit"
 
     /// The content is not clipped, and it may be rendered outside the left and right edges. This is default.
     static member inline overflowVisible: JSX.Style = "overflow", "visibile"
@@ -150,30 +150,30 @@ type Css =
     static member inline overflowInheritFromParent: JSX.Style = "overflow", "inherit"
 
     /// The content is not clipped, and it may be rendered outside the left and right edges. This is default.
-    static member inline overflowXVisible: JSX.Style = "overflow-x", "visibile"
+    static member inline overflowXVisible: JSX.Style = "overflowX", "visibile"
     /// The content is clipped - and no scrolling mechanism is provided.
-    static member inline overflowXHidden: JSX.Style = "overflow-x", "hidden"
+    static member inline overflowXHidden: JSX.Style = "overflowX", "hidden"
     /// The content is clipped and a scrolling mechanism is provided.
-    static member inline overflowXScroll: JSX.Style = "overflow-x", "scroll"
+    static member inline overflowXScroll: JSX.Style = "overflowX", "scroll"
     /// Should cause a scrolling mechanism to be provided for overflowing boxes
-    static member inline overflowXAuto: JSX.Style = "overflow-x", "auto"
+    static member inline overflowXAuto: JSX.Style = "overflowX", "auto"
     /// Sets this property to its default value.
-    static member inline overflowXInitial: JSX.Style = "overflow-x", "initial"
+    static member inline overflowXInitial: JSX.Style = "overflowX", "initial"
     /// Inherits this property from its parent element.
-    static member inline overflowXInheritFromParent: JSX.Style = "overflow-x", "inherit"
+    static member inline overflowXInheritFromParent: JSX.Style = "overflowX", "inherit"
 
     /// The content is not clipped, and it may be rendered outside the left and right edges. This is default.
-    static member inline overflowYVisible: JSX.Style = "overflow-y", "visibile"
+    static member inline overflowYVisible: JSX.Style = "overflowY", "visibile"
     /// The content is clipped - and no scrolling mechanism is provided.
-    static member inline overflowYHidden: JSX.Style = "overflow-y", "hidden"
+    static member inline overflowYHidden: JSX.Style = "overflowY", "hidden"
     /// The content is clipped and a scrolling mechanism is provided.
-    static member inline overflowYScroll: JSX.Style = "overflow-y", "scroll"
+    static member inline overflowYScroll: JSX.Style = "overflowY", "scroll"
     /// Should cause a scrolling mechanism to be provided for overflowing boxes
-    static member inline overflowYAuto: JSX.Style = "overflow-y", "auto"
+    static member inline overflowYAuto: JSX.Style = "overflowY", "auto"
     /// Sets this property to its default value.
-    static member inline overflowYInitial: JSX.Style = "overflow-y", "initial"
+    static member inline overflowYInitial: JSX.Style = "overflowY", "initial"
     /// Inherits this property from its parent element.
-    static member inline overflowYInheritFromParent: JSX.Style = "overflow-y", "inherit"
+    static member inline overflowYInheritFromParent: JSX.Style = "overflowY", "inherit"
 
     /// The element is hidden (but still takes up space).
     static member inline visibilityHidden: JSX.Style = "visibility", "hidden"
@@ -192,35 +192,35 @@ type Css =
 
     /// Default value. The length is equal to the length of the flexible item. If the item has
     /// no length specified, the length will be according to its content.
-    static member inline flexBasisAuto: JSX.Style = "flex-basis", "auto"
+    static member inline flexBasisAuto: JSX.Style = "flexBasis", "auto"
     /// Sets this property to its default value.
-    static member inline flexBasisInitial: JSX.Style = "flex-basis", "initial"
+    static member inline flexBasisInitial: JSX.Style = "flexBasis", "initial"
     /// Inherits this property from its parent element.
-    static member inline flexBasisInheritFromParent: JSX.Style = "flex-basis", "inherit"
+    static member inline flexBasisInheritFromParent: JSX.Style = "flexBasis", "inherit"
 
     /// Default value. The flexible items are displayed horizontally, as a row
-    static member inline flexDirectionRow: JSX.Style = "flex-direction", "row"
+    static member inline flexDirectionRow: JSX.Style = "flexDirection", "row"
     /// Same as row, but in reverse order.
-    static member inline flexDirectionRowReverse: JSX.Style = "flex-direction", "row-reverse"
+    static member inline flexDirectionRowReverse: JSX.Style = "flexDirection", "rowReverse"
     /// The flexible items are displayed vertically, as a column
-    static member inline flexDirectionColumn: JSX.Style = "flex-direction", "column"
+    static member inline flexDirectionColumn: JSX.Style = "flexDirection", "column"
     /// Same as column, but in reverse order
-    static member inline flexDirectionColumnReverse: JSX.Style = "flex-direction", "column-reverse"
+    static member inline flexDirectionColumnReverse: JSX.Style = "flexDirection", "columnReverse"
     /// Sets this property to its default value.
-    static member inline flexDirectionInitial: JSX.Style = "flex-basis", "initial"
+    static member inline flexDirectionInitial: JSX.Style = "flexBasis", "initial"
     /// Inherits this property from its parent element.
-    static member inline flexDirectionInheritFromParent: JSX.Style = "flex-basis", "inherit"
+    static member inline flexDirectionInheritFromParent: JSX.Style = "flexBasis", "inherit"
 
     /// Default value. Specifies that the flexible items will not wrap.
-    static member inline flexWrapNowrap: JSX.Style = "flex-wrap", "nowrap"
+    static member inline flexWrapNowrap: JSX.Style = "flexWrap", "nowrap"
     /// Specifies that the flexible items will wrap if necessary
-    static member inline flexWrapWrap: JSX.Style = "flex-wrap", "wrap"
+    static member inline flexWrapWrap: JSX.Style = "flexWrap", "wrap"
     /// Specifies that the flexible items will wrap, if necessary, in reverse order
-    static member inline flexWrapWrapReverse: JSX.Style = "flex-wrap", "wrap-reverse"
+    static member inline flexWrapWrapReverse: JSX.Style = "flexWrap", "wrapReverse"
     /// Sets this property to its default value.
-    static member inline flexWrapInitial: JSX.Style = "flex-wrap", "initial"
+    static member inline flexWrapInitial: JSX.Style = "flexWrap", "initial"
     /// Inherits this property from its parent element.
-    static member inline flexWrapInheritFromParent: JSX.Style = "flex-wrap", "inherit"
+    static member inline flexWrapInheritFromParent: JSX.Style = "flexWrap", "inherit"
 
     /// The element must float on the left side of its containing block.
     static member inline floatLeft: JSX.Style = "float", "left"
@@ -232,273 +232,273 @@ type Css =
     /// The font display strategy is defined by the user agent.
     ///
     /// Default value
-    static member inline fontDisplayAuto: JSX.Style = "font-display", "auto"
+    static member inline fontDisplayAuto: JSX.Style = "fontDisplay", "auto"
     /// Gives the font face a short block period and an infinite swap period.
-    static member inline fontDisplayBlock: JSX.Style = "font-display", "block"
+    static member inline fontDisplayBlock: JSX.Style = "fontDisplay", "block"
     /// Gives the font face an extremely small block period and an infinite swap period.
-    static member inline fontDisplaySwap: JSX.Style = "font-display", "swap"
+    static member inline fontDisplaySwap: JSX.Style = "fontDisplay", "swap"
     /// Gives the font face an extremely small block period and a short swap period.
-    static member inline fontDisplayFallback: JSX.Style = "font-display", "fallback"
+    static member inline fontDisplayFallback: JSX.Style = "fontDisplay", "fallback"
     /// Gives the font face an extremely small block period and no swap period.
-    static member inline fontDisplayOptional: JSX.Style = "font-display", "optional"
+    static member inline fontDisplayOptional: JSX.Style = "fontDisplay", "optional"
 
     /// Default. The browser determines whether font kerning should be applied or not
-    static member inline fontKerningAuto: JSX.Style = "font-kerning", "auto"
+    static member inline fontKerningAuto: JSX.Style = "fontKerning", "auto"
     /// Specifies that font kerning is applied
-    static member inline fontKerningNormal: JSX.Style = "font-kerning", "normal"
+    static member inline fontKerningNormal: JSX.Style = "fontKerning", "normal"
     /// Specifies that font kerning is not applied
-    static member inline fontKerningNone: JSX.Style = "font-kerning", "none"
+    static member inline fontKerningNone: JSX.Style = "fontKerning", "none"
 
     /// Defines from thin to thick characters. 400 is the same as normal, and 700 is the same as bold.
     /// Possible values are [100, 200, 300, 400, 500, 600, 700, 800, 900]
-    static member inline fontWeight(weight: int): JSX.Style = "font-weight", (asString weight)
+    static member inline fontWeight(weight: int): JSX.Style = "fontWeight", (asString weight)
     /// Defines normal characters. This is default.
-    static member inline fontWeightNormal: JSX.Style = "font-weight", "normal"
+    static member inline fontWeightNormal: JSX.Style = "fontWeight", "normal"
     /// Defines thick characters.
-    static member inline fontWeightBold: JSX.Style = "font-weight", "bold"
+    static member inline fontWeightBold: JSX.Style = "fontWeight", "bold"
     /// Defines thicker characters
-    static member inline fontWeightBolder: JSX.Style = "font-weight", "bolder"
+    static member inline fontWeightBolder: JSX.Style = "fontWeight", "bolder"
     /// Defines lighter characters.
-    static member inline fontWeightLighter: JSX.Style = "font-weight", "lighter"
+    static member inline fontWeightLighter: JSX.Style = "fontWeight", "lighter"
     /// Sets this property to its default value.
-    static member inline fontWeightInitial: JSX.Style = "font-weight", "initial"
+    static member inline fontWeightInitial: JSX.Style = "fontWeight", "initial"
     /// Inherits this property from its parent element.
-    static member inline fontWeightInheritFromParent: JSX.Style = "font-weight", "inherit"
+    static member inline fontWeightInheritFromParent: JSX.Style = "fontWeight", "inherit"
 
     /// The browser displays a normal font style. This is defaut.
-    static member inline fontStyleNormal: JSX.Style = "font-style", "normal"
+    static member inline fontStyleNormal: JSX.Style = "fontStyle", "normal"
     /// The browser displays an italic font style.
-    static member inline fontStyleItalic: JSX.Style = "font-style", "italic"
+    static member inline fontStyleItalic: JSX.Style = "fontStyle", "italic"
     /// The browser displays an oblique font style.
-    static member inline fontStyleOblique: JSX.Style = "font-style", "oblique"
+    static member inline fontStyleOblique: JSX.Style = "fontStyle", "oblique"
     /// Sets this property to its default value.
-    static member inline fontStyleInitial: JSX.Style = "font-style", "initial"
+    static member inline fontStyleInitial: JSX.Style = "fontStyle", "initial"
     /// Inherits this property from its parent element.
-    static member inline fontStyleInheritFromParent: JSX.Style = "font-style", "inherit"
+    static member inline fontStyleInheritFromParent: JSX.Style = "fontStyle", "inherit"
 
     /// The browser displays a normal font. This is default
-    static member inline fontVariantNormal: JSX.Style = "font-variant", "normal"
+    static member inline fontVariantNormal: JSX.Style = "fontVariant", "normal"
     /// The browser displays a small-caps font
-    static member inline fontVariantSmallCaps: JSX.Style = "font-variant", "small-caps"
+    static member inline fontVariantSmallCaps: JSX.Style = "fontVariant", "smallCaps"
     /// Sets this property to its default value.
-    static member inline fontVariantInitial: JSX.Style = "font-variant", "initial"
+    static member inline fontVariantInitial: JSX.Style = "fontVariant", "initial"
     /// Inherits this property from its parent element.
-    static member inline fontVariantInheritFromParent: JSX.Style = "font-variant", "inherit"
+    static member inline fontVariantInheritFromParent: JSX.Style = "fontVariant", "inherit"
 
     /// Break words only at allowed break points
-    static member inline wordWrapNormal: JSX.Style = "word-wrap", "normal"
+    static member inline wordWrapNormal: JSX.Style = "wordWrap", "normal"
     /// Allows unbreakable words to be broken
-    static member inline wordWrapBreakWord: JSX.Style = "word-wrap", "break-word"
+    static member inline wordWrapBreakWord: JSX.Style = "wordWrap", "breakWord"
     /// Sets this property to its default value.
-    static member inline wordWrapInitial: JSX.Style = "word-wrap", "initial"
+    static member inline wordWrapInitial: JSX.Style = "wordWrap", "initial"
     /// Inherits this property from its parent element.
-    static member inline wordWrapInheritFromParent: JSX.Style = "word-wrap", "inherit"
+    static member inline wordWrapInheritFromParent: JSX.Style = "wordWrap", "inherit"
 
     /// Default. The element inherits its parent container's align-items property, or "stretch" if it has no parent container.
-    static member inline alignSelfAuto: JSX.Style = "align-self", "auto"
+    static member inline alignSelfAuto: JSX.Style = "alignSelf", "auto"
     /// The element is positioned to fit the container (align-self overrides align-items)
-    static member inline alignSelfStretch: JSX.Style = "align-self", "stretch"
+    static member inline alignSelfStretch: JSX.Style = "alignSelf", "stretch"
     /// The element is positioned at the center of the container (align-self overrides align-items)
-    static member inline alignSelfCenter: JSX.Style = "align-self", "center"
+    static member inline alignSelfCenter: JSX.Style = "alignSelf", "center"
     /// The element is positioned at the beginning of the container (align-self overrides align-items)
-    static member inline alignSelfFlexStart: JSX.Style = "align-self", "flex-start"
+    static member inline alignSelfFlexStart: JSX.Style = "alignSelf", "flexStart"
     /// The element is positioned at the end of the container (align-self overrides align-items)
-    static member inline alignSelfFlexEnd: JSX.Style = "align-self", "flex-end"
+    static member inline alignSelfFlexEnd: JSX.Style = "alignSelf", "flexEnd"
     /// The element is positioned at the baseline of the container (align-self overrides align-items)
-    static member inline alignSelfBaseline: JSX.Style = "align-self", "baseline"
+    static member inline alignSelfBaseline: JSX.Style = "alignSelf", "baseline"
     /// Sets this property to its default value
-    static member inline alignSelfInitial: JSX.Style = "align-self", "initial"
+    static member inline alignSelfInitial: JSX.Style = "alignSelf", "initial"
     /// Inherits this property from its parent element
-    static member inline alignSelfInheritFromParent: JSX.Style = "align-self", "inherit"
+    static member inline alignSelfInheritFromParent: JSX.Style = "alignSelf", "inherit"
 
     /// Default. Items are stretched to fit the container along the cross axis
-    static member inline alignItemsStretch: JSX.Style = "align-items", "stretch"
+    static member inline alignItemsStretch: JSX.Style = "alignItems", "stretch"
     /// Items are positioned at the center of the container along the cross axis
-    static member inline alignItemsCenter: JSX.Style = "align-items", "center"
+    static member inline alignItemsCenter: JSX.Style = "alignItems", "center"
     /// Items are positioned at the beginning of the container along the cross axis
-    static member inline alignItemsFlexStart: JSX.Style = "align-items", "flex-start"
+    static member inline alignItemsFlexStart: JSX.Style = "alignItems", "flexStart"
     /// Items are positioned at the end of the container along the cross axis
-    static member inline alignItemsFlexEnd: JSX.Style = "align-items", "flex-end"
+    static member inline alignItemsFlexEnd: JSX.Style = "alignItems", "flexEnd"
     /// Items are positioned at the baseline of the container along the cross axis
-    static member inline alignItemsBaseline: JSX.Style = "align-items", "baseline"
+    static member inline alignItemsBaseline: JSX.Style = "alignItems", "baseline"
     /// Sets this property to its default value
-    static member inline alignItemsInitial: JSX.Style = "align-items", "initial"
+    static member inline alignItemsInitial: JSX.Style = "alignItems", "initial"
     /// Inherits this property from its parent element
-    static member inline alignItemsInheritFromParent: JSX.Style = "align-items", "inherit"
+    static member inline alignItemsInheritFromParent: JSX.Style = "alignItems", "inherit"
 
     /// Default value. Lines stretch to take up the remaining space.
-    static member inline alignContentStretch: JSX.Style = "align-content", "stretch"
+    static member inline alignContentStretch: JSX.Style = "alignContent", "stretch"
     /// Lines are packed toward the center of the flex container.
-    static member inline alignContentCenter: JSX.Style = "align-content", "center"
+    static member inline alignContentCenter: JSX.Style = "alignContent", "center"
     /// Lines are packed toward the start of the flex container.
-    static member inline alignContentFlexStart: JSX.Style = "align-content", "flex-start"
+    static member inline alignContentFlexStart: JSX.Style = "alignContent", "flexStart"
     /// Lines are packed toward the end of the flex container.
-    static member inline alignContentFlexEnd: JSX.Style = "align-content", "flex-end"
+    static member inline alignContentFlexEnd: JSX.Style = "alignContent", "flexEnd"
     /// Lines are evenly distributed in the flex container.
-    static member inline alignContentSpaceBetween: JSX.Style = "align-content", "space-between"
+    static member inline alignContentSpaceBetween: JSX.Style = "alignContent", "spaceBetween"
     /// Lines are evenly distributed in the flex container, with half-size spaces on either end.
-    static member inline alignContentSpaceAround: JSX.Style = "align-content", "space-around"
-    static member inline alignContentInitial: JSX.Style = "align-content", "initial"
-    static member inline alignContentInheritFromParent: JSX.Style = "align-content", "inherit"
+    static member inline alignContentSpaceAround: JSX.Style = "alignContent", "spaceAround"
+    static member inline alignContentInitial: JSX.Style = "alignContent", "initial"
+    static member inline alignContentInheritFromParent: JSX.Style = "alignContent", "inherit"
 
     /// Default value. Items are positioned at the beginning of the container along the main axis.
-    static member inline justifyContentFlexStart: JSX.Style = "justify-content", "flex-start"
+    static member inline justifyContentFlexStart: JSX.Style = "justifyContent", "flexStart"
     /// Items are positioned at the end of the container along the main axis.
-    static member inline justifyContentFlexEnd: JSX.Style = "justify-content", "flex-end"
+    static member inline justifyContentFlexEnd: JSX.Style = "justifyContent", "flexEnd"
     /// Items are positioned at the center of the containe along the main axis.
-    static member inline justifyContentCenter: JSX.Style = "justify-content", "center"
+    static member inline justifyContentCenter: JSX.Style = "justifyContent", "center"
     /// Items are positioned with space between the line along the main axis.
-    static member inline justifyContentSpaceBetween: JSX.Style = "justify-content", "space-between"
+    static member inline justifyContentSpaceBetween: JSX.Style = "justifyContent", "spaceBetween"
     /// Items are positioned with space before, between, and after the lines along the main axis.
-    static member inline justifyContentSpaceAround: JSX.Style = "justify-content", "space-around"
+    static member inline justifyContentSpaceAround: JSX.Style = "justifyContent", "spaceAround"
     /// Sets this property to its default value.
-    static member inline justifyContentInitial: JSX.Style = "justify-content", "initial"
+    static member inline justifyContentInitial: JSX.Style = "justifyContent", "initial"
     /// Inherits this property from its parent element.
-    static member inline justifyContentInheritFromParent: JSX.Style = "justify-content", "inherit"
+    static member inline justifyContentInheritFromParent: JSX.Style = "justifyContent", "inherit"
 
-    static member inline outlineWidth(width: int): JSX.Style = "outline-width", (asString width + "px")
-    static member inline outlineWidth(width: ICssUnit): JSX.Style = "outline-width", (asString width)
+    static member inline outlineWidth(width: int): JSX.Style = "outlineWidth", (asString width + "px")
+    static member inline outlineWidth(width: ICssUnit): JSX.Style = "outlineWidth", (asString width)
     /// Specifies a medium outline. This is default.
-    static member inline outlineWidthMedium: JSX.Style = "outline-width", "medium"
+    static member inline outlineWidthMedium: JSX.Style = "outlineWidth", "medium"
     /// Specifies a thin outline.
-    static member inline outlineWidthThin: JSX.Style = "outline-width", "thin"
+    static member inline outlineWidthThin: JSX.Style = "outlineWidth", "thin"
     /// Specifies a thick outline.
-    static member inline outlineWidthThick: JSX.Style = "outline-width", "thick"
+    static member inline outlineWidthThick: JSX.Style = "outlineWidth", "thick"
     /// Sets this property to its default value
-    static member inline outlineWidthInitial: JSX.Style = "outline-width", "initial"
+    static member inline outlineWidthInitial: JSX.Style = "outlineWidth", "initial"
     /// Inherits this property from its parent element
-    static member inline outlineWidthInheritFromParent: JSX.Style = "outline-width", "inherit"
+    static member inline outlineWidthInheritFromParent: JSX.Style = "outlineWidth", "inherit"
 
     /// Default value. The marker is a filled circle
-    static member inline listStyleTypeDisc: JSX.Style = "list-style-type", "disc"
+    static member inline listStyleTypeDisc: JSX.Style = "listStyleType", "disc"
     /// The marker is traditional Armenian numbering
-    static member inline listStyleTypeArmenian: JSX.Style = "list-style-type", "armenian"
+    static member inline listStyleTypeArmenian: JSX.Style = "listStyleType", "armenian"
     /// The marker is a circle
-    static member inline listStyleTypeCircle: JSX.Style = "list-style-type", "circle"
+    static member inline listStyleTypeCircle: JSX.Style = "listStyleType", "circle"
     /// The marker is plain ideographic numbers
-    static member inline listStyleTypeCjkIdeographic: JSX.Style = "list-style-type", "cjk-ideographic"
+    static member inline listStyleTypeCjkIdeographic: JSX.Style = "listStyleType", "cjkIdeographic"
     /// The marker is a number
-    static member inline listStyleTypeDecimal: JSX.Style = "list-style-type", "decimal"
+    static member inline listStyleTypeDecimal: JSX.Style = "listStyleType", "decimal"
     /// The marker is a number with leading zeros (01, 02, 03, etc.)
-    static member inline listStyleTypeDecimalLeadingZero: JSX.Style = "list-style-type", "decimal-leading-zero"
+    static member inline listStyleTypeDecimalLeadingZero: JSX.Style = "listStyleType", "decimalLeadingZero"
     /// The marker is traditional Georgian numbering
-    static member inline listStyleTypeGeorgian: JSX.Style = "list-style-type", "georgian"
+    static member inline listStyleTypeGeorgian: JSX.Style = "listStyleType", "georgian"
     /// The marker is traditional Hebrew numbering
-    static member inline listStyleTypeHebrew: JSX.Style = "list-style-type", "hebrew"
+    static member inline listStyleTypeHebrew: JSX.Style = "listStyleType", "hebrew"
     /// The marker is traditional Hiragana numbering
-    static member inline listStyleTypeHiragana: JSX.Style = "list-style-type", "hiragana"
+    static member inline listStyleTypeHiragana: JSX.Style = "listStyleType", "hiragana"
     /// The marker is traditional Hiragana iroha numbering
-    static member inline listStyleTypeHiraganaIroha: JSX.Style = "list-style-type", "hiragana-iroha"
+    static member inline listStyleTypeHiraganaIroha: JSX.Style = "listStyleType", "hiraganaIroha"
     /// The marker is traditional Katakana numbering
-    static member inline listStyleTypeKatakana: JSX.Style = "list-style-type", "katakana"
+    static member inline listStyleTypeKatakana: JSX.Style = "listStyleType", "katakana"
     /// The marker is traditional Katakana iroha numbering
-    static member inline listStyleTypeKatakanaIroha: JSX.Style = "list-style-type", "katakana-iroha"
+    static member inline listStyleTypeKatakanaIroha: JSX.Style = "listStyleType", "katakanaIroha"
     /// The marker is lower-alpha (a, b, c, d, e, etc.)
-    static member inline listStyleTypeLowerAlpha: JSX.Style = "list-style-type", "lower-alpha"
+    static member inline listStyleTypeLowerAlpha: JSX.Style = "listStyleType", "lowerAlpha"
     /// The marker is lower-greek
-    static member inline listStyleTypeLowerGreek: JSX.Style = "list-style-type", "lower-greek"
+    static member inline listStyleTypeLowerGreek: JSX.Style = "listStyleType", "lowerGreek"
     /// The marker is lower-latin (a, b, c, d, e, etc.)
-    static member inline listStyleTypeLowerLatin: JSX.Style = "list-style-type", "lower-latin"
+    static member inline listStyleTypeLowerLatin: JSX.Style = "listStyleType", "lowerLatin"
     /// The marker is lower-roman (i, ii, iii, iv, v, etc.)
-    static member inline listStyleTypeLowerRoman: JSX.Style = "list-style-type", "lower-roman"
+    static member inline listStyleTypeLowerRoman: JSX.Style = "listStyleType", "lowerRoman"
     /// No marker is shown
-    static member inline listStyleTypeNone: JSX.Style = "list-style-type", "none"
+    static member inline listStyleTypeNone: JSX.Style = "listStyleType", "none"
     /// The marker is a square
-    static member inline listStyleTypeSquare: JSX.Style = "list-style-type", "square"
+    static member inline listStyleTypeSquare: JSX.Style = "listStyleType", "square"
     /// The marker is upper-alpha (A, B, C, D, E, etc.)
-    static member inline listStyleTypeUpperAlpha: JSX.Style = "list-style-type", "upper-alpha"
+    static member inline listStyleTypeUpperAlpha: JSX.Style = "listStyleType", "upperAlpha"
     /// The marker is upper-greek
-    static member inline listStyleTypeUpperGreek: JSX.Style = "list-style-type", "upper-greek"
+    static member inline listStyleTypeUpperGreek: JSX.Style = "listStyleType", "upperGreek"
     /// The marker is upper-latin (A, B, C, D, E, etc.)
-    static member inline listStyleTypeUpperLatin: JSX.Style = "list-style-type", "upper-latin"
+    static member inline listStyleTypeUpperLatin: JSX.Style = "listStyleType", "upperLatin"
     /// The marker is upper-roman (I, II, III, IV, V, etc.)
-    static member inline listStyleTypeUpperRoman: JSX.Style = "list-style-type", "upper-roman"
+    static member inline listStyleTypeUpperRoman: JSX.Style = "listStyleType", "upperRoman"
     /// Sets this property to its default value.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-    static member inline listStyleTypeInitial: JSX.Style = "list-style-type", "initial"
+    static member inline listStyleTypeInitial: JSX.Style = "listStyleType", "initial"
     /// Inherits this property from its parent element.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-    static member inline listStyleTypeInheritFromParent: JSX.Style = "list-style-type", "inherit"
+    static member inline listStyleTypeInheritFromParent: JSX.Style = "listStyleType", "inherit"
 
-    static member inline propertyNone: JSX.Style = "list-style-image", "none"
+    static member inline propertyNone: JSX.Style = "listStyleImage", "none"
     /// The path to the image to be used as a list-item marker
-    static member inline propertyUrl (path: string): JSX.Style = "list-style-image", ("url('" + path + "')")
+    static member inline propertyUrl (path: string): JSX.Style = "listStyleImage", ("url('" + path + "')")
     /// Sets this property to its default value.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-    static member inline propertyInitial: JSX.Style = "list-style-image", "initial"
+    static member inline propertyInitial: JSX.Style = "listStyleImage", "initial"
     /// Inherits this property from its parent element.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-    static member inline propertyInheritFromParent: JSX.Style = "list-style-image", "inherit"
+    static member inline propertyInheritFromParent: JSX.Style = "listStyleImage", "inherit"
 
     /// The bullet points will be inside the list item
-    static member inline listStylePositionInside: JSX.Style = "list-style-position", "inside"
+    static member inline listStylePositionInside: JSX.Style = "listStylePosition", "inside"
     /// The bullet points will be outside the list item. This is default
-    static member inline listStylePositionOutside: JSX.Style = "list-style-position", "outside"
+    static member inline listStylePositionOutside: JSX.Style = "listStylePosition", "outside"
     /// Sets this property to its default value.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-    static member inline listStylePositionInitial: JSX.Style = "list-style-position", "initial"
+    static member inline listStylePositionInitial: JSX.Style = "listStylePosition", "initial"
     /// Inherits this property from its parent element.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-    static member inline listStylePositionInheritFromParent: JSX.Style = "list-style-position", "inherit"
+    static member inline listStylePositionInheritFromParent: JSX.Style = "listStylePosition", "inherit"
 
-    static member inline textDecorationLine(line: ITextDecorationLine): JSX.Style = "text-decoration-line", (asString line)
-    static member inline textDecorationLineNone: JSX.Style = "text-decoration-line", "none"
-    static member inline textDecorationLineUnderline: JSX.Style = "text-decoration-line", "underline"
-    static member inline textDecorationLineOverline: JSX.Style = "text-decoration-line", "overline"
-    static member inline textDecorationLineLineThrough: JSX.Style = "text-decoration-line", "line-through"
-    static member inline textDecorationLineInitial: JSX.Style = "text-decoration-line", "initial"
+    static member inline textDecorationLine(line: ITextDecorationLine): JSX.Style = "textDecorationLine", (asString line)
+    static member inline textDecorationLineNone: JSX.Style = "textDecorationLine", "none"
+    static member inline textDecorationLineUnderline: JSX.Style = "textDecorationLine", "underline"
+    static member inline textDecorationLineOverline: JSX.Style = "textDecorationLine", "overline"
+    static member inline textDecorationLineLineThrough: JSX.Style = "textDecorationLine", "lineThrough"
+    static member inline textDecorationLineInitial: JSX.Style = "textDecorationLine", "initial"
     /// Inherits this property from its parent element.
-    static member inline textDecorationLineInheritFromParent: JSX.Style = "text-decoration-line", "inherit"
+    static member inline textDecorationLineInheritFromParent: JSX.Style = "textDecorationLine", "inherit"
 
-    static member inline textDecoration(line: ITextDecorationLine): JSX.Style = "text-decoration", (asString line)
+    static member inline textDecoration(line: ITextDecorationLine): JSX.Style = "textDecoration", (asString line)
     static member inline textDecoration(bottom: ITextDecorationLine, top: ITextDecorationLine): JSX.Style =
-        "text-decoration", (asString bottom + " " + asString top)
+        "textDecoration", (asString bottom + " " + asString top)
     static member inline textDecoration(bottom: ITextDecorationLine, top: ITextDecorationLine, style: ITextDecoration): JSX.Style =
-        "text-decoration", ((asString bottom) + " " + (asString top) + " " + (asString style))
+        "textDecoration", ((asString bottom) + " " + (asString top) + " " + (asString style))
     static member inline textDecoration(bottom: ITextDecorationLine, top: ITextDecorationLine, style: ITextDecoration, color: string): JSX.Style =
-        "text-decoration", ((asString bottom) + " " + (asString top) + " " + (asString style) + " " + color)
-    static member inline textDecorationNone: JSX.Style = "text-decoration", "none"
-    static member inline textDecorationUnderline: JSX.Style = "text-decoration", "underline"
-    static member inline textDecorationOverline: JSX.Style = "text-decoration", "overline"
-    static member inline textDecorationLineThrough: JSX.Style = "text-decoration", "line-through"
-    static member inline textDecorationInitial: JSX.Style = "text-decoration", "initial"
+        "textDecoration", ((asString bottom) + " " + (asString top) + " " + (asString style) + " " + color)
+    static member inline textDecorationNone: JSX.Style = "textDecoration", "none"
+    static member inline textDecorationUnderline: JSX.Style = "textDecoration", "underline"
+    static member inline textDecorationOverline: JSX.Style = "textDecoration", "overline"
+    static member inline textDecorationLineThrough: JSX.Style = "textDecoration", "lineThrough"
+    static member inline textDecorationInitial: JSX.Style = "textDecoration", "initial"
     /// Inherits this property from its parent element.
-    static member inline textDecorationInheritFromParent: JSX.Style = "text-decoration", "inherit"
+    static member inline textDecorationInheritFromParent: JSX.Style = "textDecoration", "inherit"
 
     /// Specifies that child elements will NOT preserve its 3D position. This is default.
-    static member inline transformStyleFlat: JSX.Style = "transform-style", "flat"
+    static member inline transformStyleFlat: JSX.Style = "transformStyle", "flat"
     /// Specifies that child elements will preserve its 3D position
-    static member inline transformStylePreserve3D: JSX.Style = "transform-style", "preserve-3d"
-    static member inline transformStyleInitial: JSX.Style = "transform-style", "initial"
+    static member inline transformStylePreserve3D: JSX.Style = "transformStyle", "preserve3d"
+    static member inline transformStyleInitial: JSX.Style = "transformStyle", "initial"
     /// Inherits this property from its parent element.
-    static member inline transformStyleInheritFromParent: JSX.Style = "transform-style", "inherit"
+    static member inline transformStyleInheritFromParent: JSX.Style = "transformStyle", "inherit"
 
     /// No capitalization. The text renders as it is. This is default.
-    static member inline textTransformNone: JSX.Style = "text-transform", "none"
+    static member inline textTransformNone: JSX.Style = "textTransform", "none"
     /// Transforms the first character of each word to uppercase.
-    static member inline textTransformCapitalize: JSX.Style = "text-transform", "capitalize"
+    static member inline textTransformCapitalize: JSX.Style = "textTransform", "capitalize"
     /// Transforms all characters to uppercase.
-    static member inline textTransformUppercase: JSX.Style = "text-transform", "uppercase"
+    static member inline textTransformUppercase: JSX.Style = "textTransform", "uppercase"
     /// Transforms all characters to lowercase.
-    static member inline textTransformLowercase: JSX.Style = "text-transform", "lowercase"
-    static member inline textTransformInitial: JSX.Style = "text-transform", "initial"
+    static member inline textTransformLowercase: JSX.Style = "textTransform", "lowercase"
+    static member inline textTransformInitial: JSX.Style = "textTransform", "initial"
     /// Inherits this property from its parent element.
-    static member inline textTransformInheritFromParent: JSX.Style = "text-transform", "inherit"
+    static member inline textTransformInheritFromParent: JSX.Style = "textTransform", "inherit"
 
     /// Default value. The text is clipped and not accessible.
-    static member inline textOverflowClip: JSX.Style = "text-overflow", "clip"
+    static member inline textOverflowClip: JSX.Style = "textOverflow", "clip"
     /// Render an ellipsis ("...") to represent the clipped text.
-    static member inline textOverflowEllipsis: JSX.Style = "text-overflow", "ellipsis"
+    static member inline textOverflowEllipsis: JSX.Style = "textOverflow", "ellipsis"
     /// Render the given asString to represent the clipped text.
-    static member inline textOverflowInitial: JSX.Style = "text-overflow", "initial"
+    static member inline textOverflowInitial: JSX.Style = "textOverflow", "initial"
     /// Inherits this property from its parent element.
-    static member inline textOverflowInheritFromParent: JSX.Style = "text-overflow", "inherit"
+    static member inline textOverflowInheritFromParent: JSX.Style = "textOverflow", "inherit"
 
     /// Default value. Specifies no effects.
     static member inline filterNone: JSX.Style = "filter", "none"
@@ -529,11 +529,11 @@ type Css =
     /// This overload takes a floating number that goes from 0 to 1
     static member inline filterContrast(value: double): JSX.Style = "filter", ("contrast(" + ((asString value) + ")"))
     /// Applies a drop shadow effect.
-    static member inline filterDropShadow(horizontalOffset: int, verticalOffset: int, blur: int, spread: int,  color: string): JSX.Style = "filter", ("drop-shadow(" + (asString horizontalOffset) + "px " + (asString verticalOffset) + "px " + (asString blur) + "px " + (asString spread) + "px " + color + ")")
+    static member inline filterDropShadow(horizontalOffset: int, verticalOffset: int, blur: int, spread: int,  color: string): JSX.Style = "filter", ("dropShadow(" + (asString horizontalOffset) + "px " + (asString verticalOffset) + "px " + (asString blur) + "px " + (asString spread) + "px " + color + ")")
     /// Applies a drop shadow effect.
-    static member inline filterDropShadow(horizontalOffset: int, verticalOffset: int, blur: int, color: string): JSX.Style = "filter", ("drop-shadow(" + (asString horizontalOffset) + "px " + (asString verticalOffset) + "px " + (asString blur) + "px " + color + ")")
+    static member inline filterDropShadow(horizontalOffset: int, verticalOffset: int, blur: int, color: string): JSX.Style = "filter", ("dropShadow(" + (asString horizontalOffset) + "px " + (asString verticalOffset) + "px " + (asString blur) + "px " + color + ")")
     /// Applies a drop shadow effect.
-    static member inline filterDropShadow(horizontalOffset: int, verticalOffset: int, color: string): JSX.Style = "filter", ("drop-shadow(" + (asString horizontalOffset) + "px " + (asString verticalOffset) + "px " + color + ")")
+    static member inline filterDropShadow(horizontalOffset: int, verticalOffset: int, color: string): JSX.Style = "filter", ("dropShadow(" + (asString horizontalOffset) + "px " + (asString verticalOffset) + "px " + color + ")")
     /// Converts the image to grayscale
     ///
     /// This overload takes an integer that represents a percentage from 0 to 100.
@@ -546,7 +546,7 @@ type Css =
     /// samples will be adjusted. 0deg is default, and represents the original image.
     ///
     /// **Note**: Maximum value is 360
-    static member inline filterHueRotate(degrees: int): JSX.Style = "filter", ("hue-rotate(" + (asString degrees) + "deg)")
+    static member inline filterHueRotate(degrees: int): JSX.Style = "filter", ("hueRotate(" + (asString degrees) + "deg)")
     /// Inverts the element.
     ///
     /// This overload takes an integer that represents a percentage from 0 to 100.
@@ -590,35 +590,35 @@ type Css =
 
     /// Sets whether table borders should collapse into a single border or be separated as in standard HTML.
     /// Borders are separated; each cell will display its own borders. This is default.
-    static member inline borderCollapseSeparate: JSX.Style = "border-collapse", "separate"
+    static member inline borderCollapseSeparate: JSX.Style = "borderCollapse", "separate"
     /// Borders are collapsed into a single border when possible (border-spacing and empty-cells properties have no effect)
-    static member inline borderCollapseCollapse: JSX.Style = "border-collapse", "collapse"
+    static member inline borderCollapseCollapse: JSX.Style = "borderCollapse", "collapse"
     /// Sets this property to its default value
-    static member inline borderCollapseInitial: JSX.Style = "border-collapse", "initial"
+    static member inline borderCollapseInitial: JSX.Style = "borderCollapse", "initial"
     /// Inherits this property from its parent element.
-    static member inline borderCollapseInheritFromParent: JSX.Style = "border-collapse", "inherit"
+    static member inline borderCollapseInheritFromParent: JSX.Style = "borderCollapse", "inherit"
 
     /// Sets the distance between the borders of adjacent <table> cells. Applies only when border-collapse is separate.
     static member inline borderSpacing(horizontal: ICssUnit, ?vertical: ICssUnit): JSX.Style =
-        "border-spacing", (asString horizontal + " " + asString vertical)
+        "borderSpacing", (asString horizontal + " " + asString vertical)
     /// Sets this property to its default value
-    static member inline borderSpacingInitial: JSX.Style = "border-spacing", "initial"
+    static member inline borderSpacingInitial: JSX.Style = "borderSpacing", "initial"
     /// Inherits this property from its parent element.
-    static member inline borderSpacingInheritFromParent: JSX.Style = "border-spacing", "inherit"
+    static member inline borderSpacingInheritFromParent: JSX.Style = "borderSpacing", "inherit"
 
     /// Sets the size of the element's background image.
     ///
     /// The image can be left to its natural size, stretched, or constrained to fit the available space.
-    static member inline backgroundSize(value: string): JSX.Style = "background-size", (asString value)
+    static member inline backgroundSize(value: string): JSX.Style = "backgroundSize", (asString value)
     /// Sets the size of the element's background image.
     ///
     /// The image can be left to its natural size, stretched, or constrained to fit the available space.
-    static member inline backgroundSize(value: ICssUnit): JSX.Style = "background-size", (asString value)
+    static member inline backgroundSize(value: ICssUnit): JSX.Style = "backgroundSize", (asString value)
     /// Sets the size of the element's background image.
     ///
     /// The image can be left to its natural size, stretched, or constrained to fit the available space.
     static member inline backgroundSize(width: ICssUnit, height: ICssUnit): JSX.Style =
-        "background-size", (
+        "backgroundSize", (
             asString width
             + " " +
             asString height
@@ -626,69 +626,69 @@ type Css =
     /// Default value. The background image is displayed in its original size
     ///
     /// See [example here](https://www.w3schools.com/cssref/playit.asp?filename=playcss_background-size&preval=auto)
-    static member inline backgroundSizeAuto: JSX.Style = "background-size", "auto"
+    static member inline backgroundSizeAuto: JSX.Style = "backgroundSize", "auto"
     /// Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges.
     ///
     /// See [example here](https://www.w3schools.com/cssref/playit.asp?filename=playcss_background-size&preval=cover)
-    static member inline backgroundSizeCover: JSX.Style = "background-size", "cover"
+    static member inline backgroundSizeCover: JSX.Style = "backgroundSize", "cover"
     /// Resize the background image to make sure the image is fully visible
     ///
     /// See [example here](https://www.w3schools.com/cssref/playit.asp?filename=playcss_background-size&preval=contain)
-    static member inline backgroundSizeContain: JSX.Style = "background-size", "contain"
+    static member inline backgroundSizeContain: JSX.Style = "backgroundSize", "contain"
     /// Sets this property to its default value.
-    static member inline backgroundSizeInitial: JSX.Style = "background-size", "initial"
+    static member inline backgroundSizeInitial: JSX.Style = "backgroundSize", "initial"
     /// Inherits this property from its parent element.
-    static member inline backgroundSizeInheritFromParent: JSX.Style = "background-size", "inherit"
+    static member inline backgroundSizeInheritFromParent: JSX.Style = "backgroundSize", "inherit"
 
     /// Default value. The line will display as a single line.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-decoration-style&preval=solid
-    static member inline textDecorationStyleSolid: JSX.Style = "text-decoration-style", "solid"
+    static member inline textDecorationStyleSolid: JSX.Style = "textDecorationStyle", "solid"
     /// The line will display as a double line.
     ///
     /// https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-decoration-style&preval=double
-    static member inline textDecorationStyleDouble: JSX.Style = "text-decoration-style", "double"
+    static member inline textDecorationStyleDouble: JSX.Style = "textDecorationStyle", "double"
     /// The line will display as a dotted line.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-decoration-style&preval=dotted
-    static member inline textDecorationStyleDotted: JSX.Style = "text-decoration-style", "dotted"
+    static member inline textDecorationStyleDotted: JSX.Style = "textDecorationStyle", "dotted"
     /// The line will display as a dashed line.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-decoration-style&preval=dashed
-    static member inline textDecorationStyleDashed: JSX.Style = "text-decoration-style", "dashed"
+    static member inline textDecorationStyleDashed: JSX.Style = "textDecorationStyle", "dashed"
     /// The line will display as a wavy line.
     ///
     /// https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-decoration-style&preval=wavy
-    static member inline textDecorationStyleWavy: JSX.Style = "text-decoration-style", "wavy"
+    static member inline textDecorationStyleWavy: JSX.Style = "textDecorationStyle", "wavy"
     /// Sets this property to its default value.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-decoration-style&preval=initial
-    static member inline textDecorationStyleInitial: JSX.Style = "text-decoration-style", "initial"
+    static member inline textDecorationStyleInitial: JSX.Style = "textDecorationStyle", "initial"
     /// Inherits this property from its parent element.
-    static member inline textDecorationStyleInheritFromParent: JSX.Style = "text-decoration-style", "inherit"
+    static member inline textDecorationStyleInheritFromParent: JSX.Style = "textDecorationStyle", "inherit"
 
     /// Makes the text as narrow as it gets.
-    static member inline fontStretchUltraCondensed: JSX.Style = "font-stretch", "ultra-condensed"
+    static member inline fontStretchUltraCondensed: JSX.Style = "fontStretch", "ultraCondensed"
     /// Makes the text narrower than condensed, but not as narrow as ultra-condensed
-    static member inline fontStretchExtraCondensed: JSX.Style = "font-stretch", "extra-condensed"
+    static member inline fontStretchExtraCondensed: JSX.Style = "fontStretch", "extraCondensed"
     /// Makes the text narrower than semi-condensed, but not as narrow as extra-condensed.
-    static member inline fontStretchCondensed: JSX.Style = "font-stretch", "condensed"
+    static member inline fontStretchCondensed: JSX.Style = "fontStretch", "condensed"
     /// Makes the text narrower than normal, but not as narrow as condensed.
-    static member inline fontStretchSemiCondensed: JSX.Style = "font-stretch", "semi-condensed"
+    static member inline fontStretchSemiCondensed: JSX.Style = "fontStretch", "semiCondensed"
     /// Default value. No font stretching
-    static member inline fontStretchNormal: JSX.Style = "font-stretch", "normal"
+    static member inline fontStretchNormal: JSX.Style = "fontStretch", "normal"
     /// Makes the text wider than normal, but not as wide as expanded
-    static member inline fontStretchSemiExpanded: JSX.Style = "font-stretch", "semi-expanded"
+    static member inline fontStretchSemiExpanded: JSX.Style = "fontStretch", "semiExpanded"
     /// Makes the text wider than semi-expanded, but not as wide as extra-expanded
-    static member inline fontStretchExpanded: JSX.Style = "font-stretch", "expanded"
+    static member inline fontStretchExpanded: JSX.Style = "fontStretch", "expanded"
     /// Makes the text wider than expanded, but not as wide as ultra-expanded
-    static member inline fontStretchExtraExpanded: JSX.Style = "font-stretch", "extra-expanded"
+    static member inline fontStretchExtraExpanded: JSX.Style = "fontStretch", "extraExpanded"
     /// Makes the text as wide as it gets.
-    static member inline fontStretchUltraExpanded: JSX.Style = "font-stretch", "ultra-expanded"
+    static member inline fontStretchUltraExpanded: JSX.Style = "fontStretch", "ultraExpanded"
     /// Sets this property to its default value.
-    static member inline fontStretchInitial: JSX.Style = "font-stretch", "initial"
+    static member inline fontStretchInitial: JSX.Style = "fontStretch", "initial"
     /// Inherits this property from its parent element.
-    static member inline fontStretchInheritFromParent: JSX.Style = "font-stretch", "inherit"
+    static member inline fontStretchInheritFromParent: JSX.Style = "fontStretch", "inherit"
 
     /// The element does not float, (will be displayed just where it occurs in the text). This is default
     static member inline floatStyleNone: JSX.Style = "float", "none"
@@ -700,161 +700,161 @@ type Css =
     static member inline floatStyleInheritFromParent: JSX.Style = "float", "inherit"
 
     /// The element is aligned with the baseline of the parent. This is default.
-    static member inline verticalAlignBaseline: JSX.Style = "vertical-align", "baseline"
+    static member inline verticalAlignBaseline: JSX.Style = "verticalAlign", "baseline"
     /// The element is aligned with the subscript baseline of the parent
-    static member inline verticalAlignSub: JSX.Style = "vertical-align", "sup"
+    static member inline verticalAlignSub: JSX.Style = "verticalAlign", "sup"
     /// The element is aligned with the superscript baseline of the parent.
-    static member inline verticalAlignSuper: JSX.Style = "vertical-align", "super"
+    static member inline verticalAlignSuper: JSX.Style = "verticalAlign", "super"
     /// The element is aligned with the top of the tallest element on the line.
-    static member inline verticalAlignTop: JSX.Style = "vertical-align", "top"
+    static member inline verticalAlignTop: JSX.Style = "verticalAlign", "top"
     /// The element is aligned with the top of the parent element's font.
-    static member inline verticalAlignTextTop: JSX.Style = "vertical-align", "text-top"
+    static member inline verticalAlignTextTop: JSX.Style = "verticalAlign", "textTop"
     /// The element is placed in the middle of the parent element.
-    static member inline verticalAlignMiddle: JSX.Style = "vertical-align", "middle"
+    static member inline verticalAlignMiddle: JSX.Style = "verticalAlign", "middle"
     /// The element is aligned with the lowest element on the line.
-    static member inline verticalAlignBottom: JSX.Style = "vertical-align", "bottom"
+    static member inline verticalAlignBottom: JSX.Style = "verticalAlign", "bottom"
     /// The element is aligned with the bottom of the parent element's font
-    static member inline verticalAlignTextBottom: JSX.Style = "vertical-align", "text-bottom"
+    static member inline verticalAlignTextBottom: JSX.Style = "verticalAlign", "textBottom"
     /// Sets this property to its default value.
-    static member inline verticalAlignInitial: JSX.Style = "vertical-align", "initial"
+    static member inline verticalAlignInitial: JSX.Style = "verticalAlign", "initial"
     /// Inherits this property from its parent element.
-    static member inline verticalAlignInheritFromParent: JSX.Style = "vertical-align", "inherit"
+    static member inline verticalAlignInheritFromParent: JSX.Style = "verticalAlign", "inherit"
 
     /// Let the content flow horizontally from left to right, vertically from top to bottom
-    static member inline writingModeHorizontalTopBottom: JSX.Style = "writing-mode", "horizontal-tb"
+    static member inline writingModeHorizontalTopBottom: JSX.Style = "writingMode", "horizontalTb"
     /// Let the content flow vertically from top to bottom, horizontally from right to left
-    static member inline writingModeVerticalRightLeft: JSX.Style = "writing-mode", "vertical-rl"
+    static member inline writingModeVerticalRightLeft: JSX.Style = "writingMode", "verticalRl"
     /// Let the content flow vertically from top to bottom, horizontally from left to right
-    static member inline writingModeVerticalLeftRight: JSX.Style = "writing-mode", "vertical-lr"
+    static member inline writingModeVerticalLeftRight: JSX.Style = "writingMode", "verticalLr"
     /// Sets this property to its default value.
-    static member inline writingModeInitial: JSX.Style = "writing-mode", "initial"
+    static member inline writingModeInitial: JSX.Style = "writingMode", "initial"
     /// Inherits this property from its parent element.
-    static member inline writingModeInheritFromParent: JSX.Style = "writing-mode", "inherit"
+    static member inline writingModeInheritFromParent: JSX.Style = "writingMode", "inherit"
 
     /// Default value. Specifies a animation effect with a slow start, then fast, then end slowly (equivalent to cubic-bezier(0.25,0.1,0.25,1)).
-    static member inline animationTimingFunctionEase: JSX.Style = "animation-timing-function", "ease"
+    static member inline animationTimingFunctionEase: JSX.Style = "animationTimingFunction", "ease"
     /// Specifies a animation effect with the same speed from start to end (equivalent to cubic-bezier(0,0,1,1))
-    static member inline animationTimingFunctionLinear: JSX.Style = "animation-timing-function", "linear"
+    static member inline animationTimingFunctionLinear: JSX.Style = "animationTimingFunction", "linear"
     /// Specifies a animation effect with a slow start (equivalent to cubic-bezier(0.42,0,1,1)).
-    static member inline animationTimingFunctionEaseIn: JSX.Style = "animation-timing-function", "ease-in"
+    static member inline animationTimingFunctionEaseIn: JSX.Style = "animationTimingFunction", "easeIn"
     /// Specifies a animation effect with a slow end (equivalent to cubic-bezier(0,0,0.58,1)).
-    static member inline animationTimingFunctionEaseOut: JSX.Style = "animation-timing-function", "ease-out"
+    static member inline animationTimingFunctionEaseOut: JSX.Style = "animationTimingFunction", "easeOut"
     /// Specifies a animation effect with a slow start and end (equivalent to cubic-bezier(0.42,0,0.58,1))
-    static member inline animationTimingFunctionEaseInOut: JSX.Style = "animation-timing-function", "ease-in-out"
+    static member inline animationTimingFunctionEaseInOut: JSX.Style = "animationTimingFunction", "easeInOut"
     /// Define your own values in the cubic-bezier function. Possible values are numeric values from 0 to 1
-    static member inline animationTimingFunctionCubicBezier(n1: float, n2: float, n3: float, n4: float): JSX.Style = "animation-timing-function", ("cubic-bezier(" + (asString n1) + "," + (asString n2) + "," + (asString n3) + ", " + (asString n4) + ")")
+    static member inline animationTimingFunctionCubicBezier(n1: float, n2: float, n3: float, n4: float): JSX.Style = "animationTimingFunction", ("cubicBezier(" + (asString n1) + "," + (asString n2) + "," + (asString n3) + ", " + (asString n4) + ")")
     /// Sets this property to its default value
-    static member inline animationTimingFunctionInitial: JSX.Style = "animation-timing-function", "initial"
+    static member inline animationTimingFunctionInitial: JSX.Style = "animationTimingFunction", "initial"
     /// Inherits this property from its parent element.
-    static member inline animationTimingFunctionInheritFromParent: JSX.Style = "animation-timing-function", "inherit"
+    static member inline animationTimingFunctionInheritFromParent: JSX.Style = "animationTimingFunction", "inherit"
 
     /// Default value. Specifies a transition effect with a slow start, then fast, then end slowly (equivalent to cubic-bezier(0.25,0.1,0.25,1)).
-    static member inline transitionTimingFunctionEase: JSX.Style = "transition-timing-function", "ease"
+    static member inline transitionTimingFunctionEase: JSX.Style = "transitionTimingFunction", "ease"
     /// Specifies a transition effect with the same speed from start to end (equivalent to cubic-bezier(0,0,1,1))
-    static member inline transitionTimingFunctionLinear: JSX.Style = "transition-timing-function", "linear"
+    static member inline transitionTimingFunctionLinear: JSX.Style = "transitionTimingFunction", "linear"
     /// Specifies a transition effect with a slow start (equivalent to cubic-bezier(0.42,0,1,1)).
-    static member inline transitionTimingFunctionEaseIn: JSX.Style = "transition-timing-function", "ease-in"
+    static member inline transitionTimingFunctionEaseIn: JSX.Style = "transitionTimingFunction", "easeIn"
     /// Specifies a transition effect with a slow end (equivalent to cubic-bezier(0,0,0.58,1)).
-    static member inline transitionTimingFunctionEaseOut: JSX.Style = "transition-timing-function", "ease-out"
+    static member inline transitionTimingFunctionEaseOut: JSX.Style = "transitionTimingFunction", "easeOut"
     /// Specifies a transition effect with a slow start and end (equivalent to cubic-bezier(0.42,0,0.58,1))
-    static member inline transitionTimingFunctionEaseInOut: JSX.Style = "transition-timing-function", "ease-in-out"
+    static member inline transitionTimingFunctionEaseInOut: JSX.Style = "transitionTimingFunction", "easeInOut"
     /// Equivalent to steps(1, start)
-    static member inline transitionTimingFunctionStepStart: JSX.Style = "transition-timing-function", "step-start"
+    static member inline transitionTimingFunctionStepStart: JSX.Style = "transitionTimingFunction", "stepStart"
     /// Equivalent to steps(1, end)
-    static member inline transitionTimingFunctionStepEnd: JSX.Style = "transition-timing-function", "step-end"
+    static member inline transitionTimingFunctionStepEnd: JSX.Style = "transitionTimingFunction", "stepEnd"
     /// Define your own values in the cubic-bezier function. Possible values are numeric values from 0 to 1
-    static member inline transitionTimingFunctionCubicBezier(n1: float, n2: float, n3: float, n4: float): JSX.Style = "transition-timing-function", ("cubic-bezier(" + (asString n1) + "," + (asString n2) + "," + (asString n3) + ", " + (asString n4) + ")")
+    static member inline transitionTimingFunctionCubicBezier(n1: float, n2: float, n3: float, n4: float): JSX.Style = "transitionTimingFunction", ("cubicBezier(" + (asString n1) + "," + (asString n2) + "," + (asString n3) + ", " + (asString n4) + ")")
     /// Sets this property to its default value
-    static member inline transitionTimingFunctionInitial: JSX.Style = "transition-timing-function", "initial"
+    static member inline transitionTimingFunctionInitial: JSX.Style = "transitionTimingFunction", "initial"
     /// Inherits this property from its parent element.
-    static member inline transitionTimingFunctionInheritFromParent: JSX.Style = "transition-timing-function", "inherit"
+    static member inline transitionTimingFunctionInheritFromParent: JSX.Style = "transitionTimingFunction", "inherit"
 
     /// Default. Text can be selected if the browser allows it.
-    static member inline userSelectAuto: JSX.Style = "user-select", "auto"
+    static member inline userSelectAuto: JSX.Style = "userSelect", "auto"
     /// Prevents text selection.
-    static member inline userSelectNone: JSX.Style = "user-select", "none"
+    static member inline userSelectNone: JSX.Style = "userSelect", "none"
     /// The text can be selected by the user.
-    static member inline userSelectText: JSX.Style = "user-select", "text"
+    static member inline userSelectText: JSX.Style = "userSelect", "text"
     /// Text selection is made with one click instead of a double-click.
-    static member inline userSelectAll: JSX.Style = "user-select", "all"
+    static member inline userSelectAll: JSX.Style = "userSelect", "all"
     /// Sets this property to its default value.
-    static member inline userSelectInitial: JSX.Style = "user-select", "initial"
+    static member inline userSelectInitial: JSX.Style = "userSelect", "initial"
     /// Inherits this property from its parent element.
-    static member inline userSelectInheritFromParent: JSX.Style = "user-select", "inherit"
+    static member inline userSelectInheritFromParent: JSX.Style = "userSelect", "inherit"
 
     /// Sets the line style for all four sides of an element's border.
-    static member inline borderStyle(style: IBorderStyle): JSX.Style = "border-style", (asString style)
+    static member inline borderStyle(style: IBorderStyle): JSX.Style = "borderStyle", (asString style)
     /// Sets the line style for all four sides of an element's border.
     static member inline borderStyle(vertical: IBorderStyle, horizontal: IBorderStyle)  =
-        "border-style", (asString vertical + " " + asString horizontal)
+        "borderStyle", (asString vertical + " " + asString horizontal)
     /// Sets the line style for all four sides of an element's border.
     static member inline borderStyle(top: IBorderStyle, right: IBorderStyle, bottom: IBorderStyle, left: IBorderStyle): JSX.Style =
-        "border-style", ((asString top) + " " + (asString right) + " " + (asString bottom) + " " +  (asString left))
+        "borderStyle", ((asString top) + " " + (asString right) + " " + (asString bottom) + " " +  (asString left))
     /// Specifies a dotted border.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-    static member inline borderStyleDotted: JSX.Style = "border-style", "dotted"
+    static member inline borderStyleDotted: JSX.Style = "borderStyle", "dotted"
     /// Specifies a dashed border.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-    static member inline borderStyleDashed: JSX.Style = "border-style", "dashed"
+    static member inline borderStyleDashed: JSX.Style = "borderStyle", "dashed"
     /// Specifies a solid border.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-    static member inline borderStyleSolid: JSX.Style = "border-style", "solid"
+    static member inline borderStyleSolid: JSX.Style = "borderStyle", "solid"
     /// Specifies a double border.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-    static member inline borderStyleDouble: JSX.Style = "border-style", "double"
+    static member inline borderStyleDouble: JSX.Style = "borderStyle", "double"
     /// Specifies a 3D grooved border. The effect depends on the border-color value.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-    static member inline borderStyleGroove: JSX.Style = "border-style", "groove"
+    static member inline borderStyleGroove: JSX.Style = "borderStyle", "groove"
     /// Specifies a 3D ridged border. The effect depends on the border-color value.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-    static member inline borderStyleRidge: JSX.Style = "border-style", "ridge"
+    static member inline borderStyleRidge: JSX.Style = "borderStyle", "ridge"
     /// Specifies a 3D inset border. The effect depends on the border-color value.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-    static member inline borderStyleInset: JSX.Style = "border-style", "inset"
+    static member inline borderStyleInset: JSX.Style = "borderStyle", "inset"
     /// Specifies a 3D outset border. The effect depends on the border-color value.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-    static member inline borderStyleOutset: JSX.Style = "border-style", "outset"
+    static member inline borderStyleOutset: JSX.Style = "borderStyle", "outset"
     /// Default value. Specifies no border.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=dotted
-    static member inline borderStyleNone: JSX.Style = "border-style", "none"
+    static member inline borderStyleNone: JSX.Style = "borderStyle", "none"
     /// The same as "none", except in border conflict resolution for table elements.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=hidden
-    static member inline borderStyleHidden: JSX.Style = "border-style", "hidden"
+    static member inline borderStyleHidden: JSX.Style = "borderStyle", "hidden"
     /// Sets this property to its default value.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=hidden
     ///
     /// Read about initial value https://www.w3schools.com/cssref/css_initial.asp
-    static member inline borderStyleInitial: JSX.Style = "border-style", "initial"
+    static member inline borderStyleInitial: JSX.Style = "borderStyle", "initial"
     /// Inherits this property from its parent element.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_border-style&preval=hidden
     ///
     /// Read about inherit https://www.w3schools.com/cssref/css_inherit.asp
-    static member inline borderStyleInheritFromParent: JSX.Style = "border-style", "inherit"
+    static member inline borderStyleInheritFromParent: JSX.Style = "borderStyle", "inherit"
 
     /// Browsers use an automatic table layout algorithm. The column width is set by the widest unbreakable
     /// content in the cells. The content will dictate the layout
-    static member inline tableLayoutAuto: JSX.Style = "table-layout", "auto"
+    static member inline tableLayoutAuto: JSX.Style = "tableLayout", "auto"
     /// Sets a fixed table layout algorithm. The table and column widths are set by the widths of table and col
     /// or by the width of the first row of cells. Cells in other rows do not affect column widths. If no widths
     /// are present on the first row, the column widths are divided equally across the table, regardless of content
     /// inside the cells
-    static member inline tableLayoutFixed': JSX.Style = "table-layout", "fixed"
+    static member inline tableLayoutFixed': JSX.Style = "tableLayout", "fixed"
     /// Sets this property to its default value.
-    static member inline tableLayoutInitial: JSX.Style = "table-layout", "initial"
+    static member inline tableLayoutInitial: JSX.Style = "tableLayout", "initial"
     /// Inherits this property from its parent element.
-    static member inline tableLayoutInheritFromParent: JSX.Style = "table-layout", "inherit"
+    static member inline tableLayoutInheritFromParent: JSX.Style = "tableLayout", "inherit"
 
     static member inline cursor(value: string): JSX.Style = "cursor", (asString value)
     /// The User Agent will determine the cursor to display based on the current context. E.g., equivalent to text when hovering text.
@@ -866,7 +866,7 @@ type Css =
     /// No cursor is rendered.
     static member inline cursorNone: JSX.Style = "cursor", "none"
     /// A context menu is available.
-    static member inline cursorContextMenu: JSX.Style = "cursor", "context-menu"
+    static member inline cursorContextMenu: JSX.Style = "cursor", "contextMenu"
     /// Help information is available.
     static member inline cursorHelp: JSX.Style = "cursor", "help"
     /// The cursor is a pointer that indicates a link. Typically an image of a pointing hand.
@@ -882,125 +882,125 @@ type Css =
     /// The text can be selected. Typically the shape of an I-beam.
     static member inline cursorText: JSX.Style = "cursor", "text"
     /// The vertical text can be selected. Typically the shape of a sideways I-beam.
-    static member inline cursorVerticalText: JSX.Style = "cursor", "vertical-text"
+    static member inline cursorVerticalText: JSX.Style = "cursor", "verticalText"
     /// Something is to be copied.
     static member inline cursorCopy: JSX.Style = "cursor", "copy"
     /// Something is to be moved.
     static member inline cursorMove: JSX.Style = "cursor", "move"
     /// An item may not be dropped at the current location. On Windows and Mac OS X, `no-drop` is the same as `not-allowed`.
-    static member inline cursorNoDrop: JSX.Style = "cursor", "no-drop"
+    static member inline cursorNoDrop: JSX.Style = "cursor", "noDrop"
     /// The requested action will not be carried out.
-    static member inline cursorNotAllowed: JSX.Style = "cursor", "not-allowed"
+    static member inline cursorNotAllowed: JSX.Style = "cursor", "notAllowed"
     /// Something can be grabbed (dragged to be moved).
     static member inline cursorGrab: JSX.Style = "cursor", "grab"
     /// Something is being grabbed (dragged to be moved).
     static member inline cursorGrabbing: JSX.Style = "cursor", "grabbing"
     /// Something can be scrolled in any direction (panned).
-    static member inline cursorAllScroll: JSX.Style = "cursor", "all-scroll"
+    static member inline cursorAllScroll: JSX.Style = "cursor", "allScroll"
     /// The item/column can be resized horizontally. Often rendered as arrows pointing left and right with a vertical bar separating them.
-    static member inline cursorColumnResize: JSX.Style = "cursor", "col-resize"
+    static member inline cursorColumnResize: JSX.Style = "cursor", "colResize"
     /// The item/row can be resized vertically. Often rendered as arrows pointing up and down with a horizontal bar separating them.
-    static member inline cursorRowResize: JSX.Style = "cursor", "row-resize"
+    static member inline cursorRowResize: JSX.Style = "cursor", "rowResize"
     /// Directional resize arrow
-    static member inline cursorNorthResize: JSX.Style = "cursor", "n-resize"
+    static member inline cursorNorthResize: JSX.Style = "cursor", "nResize"
     /// Directional resize arrow
-    static member inline cursorEastResize: JSX.Style = "cursor", "e-resize"
+    static member inline cursorEastResize: JSX.Style = "cursor", "eResize"
     /// Directional resize arrow
-    static member inline cursorSouthResize: JSX.Style = "cursor", "s-resize"
+    static member inline cursorSouthResize: JSX.Style = "cursor", "sResize"
     /// Directional resize arrow
-    static member inline cursorWestResize: JSX.Style = "cursor", "w-resize"
+    static member inline cursorWestResize: JSX.Style = "cursor", "wResize"
     /// Directional resize arrow
-    static member inline cursorNorthEastResize: JSX.Style = "cursor", "ne-resize"
+    static member inline cursorNorthEastResize: JSX.Style = "cursor", "neResize"
     /// Directional resize arrow
-    static member inline cursorNorthWestResize: JSX.Style = "cursor", "nw-resize"
+    static member inline cursorNorthWestResize: JSX.Style = "cursor", "nwResize"
     /// Directional resize arrow
-    static member inline cursorSouthEastResize: JSX.Style = "cursor", "se-resize"
+    static member inline cursorSouthEastResize: JSX.Style = "cursor", "seResize"
     /// Directional resize arrow
-    static member inline cursorSouthWestResize: JSX.Style = "cursor", "sw-resize"
+    static member inline cursorSouthWestResize: JSX.Style = "cursor", "swResize"
     /// Directional resize arrow
-    static member inline cursorEastWestResize: JSX.Style = "cursor", "ew-resize"
+    static member inline cursorEastWestResize: JSX.Style = "cursor", "ewResize"
     /// Directional resize arrow
-    static member inline cursorNorthSouthResize: JSX.Style = "cursor", "ns-resize"
+    static member inline cursorNorthSouthResize: JSX.Style = "cursor", "nsResize"
     /// Directional resize arrow
-    static member inline cursorNorthEastSouthWestResize: JSX.Style = "cursor", "nesw-resize"
+    static member inline cursorNorthEastSouthWestResize: JSX.Style = "cursor", "neswResize"
     /// Directional resize arrow
-    static member inline cursorNorthWestSouthEastResize: JSX.Style = "cursor", "nwse-resize"
+    static member inline cursorNorthWestSouthEastResize: JSX.Style = "cursor", "nwseResize"
     /// Something can be zoomed (magnified) in
-    static member inline cursorZoomIn: JSX.Style = "cursor", "zoom-in"
+    static member inline cursorZoomIn: JSX.Style = "cursor", "zoomIn"
     /// Something can be zoomed out
-    static member inline cursorZoomOut: JSX.Style = "cursor", "zoom-out"
+    static member inline cursorZoomOut: JSX.Style = "cursor", "zoomOut"
 
     /// Permits the user agent to render a custom outline style.
-    static member inline outlineStyleAuto: JSX.Style = "outline-style", "auto"
+    static member inline outlineStyleAuto: JSX.Style = "outlineStyle", "auto"
     /// Specifies no outline. This is default.
-    static member inline outlineStyleNone: JSX.Style = "outline-style", "none"
+    static member inline outlineStyleNone: JSX.Style = "outlineStyle", "none"
     /// Specifies a hidden outline
-    static member inline outlineStyleHidden: JSX.Style = "outline-style", "hidden"
+    static member inline outlineStyleHidden: JSX.Style = "outlineStyle", "hidden"
     /// Specifies a dotted outline
-    static member inline outlineStyleDotted: JSX.Style = "outline-style", "dotted"
+    static member inline outlineStyleDotted: JSX.Style = "outlineStyle", "dotted"
     /// Specifies a dashed outline
-    static member inline outlineStyleDashed: JSX.Style = "outline-style", "dashed"
+    static member inline outlineStyleDashed: JSX.Style = "outlineStyle", "dashed"
     /// Specifies a solid outline
-    static member inline outlineStyleSolid: JSX.Style = "outline-style", "solid"
+    static member inline outlineStyleSolid: JSX.Style = "outlineStyle", "solid"
     /// Specifies a double outliner
-    static member inline outlineStyleDouble: JSX.Style = "outline-style", "double"
+    static member inline outlineStyleDouble: JSX.Style = "outlineStyle", "double"
     /// Specifies a 3D grooved outline. The effect depends on the outline-color value
-    static member inline outlineStyleGroove: JSX.Style = "outline-style", "groove"
+    static member inline outlineStyleGroove: JSX.Style = "outlineStyle", "groove"
     /// Specifies a 3D ridged outline. The effect depends on the outline-color value
-    static member inline outlineStyleRidge: JSX.Style = "outline-style", "ridge"
+    static member inline outlineStyleRidge: JSX.Style = "outlineStyle", "ridge"
     /// Specifies a 3D inset  outline. The effect depends on the outline-color value
-    static member inline outlineStyleInset: JSX.Style = "outline-style", "inset"
+    static member inline outlineStyleInset: JSX.Style = "outlineStyle", "inset"
     /// Specifies a 3D outset outline. The effect depends on the outline-color value
-    static member inline outlineStyleOutset: JSX.Style = "outline-style", "outset"
+    static member inline outlineStyleOutset: JSX.Style = "outlineStyle", "outset"
     /// Sets this property to its default value
-    static member inline outlineStyleInitial: JSX.Style = "outline-style", "initial"
+    static member inline outlineStyleInitial: JSX.Style = "outlineStyle", "initial"
     /// Inherits this property from its parent element
-    static member inline outlineStyleInheritFromParent: JSX.Style = "outline-style", "inherit"
+    static member inline outlineStyleInheritFromParent: JSX.Style = "outlineStyle", "inherit"
 
     /// Sets the initial position for each background image.
     ///
     /// The position is relative to the position layer set by background-origin.
-    static member inline backgroundPosition(position: string): JSX.Style = "background-position", position
+    static member inline backgroundPosition(position: string): JSX.Style = "backgroundPosition", position
     /// The background image will scroll with the page. This is default.
-    static member inline backgroundPositionScroll: JSX.Style = "background-position", "scroll"
+    static member inline backgroundPositionScroll: JSX.Style = "backgroundPosition", "scroll"
     /// The background image will not scroll with the page.
-    static member inline backgroundPositionFixedNoScroll: JSX.Style = "background-position", "fixed"
+    static member inline backgroundPositionFixedNoScroll: JSX.Style = "backgroundPosition", "fixed"
     /// The background image will scroll with the element's contents.
-    static member inline backgroundPositionLocal: JSX.Style = "background-position", "local"
+    static member inline backgroundPositionLocal: JSX.Style = "backgroundPosition", "local"
     /// Sets this property to its default value.
-    static member inline backgroundPositionInitial: JSX.Style = "background-position", "initial"
+    static member inline backgroundPositionInitial: JSX.Style = "backgroundPosition", "initial"
     /// Inherits this property from its parent element.
-    static member inline backgroundPositionInheritFromParent: JSX.Style = "background-position", "inherit"
+    static member inline backgroundPositionInheritFromParent: JSX.Style = "backgroundPosition", "inherit"
 
     /// This is default. Sets the blending mode to normal.
-    static member inline backgroundBlendModeNormal: JSX.Style = "background-blend-mode", "normal"
+    static member inline backgroundBlendModeNormal: JSX.Style = "backgroundBlendMode", "normal"
     /// Sets the blending mode to screen
-    static member inline backgroundBlendModeScreen: JSX.Style = "background-blend-mode", "screen"
+    static member inline backgroundBlendModeScreen: JSX.Style = "backgroundBlendMode", "screen"
     /// Sets the blending mode to overlay
-    static member inline backgroundBlendModeOverlay: JSX.Style = "background-blend-mode", "overlay"
+    static member inline backgroundBlendModeOverlay: JSX.Style = "backgroundBlendMode", "overlay"
     /// Sets the blending mode to darken
-    static member inline backgroundBlendModeDarken: JSX.Style = "background-blend-mode", "darken"
+    static member inline backgroundBlendModeDarken: JSX.Style = "backgroundBlendMode", "darken"
     /// Sets the blending mode to multiply
-    static member inline backgroundBlendModeLighten: JSX.Style = "background-blend-mode", "lighten"
+    static member inline backgroundBlendModeLighten: JSX.Style = "backgroundBlendMode", "lighten"
     /// Sets the blending mode to color-dodge
-    static member inline backgroundBlendModeCollorDodge: JSX.Style = "background-blend-mode", "color-dodge"
+    static member inline backgroundBlendModeCollorDodge: JSX.Style = "backgroundBlendMode", "colorDodge"
     /// Sets the blending mode to saturation
-    static member inline backgroundBlendModeSaturation: JSX.Style = "background-blend-mode", "saturation"
+    static member inline backgroundBlendModeSaturation: JSX.Style = "backgroundBlendMode", "saturation"
     /// Sets the blending mode to color
-    static member inline backgroundBlendModeColor: JSX.Style = "background-blend-mode", "color"
+    static member inline backgroundBlendModeColor: JSX.Style = "backgroundBlendMode", "color"
     /// Sets the blending mode to luminosity
-    static member inline backgroundBlendModeLuminosity: JSX.Style = "background-blend-mode", "luminosity"
+    static member inline backgroundBlendModeLuminosity: JSX.Style = "backgroundBlendMode", "luminosity"
 
     /// Default value. The background extends behind the border.
-    static member inline backgroundClipBorderBox: JSX.Style = "background-clip", "border-box"
+    static member inline backgroundClipBorderBox: JSX.Style = "backgroundClip", "borderBox"
     /// The background extends to the inside edge of the border.
-    static member inline backgroundClipPaddingBox: JSX.Style = "background-clip", "padding-box"
+    static member inline backgroundClipPaddingBox: JSX.Style = "backgroundClip", "paddingBox"
     /// The background extends to the edge of the content box.
-    static member inline backgroundClipContentBox: JSX.Style = "background-clip", "content-box"
+    static member inline backgroundClipContentBox: JSX.Style = "backgroundClip", "contentBox"
     /// Sets this property to its default value.
-    static member inline backgroundClipInitial: JSX.Style = "background-clip", "initial"
+    static member inline backgroundClipInitial: JSX.Style = "backgroundClip", "initial"
     /// Inherits this property from its parent element.
-    static member inline backgroundClipInheritFromParent: JSX.Style = "background-clip", "inherit"
+    static member inline backgroundClipInheritFromParent: JSX.Style = "backgroundClip", "inherit"
 
     static member inline transform(transformation: ITransformProperty): JSX.Style =
         "transform", (asString transformation)
@@ -1087,72 +1087,72 @@ type Css =
     static member inline directionInheritFromParent: JSX.Style = "direction", "inherit"
 
     /// Display borders on empty cells. This is default
-    static member inline emptyCellsShow: JSX.Style = "empty-cells", "show"
+    static member inline emptyCellsShow: JSX.Style = "emptyCells", "show"
     /// Hide borders on empty cells
-    static member inline emptyCellsHide: JSX.Style = "empty-cells", "hide"
+    static member inline emptyCellsHide: JSX.Style = "emptyCells", "hide"
     /// Sets this property to its default value
-    static member inline emptyCellsInitial: JSX.Style = "empty-cells", "initial"
+    static member inline emptyCellsInitial: JSX.Style = "emptyCells", "initial"
     /// Inherits this property from its parent element
-    static member inline emptyCellsInheritFromParent: JSX.Style = "empty-cells", "inherit"
+    static member inline emptyCellsInheritFromParent: JSX.Style = "emptyCells", "inherit"
 
     /// Default value. The animation should be played as normal
-    static member inline animationDirectionNormal: JSX.Style = "animation-direction", "normal"
+    static member inline animationDirectionNormal: JSX.Style = "animationDirection", "normal"
     /// The animation should play in reverse direction
-    static member inline animationDirectionReverse: JSX.Style = "animation-direction", "reverse"
+    static member inline animationDirectionReverse: JSX.Style = "animationDirection", "reverse"
     /// The animation will be played as normal every odd time (1, 3, 5, etc..) and in reverse direction every even time (2, 4, 6, etc...).
-    static member inline animationDirectionAlternate: JSX.Style = "animation-direction", "alternate"
+    static member inline animationDirectionAlternate: JSX.Style = "animationDirection", "alternate"
     /// The animation will be played in reverse direction every odd time (1, 3, 5, etc..) and in a normal direction every even time (2,4,6,etc...)
-    static member inline animationDirectionAlternateReverse: JSX.Style = "animation-direction", "alternate-reverse"
+    static member inline animationDirectionAlternateReverse: JSX.Style = "animationDirection", "alternateReverse"
     /// Sets this property to its default value
-    static member inline animationDirectionInitial: JSX.Style = "animation-direction", "initial"
+    static member inline animationDirectionInitial: JSX.Style = "animationDirection", "initial"
     /// Inherits this property from its parent element.
-    static member inline animationDirectionInheritFromParent: JSX.Style = "animation-direction", "inherit"
+    static member inline animationDirectionInheritFromParent: JSX.Style = "animationDirection", "inherit"
 
     /// Default value. Specifies that the animation is running.
-    static member inline animationPlayStateRunning: JSX.Style = "animation-play-state", "running"
+    static member inline animationPlayStateRunning: JSX.Style = "animationPlayState", "running"
     /// Specifies that the animation is paused
-    static member inline animationPlayStatePaused: JSX.Style = "animation-play-state", "paused"
+    static member inline animationPlayStatePaused: JSX.Style = "animationPlayState", "paused"
     /// Sets this property to its default value
-    static member inline animationPlayStateInitial: JSX.Style = "animation-play-state", "initial"
+    static member inline animationPlayStateInitial: JSX.Style = "animationPlayState", "initial"
     /// Inherits this property from its parent element.
-    static member inline animationPlayStateInheritFromParent: JSX.Style = "animation-play-state", "inherit"
+    static member inline animationPlayStateInheritFromParent: JSX.Style = "animationPlayState", "inherit"
 
     /// Specifies that the animation should be played infinite times (forever)
-    static member inline animationIterationCountInfinite: JSX.Style = "animation-iteration-count", "infinite"
+    static member inline animationIterationCountInfinite: JSX.Style = "animationIterationCount", "infinite"
     /// Sets this property to its default value
-    static member inline animationIterationCountInitial: JSX.Style = "animation-iteration-count", "initial"
+    static member inline animationIterationCountInitial: JSX.Style = "animationIterationCount", "initial"
     /// Inherits this property from its parent element.
-    static member inline animationIterationCountInheritFromParent: JSX.Style = "animation-iteration-count", "inherit"
+    static member inline animationIterationCountInheritFromParent: JSX.Style = "animationIterationCount", "inherit"
 
     /// Default value. Animation will not apply any styles to the element before or after it is executing
-    static member inline animationFillModeNone: JSX.Style = "animation-fill-mode", "none"
+    static member inline animationFillModeNone: JSX.Style = "animationFillMode", "none"
     /// The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count).
-    static member inline animationFillModeForwards: JSX.Style = "animation-fill-mode", "forwards"
+    static member inline animationFillModeForwards: JSX.Style = "animationFillMode", "forwards"
     /// The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period
-    static member inline animationFillModeBackwards: JSX.Style = "animation-fill-mode", "backwards"
+    static member inline animationFillModeBackwards: JSX.Style = "animationFillMode", "backwards"
     /// The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions
-    static member inline animationFillModeBoth: JSX.Style = "animation-fill-mode", "both"
+    static member inline animationFillModeBoth: JSX.Style = "animationFillMode", "both"
     /// Sets this property to its default value
-    static member inline animationFillModeInitial: JSX.Style = "animation-fill-mode", "initial"
+    static member inline animationFillModeInitial: JSX.Style = "animationFillMode", "initial"
     /// Inherits this property from its parent element
-    static member inline animationFillModeInheritFromParent: JSX.Style = "animation-fill-mode", "inherit"
+    static member inline animationFillModeInheritFromParent: JSX.Style = "animationFillMode", "inherit"
 
     /// Sets how background images are repeated.
     ///
     /// A background image can be repeated along the horizontal and vertical axes, or not repeated at all.
-    static member inline backgroundRepeat(repeat: IBackgroundRepeat): JSX.Style = "background-repeat", (asString repeat)
+    static member inline backgroundRepeat(repeat: IBackgroundRepeat): JSX.Style = "backgroundRepeat", (asString repeat)
     /// The background image is repeated both vertically and horizontally. This is default.
-    static member inline backgroundRepeatRepeat: JSX.Style = "background-repeat", "repeat"
+    static member inline backgroundRepeatRepeat: JSX.Style = "backgroundRepeat", "repeat"
     /// The background image is only repeated horizontally.
-    static member inline backgroundRepeatRepeatX: JSX.Style = "background-repeat", "repeat-x"
+    static member inline backgroundRepeatRepeatX: JSX.Style = "backgroundRepeat", "repeatX"
     /// The background image is only repeated vertically.
-    static member inline backgroundRepeatRepeatY: JSX.Style = "background-repeat", "repeat-y"
+    static member inline backgroundRepeatRepeatY: JSX.Style = "backgroundRepeat", "repeatY"
     /// The background-image is not repeated.
-    static member inline backgroundRepeatNoRepeat: JSX.Style = "background-repeat", "no-repeat"
+    static member inline backgroundRepeatNoRepeat: JSX.Style = "backgroundRepeat", "noRepeat"
     /// Sets this property to its default value.
-    static member inline backgroundRepeatInitial: JSX.Style = "background-repeat", "initial"
+    static member inline backgroundRepeatInitial: JSX.Style = "backgroundRepeat", "initial"
     /// Inherits this property from its parent element.
-    static member inline backgroundRepeatInheritFromParent: JSX.Style = "background-repeat", "inherit"
+    static member inline backgroundRepeatInheritFromParent: JSX.Style = "backgroundRepeat", "inherit"
 
     /// Default value. Elements render in order, as they appear in the document flow.
     static member inline positionDefaultStatic: JSX.Style = "position", "static"
@@ -1173,13 +1173,13 @@ type Css =
     static member inline positionInheritFromParent: JSX.Style = "position", "inherit"
 
     /// Default value. The width and height properties include the content, but does not include the padding, border, or margin.
-    static member inline boxSizingContentBox: JSX.Style = "box-sizing", "content-box"
+    static member inline boxSizingContentBox: JSX.Style = "boxSizing", "contentBox"
     /// The width and height properties include the content, padding, and border, but do not include the margin. Note that padding and border will be inside of the box.
-    static member inline boxSizingBorderBox: JSX.Style = "box-sizing", "border-box"
+    static member inline boxSizingBorderBox: JSX.Style = "boxSizing", "borderBox"
     /// Sets this property to its default value.
-    static member inline boxSizingInitial: JSX.Style = "box-sizing", "initial"
+    static member inline boxSizingInitial: JSX.Style = "boxSizing", "initial"
     /// Inherits this property from its parent element.
-    static member inline boxSizingInheritFromParent: JSX.Style = "box-sizing", "inherit"
+    static member inline boxSizingInheritFromParent: JSX.Style = "boxSizing", "inherit"
 
     /// Default value. The element offers no user-controllable method for resizing it.
     static member inline resizeNone: JSX.Style = "resize", "none"
@@ -1201,27 +1201,27 @@ type Css =
     /// Aligns the text to the left.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align
-    static member inline textAlignLeft: JSX.Style = "text-align", "left"
+    static member inline textAlignLeft: JSX.Style = "textAlign", "left"
     /// Aligns the text to the right.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=right
-    static member inline textAlignRight: JSX.Style = "text-align", "right"
+    static member inline textAlignRight: JSX.Style = "textAlign", "right"
     /// Centers the text.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=center
-    static member inline textAlignCenter: JSX.Style = "text-align", "center"
+    static member inline textAlignCenter: JSX.Style = "textAlign", "center"
     /// Stretches the lines so that each line has equal width (like in newspapers and magazines).
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=justify
-    static member inline textAlignJustify: JSX.Style = "text-align", "justify"
+    static member inline textAlignJustify: JSX.Style = "textAlign", "justify"
     /// Sets this property to its default value.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-    static member inline textAlignInitial: JSX.Style = "text-align", "initial"
+    static member inline textAlignInitial: JSX.Style = "textAlign", "initial"
     /// Inherits this property from its parent element.
     ///
     /// See example https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-align&preval=initial
-    static member inline textAlignInheritFromParent: JSX.Style = "text-align", "inherit"
+    static member inline textAlignInheritFromParent: JSX.Style = "textAlign", "inherit"
 
     /// Displays an element as an inline element (like `<span> `). Any height and width properties will have no effect.
     static member inline displayInlineElement: JSX.Style = "display", "inline"
@@ -1234,39 +1234,39 @@ type Css =
     /// Displays an element as a block container box, and lays out its contents using flow layout.
     ///
     /// It always establishes a new block formatting context for its contents.
-    static member inline displayFlowRoot: JSX.Style = "display", "flow-root"
+    static member inline displayFlowRoot: JSX.Style = "display", "flowRoot"
     /// Displays an element as a block-level grid container.
     static member inline displayGrid: JSX.Style = "display", "grid"
     /// Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values.
-    static member inline displayInlineBlock: JSX.Style = "display", "inline-block"
+    static member inline displayInlineBlock: JSX.Style = "display", "inlineBlock"
     /// Displays an element as an inline-level flex container.
-    static member inline displayInlineFlex: JSX.Style = "display", "inline-flex"
+    static member inline displayInlineFlex: JSX.Style = "display", "inlineFlex"
     /// Displays an element as an inline-level grid container
-    static member inline displayInlineGrid: JSX.Style = "display", "inline-grid"
+    static member inline displayInlineGrid: JSX.Style = "display", "inlineGrid"
     /// The element is displayed as an inline-level table.
-    static member inline displayInlineTable: JSX.Style = "display", "inline-table"
+    static member inline displayInlineTable: JSX.Style = "display", "inlineTable"
     /// Let the element behave like a `<li> ` element
-    static member inline displayListItem: JSX.Style = "display", "list-item"
+    static member inline displayListItem: JSX.Style = "display", "listItem"
     /// Displays an element as either block or inline, depending on context.
-    static member inline displayRunIn: JSX.Style = "display", "run-in"
+    static member inline displayRunIn: JSX.Style = "display", "runIn"
     /// Let the element behave like a `<table> ` element.
     static member inline displayTable: JSX.Style = "display", "table"
     /// Let the element behave like a <caption> element.
-    static member inline displayTableCaption: JSX.Style = "display", "table-caption"
+    static member inline displayTableCaption: JSX.Style = "display", "tableCaption"
     /// Let the element behave like a <colgroup> element.
-    static member inline displayTableColumnGroup: JSX.Style = "display", "table-column-group"
+    static member inline displayTableColumnGroup: JSX.Style = "display", "tableColumnGroup"
     /// Let the element behave like a <thead> element.
-    static member inline displayTableHeaderGroup: JSX.Style = "display", "table-header-group"
+    static member inline displayTableHeaderGroup: JSX.Style = "display", "tableHeaderGroup"
     /// Let the element behave like a <tfoot> element.
-    static member inline displayTableFooterGroup: JSX.Style = "display", "table-footer-group"
+    static member inline displayTableFooterGroup: JSX.Style = "display", "tableFooterGroup"
     /// Let the element behave like a <tbody> element.
-    static member inline displayTableRowGroup: JSX.Style = "display", "table-row-group"
+    static member inline displayTableRowGroup: JSX.Style = "display", "tableRowGroup"
     /// Let the element behave like a <td> element.
-    static member inline displayTableCell: JSX.Style = "display", "table-cell"
+    static member inline displayTableCell: JSX.Style = "display", "tableCell"
     /// Let the element behave like a <col> element.
-    static member inline displayTableColumn: JSX.Style = "display", "table-column"
+    static member inline displayTableColumn: JSX.Style = "display", "tableColumn"
     /// Let the element behave like a <tr> element.
-    static member inline displayTableRow: JSX.Style = "display", "table-row"
+    static member inline displayTableRow: JSX.Style = "display", "tableRow"
     /// The element is completely removed.
     static member inline displayNone: JSX.Style = "display", "none"
     /// Sets this property to its default value.
@@ -1281,7 +1281,7 @@ type Css =
     /// **Tip**: A positioned element is an element with the position property set to: relative, absolute, or fixed.
     ///
     /// **Tip**: This property is useful if you want to create overlapping elements.
-    static member inline zIndex(value: int): JSX.Style = "z-index", (asString value)
+    static member inline zIndex(value: int): JSX.Style = "zIndex", (asString value)
 
     /// Sets the margin area on all four sides of an element. It is a shorthand for margin-top, margin-right,
     /// margin-bottom, and margin-left.
@@ -1321,28 +1321,28 @@ type Css =
         )
     /// Sets the margin area on the left side of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
-    static member inline marginLeft(value: int): JSX.Style = "margin-left", (asString value + "px")
+    static member inline marginLeft(value: int): JSX.Style = "marginLeft", (asString value + "px")
     /// Sets the margin area on the left side of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
-    static member inline marginLeft(value: ICssUnit): JSX.Style = "margin-left", (asString value)
+    static member inline marginLeft(value: ICssUnit): JSX.Style = "marginLeft", (asString value)
     /// sets the margin area on the right side of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
-    static member inline marginRight(value: int): JSX.Style = "margin-right", (asString value + "px")
+    static member inline marginRight(value: int): JSX.Style = "marginRight", (asString value + "px")
     /// sets the margin area on the right side of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
-    static member inline marginRight(value: ICssUnit): JSX.Style = "margin-right", (asString value)
+    static member inline marginRight(value: ICssUnit): JSX.Style = "marginRight", (asString value)
     /// Sets the margin area on the top of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
-    static member inline marginTop(value: int): JSX.Style = "margin-top", (asString value + "px")
+    static member inline marginTop(value: int): JSX.Style = "marginTop", (asString value + "px")
     /// Sets the margin area on the top of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
-    static member inline marginTop(value: ICssUnit): JSX.Style = "margin-top", (asString value)
+    static member inline marginTop(value: ICssUnit): JSX.Style = "marginTop", (asString value)
     /// Sets the margin area on the bottom of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
-    static member inline marginBottom(value: int): JSX.Style = "margin-bottom", (asString value + "px")
+    static member inline marginBottom(value: int): JSX.Style = "marginBottom", (asString value + "px")
     /// Sets the margin area on the bottom of an element. A positive value places it farther from its
     /// neighbors, while a negative value places it closer.
-    static member inline marginBottom(value: ICssUnit): JSX.Style = "margin-bottom", (asString value)
+    static member inline marginBottom(value: ICssUnit): JSX.Style = "marginBottom", (asString value)
 
     /// Sets the padding area on all four sides of an element. It is a shorthand for padding-top,
     /// padding-right, padding-bottom, and padding-left.
@@ -1366,34 +1366,34 @@ type Css =
             (asString left)
         )
     /// Sets the height of the padding area on the bottom of an element.
-    static member inline paddingBottom(value: int): JSX.Style = "padding-bottom", (asString value + "px")
+    static member inline paddingBottom(value: int): JSX.Style = "paddingBottom", (asString value + "px")
     /// Sets the height of the padding area on the bottom of an element.
-    static member inline paddingBottom(value: ICssUnit): JSX.Style = "padding-bottom", (asString value)
+    static member inline paddingBottom(value: ICssUnit): JSX.Style = "paddingBottom", (asString value)
     /// Sets the width of the padding area to the left of an element.
-    static member inline paddingLeft(value: int): JSX.Style = "padding-left", (asString value + "px")
+    static member inline paddingLeft(value: int): JSX.Style = "paddingLeft", (asString value + "px")
     /// Sets the width of the padding area to the left of an element.
-    static member inline paddingLeft(value: ICssUnit): JSX.Style = "padding-left", (asString value)
+    static member inline paddingLeft(value: ICssUnit): JSX.Style = "paddingLeft", (asString value)
     /// Sets the width of the padding area on the right of an element.
-    static member inline paddingRight(value: int): JSX.Style = "padding-right", (asString value + "px")
+    static member inline paddingRight(value: int): JSX.Style = "paddingRight", (asString value + "px")
     /// Sets the width of the padding area on the right of an element.
-    static member inline paddingRight(value: ICssUnit): JSX.Style = "padding-right", (asString value)
+    static member inline paddingRight(value: ICssUnit): JSX.Style = "paddingRight", (asString value)
     /// Sets the height of the padding area on the top of an element.
-    static member inline paddingTop(value: int): JSX.Style = "padding-top", (asString value + "px")
+    static member inline paddingTop(value: int): JSX.Style = "paddingTop", (asString value + "px")
     /// Sets the height of the padding area on the top of an element.
-    static member inline paddingTop(value: ICssUnit): JSX.Style = "padding-top", (asString value)
+    static member inline paddingTop(value: ICssUnit): JSX.Style = "paddingTop", (asString value)
 
     /// Sets the flex shrink factor of a flex item. If the size of all flex items is larger than
     /// the flex container, items shrink to fit according to flex-shrink.
-    static member inline flexShrink(value: int): JSX.Style = "flex-shrink", (asString value)
+    static member inline flexShrink(value: int): JSX.Style = "flexShrink", (asString value)
     /// Sets the initial main size of a flex item. It sets the size of the content box unless
     /// otherwise set with box-sizing.
-    static member inline flexBasis (value: int): JSX.Style = "flex-basis", (asString value + "px")
+    static member inline flexBasis (value: int): JSX.Style = "flexBasis", (asString value + "px")
     /// Sets the initial main size of a flex item. It sets the size of the content box unless
     /// otherwise set with box-sizing.
-    static member inline flexBasis (value: ICssUnit): JSX.Style = "flex-basis", (asString value)
+    static member inline flexBasis (value: ICssUnit): JSX.Style = "flexBasis", (asString value)
     /// Sets the flex grow factor of a flex item main size. It specifies how much of the remaining
     /// space in the flex container should be assigned to the item (the flex grow factor).
-    static member inline flexGrow (value: int): JSX.Style = "flex-grow", (asString value)
+    static member inline flexGrow (value: int): JSX.Style = "flexGrow", (asString value)
     /// Shorthand of flex-grow, flex-shrink and flex-basis
     static member inline flex (grow: int, ?shrink: int, ?basis: ICssUnit): JSX.Style = "flex", (asString grow + " " + asString shrink + " " + asString basis)
     /// Shorthand of flex-grow, flex-shrink and flex-basis
@@ -1411,7 +1411,7 @@ type Css =
     /// ```
     static member inline gridTemplateColumns(value: int seq): JSX.Style =
         let addPixels = fun x -> x + "px"
-        "grid-template-columns", (value |> Seq.map (asString >> addPixels) |> String.concat " ")
+        "gridTemplateColumns", (value |> Seq.map (asString >> addPixels) |> String.concat " ")
     /// Sets the width of each individual grid column.
     ///
     /// **CSS**
@@ -1423,7 +1423,7 @@ type Css =
     /// gridTemplateColumns: [length.fr 1; length.fr 1; length.fr 2]
     /// ```
     static member inline gridTemplateColumns(value: ICssUnit seq): JSX.Style =
-        "grid-template-columns", (value |> Seq.map asString |> String.concat " ")
+        "gridTemplateColumns", (value |> Seq.map asString |> String.concat " ")
     /// Sets the width of each individual grid column. It can also name the lines between them
     /// There can be multiple names for the same line
     ///
@@ -1434,15 +1434,15 @@ type Css =
     /// **F#**
     /// ```f#
     /// style.gridTemplateColumns [
-    ///     grid.namedLine "first-line"
+    ///     grid.namedLine "firstLine"
     ///     grid.templateWidth length.auto
-    ///     grid.namedLines ["first-line-end second-line-start"]
+    ///     grid.namedLines ["firstLineEnd second-line-start"]
     ///     grid.templateWidth 100
-    ///     grid.namedLine "second-line-end"
+    ///     grid.namedLine "secondLineEnd"
     /// ]
     /// ```
     static member inline gridTemplateColumns(value: IGridTemplateItem seq): JSX.Style =
-        "grid-template-columns", (value |> Seq.map asString |> String.concat " ")
+        "gridTemplateColumns", (value |> Seq.map asString |> String.concat " ")
     /// Sets the width of a number of grid columns to the defined width, as well as naming the lines between them
     ///
     /// **CSS**
@@ -1451,11 +1451,11 @@ type Css =
     /// ```
     /// **F#**
     /// ```f#
-    /// style.gridTemplateColumns (3, length.fr 1, "col-start")
+    /// style.gridTemplateColumns (3, length.fr 1, "colStart")
     /// ```
     static member inline gridTemplateColumns(count: int, size: ICssUnit, ?areaName: string): JSX.Style =
         let areaName = match areaName with Some n -> " [" + n + "]" | None -> ""
-        "grid-template-columns", (
+        "gridTemplateColumns", (
             "repeat(" +
             (asString count) + ", " +
             (asString size) + areaName + ")"
@@ -1472,7 +1472,7 @@ type Css =
     /// ```
     static member inline gridTemplateRows(value: int seq): JSX.Style =
         let addPixels = (fun x -> x + "px")
-        "grid-template-rows", (value |> Seq.map (asString >> addPixels) |> String.concat " ")
+        "gridTemplateRows", (value |> Seq.map (asString >> addPixels) |> String.concat " ")
     /// Sets the width of a number of grid rows to the defined width
     ///
     /// **CSS**
@@ -1484,7 +1484,7 @@ type Css =
     /// style.gridTemplateRows [length.fr 1; length.percent 10; length.px 250; length.auto]
     /// ```
     static member inline gridTemplateRows(value: ICssUnit seq): JSX.Style =
-        "grid-template-rows", (value |> Seq.map asString |> String.concat " ")
+        "gridTemplateRows", (value |> Seq.map asString |> String.concat " ")
     /// Sets the width of a number of grid rows to the defined width as well as naming the spaces between
     ///
     /// **CSS**
@@ -1494,15 +1494,15 @@ type Css =
     /// **F#**
     /// ```f#
     /// style.gridTemplateRows [
-    ///     grid.namedLine "row-1-start"
+    ///     grid.namedLine "row1Start"
     ///     grid.templateWidth (length.fr 1)
-    ///     grid.namedLines ["row-1-end"; "row-2-start"]
+    ///     grid.namedLines ["row1End"; "row2Start"]
     ///     grid.templateWidth (length.fr 1)
-    ///     grid.namedLine "row-2-end"
+    ///     grid.namedLine "row2End"
     /// ]
     /// ```
     static member inline gridTemplateRows(value: IGridTemplateItem seq): JSX.Style =
-        "grid-template-rows", (value |> Seq.map asString |> String.concat " ")
+        "gridTemplateRows", (value |> Seq.map asString |> String.concat " ")
     /// Sets the width of a number of grid rows to the defined width
     ///
     /// **CSS**
@@ -1515,7 +1515,7 @@ type Css =
     /// ```
     static member inline gridTemplateRows(count: int, size: ICssUnit, ?areaName: string): JSX.Style =
         let areaName = match areaName with Some n -> " [" + n + "]" | None -> ""
-        "grid-template-rows", (
+        "gridTemplateRows", (
             "repeat("+
             (asString count) + ", " +
             (asString size) + areaName + ")"
@@ -1541,7 +1541,7 @@ type Css =
         let wrapLine = (fun x -> "'" + x + "'")
         let lines = List.map (String.concat " " >> wrapLine) value
         let block = String.concat "\n" lines
-        "grid-template-areas", block
+        "gridTemplateAreas", block
     /// 2D representation of grid layout as blocks with names
     ///
     /// **CSS**
@@ -1563,7 +1563,7 @@ type Css =
         let wrapLine = (fun x -> "'" + x + "'")
         let lines = Array.map (String.concat " " >> wrapLine) value
         let block = String.concat "\n" lines
-        "grid-template-areas", block
+        "gridTemplateAreas", block
     /// One-dimensional alternative to the nested list. For column-based layouts
     ///
     /// **CSS**
@@ -1576,7 +1576,7 @@ type Css =
     /// ```
     static member inline gridTemplateAreas(value: string seq): JSX.Style =
         let block = String.concat " " value
-        "grid-template-areas", ("'" + block + "'")
+        "gridTemplateAreas", ("'" + block + "'")
     /// Specifies the size of the grid lines. You can think of it like
     /// setting the width of the gutters between the columns.
     ///
@@ -1589,7 +1589,7 @@ type Css =
     /// style.columnGap 10
     /// ```
     static member inline columnGap(value: int): JSX.Style =
-        "column-gap", (asString value + "px")
+        "columnGap", (asString value + "px")
     /// Specifies the size of the grid lines. You can think of it like
     /// setting the width of the gutters between the columns.
     ///
@@ -1602,7 +1602,7 @@ type Css =
     /// style.columnGap (length.em 1)
     /// ```
     static member inline columnGap(value: ICssUnit): JSX.Style =
-        "column-gap", (asString value)
+        "columnGap", (asString value)
     /// Specifies the size of the grid lines. You can think of it like
     /// setting the width of the gutters between the rows.
     ///
@@ -1615,7 +1615,7 @@ type Css =
     /// style.rowGap 10
     /// ```
     static member inline rowGap(value: int): JSX.Style =
-        "row-gap", (asString value + "px")
+        "rowGap", (asString value + "px")
     /// Specifies the size of the grid lines. You can think of it like
     /// setting the width of the gutters between the rows.
     ///
@@ -1628,7 +1628,7 @@ type Css =
     /// style.rowGap (length.em 1)
     /// ```
     static member inline rowGap(value: ICssUnit): JSX.Style =
-        "row-gap", (asString value)
+        "rowGap", (asString value)
     /// Specifies the size of the grid lines. You can think of it like
     /// setting the width of the gutters between the rows/columns.
     ///
@@ -1671,7 +1671,7 @@ type Css =
     /// style.gridColumnStart ("col", 2)
     /// ```
     static member inline gridColumnStart(value: string, ?count: int): JSX.Style =
-        "grid-column-start", (asString value + " " + (asString count))
+        "gridColumnStart", (asString value + " " + (asString count))
     /// Sets where an item in the grid starts
     /// The value can be one of the following options:
     /// - a named line
@@ -1688,7 +1688,7 @@ type Css =
     /// ```f#
     /// style.gridColumnStart 2
     /// ```
-    static member inline gridColumnStart(value: int): JSX.Style = "grid-column-start", (asString value)
+    static member inline gridColumnStart(value: int): JSX.Style = "gridColumnStart", (asString value)
     /// Sets where an item in the grid starts
     /// The value can be one of the following options:
     /// - a named line
@@ -1703,9 +1703,9 @@ type Css =
     /// ```
     /// **F#**
     /// ```f#
-    /// style.gridColumnStart (gridColumn.span "odd-col")
+    /// style.gridColumnStart (gridColumn.span "oddCol")
     /// ```
-    static member inline gridColumnStart(value: IGridSpan): JSX.Style = "grid-column-start", (asString value)
+    static member inline gridColumnStart(value: IGridSpan): JSX.Style = "gridColumnStart", (asString value)
     /// Sets where an item in the grid ends
     /// The value can be one of the following options:
     /// - a named line
@@ -1722,10 +1722,10 @@ type Css =
     /// ```
     /// **F#**
     /// ```f#
-    /// style.gridColumnEnd ("odd-col", 2)
+    /// style.gridColumnEnd ("oddCol", 2)
     /// ```
     static member inline gridColumnEnd(value: string, ?count: int): JSX.Style =
-        "grid-column-end", (asString value + " " + (asString count))
+        "gridColumnEnd", (asString value + " " + (asString count))
     /// Sets where an item in the grid ends
     /// The value can be one of the following options:
     /// - a named line
@@ -1742,7 +1742,7 @@ type Css =
     /// ```f#
     /// style.gridColumnEnd 2
     /// ```
-    static member inline gridColumnEnd(value: int): JSX.Style = "grid-column-end", (asString value)
+    static member inline gridColumnEnd(value: int): JSX.Style = "gridColumnEnd", (asString value)
     /// Sets where an item in the grid ends
     /// The value can be one of the following options:
     /// - a named line
@@ -1759,7 +1759,7 @@ type Css =
     /// ```f#
     /// style.gridColumnEnd (gridColumn.span 2)
     /// ```
-    static member inline gridColumnEnd(value: IGridSpan): JSX.Style = "grid-column-end", (asString value)
+    static member inline gridColumnEnd(value: IGridSpan): JSX.Style = "gridColumnEnd", (asString value)
     /// Sets where an item in the grid starts
     /// The value can be one of the following options:
     /// - a named line
@@ -1777,7 +1777,7 @@ type Css =
     /// style.gridRowStart ("col", 2)
     /// ```
     static member inline gridRowStart(value: string, ?count: int): JSX.Style =
-        "grid-row-start", (asString value + " " + (asString count))
+        "gridRowStart", (asString value + " " + (asString count))
     /// Sets where an item in the grid starts
     /// The value can be one of the following options:
     /// - a named line
@@ -1794,7 +1794,7 @@ type Css =
     /// ```f#
     /// style.gridRowStart 2
     /// ```
-    static member inline gridRowStart(value: int): JSX.Style = "grid-row-start", (asString value)
+    static member inline gridRowStart(value: int): JSX.Style = "gridRowStart", (asString value)
     /// Sets where an item in the grid starts
     /// The value can be one of the following options:
     /// - a named line
@@ -1809,9 +1809,9 @@ type Css =
     /// ```
     /// **F#**
     /// ```f#
-    /// style.gridRowStart (gridRow.span "odd-col")
+    /// style.gridRowStart (gridRow.span "oddCol")
     /// ```
-    static member inline gridRowStart(value: IGridSpan): JSX.Style = "grid-row-start", (asString value)
+    static member inline gridRowStart(value: IGridSpan): JSX.Style = "gridRowStart", (asString value)
     /// Sets where an item in the grid ends
     /// The value can be one of the following options:
     /// - a named line
@@ -1828,10 +1828,10 @@ type Css =
     /// ```
     /// **F#**
     /// ```f#
-    /// style.gridRowEnd ("odd-col", 2)
+    /// style.gridRowEnd ("oddCol", 2)
     /// ```
     static member inline gridRowEnd(value: string, ?count: int): JSX.Style =
-        "grid-row-end", (asString value + " " + (asString count))
+        "gridRowEnd", (asString value + " " + (asString count))
     /// Sets where an item in the grid ends
     /// The value can be one of the following options:
     /// - a named line
@@ -1848,7 +1848,7 @@ type Css =
     /// ```f#
     /// style.gridRowEnd 2
     /// ```
-    static member inline gridRowEnd(value: int): JSX.Style = "grid-row-end", (asString value)
+    static member inline gridRowEnd(value: int): JSX.Style = "gridRowEnd", (asString value)
     /// Sets where an item in the grid ends
     /// The value can be one of the following options:
     /// - a named line
@@ -1865,7 +1865,7 @@ type Css =
     /// ```f#
     /// style.gridRowEnd (gridRow.span 2)
     /// ```
-    static member inline gridRowEnd(value: IGridSpan): JSX.Style = "grid-row-end", (asString value)
+    static member inline gridRowEnd(value: IGridSpan): JSX.Style = "gridRowEnd", (asString value)
     /// Determines a grid item’s location within the grid by referring to specific grid lines.
     /// start is the line where the item begins, end' is the line where it ends.
     /// They can be one of the following options:
@@ -1883,10 +1883,10 @@ type Css =
     /// ```
     /// **F#**
     /// ```f#
-    /// style.gridColumn ("col-2", "col-4")
+    /// style.gridColumn ("col2", "col4")
     /// ```
     static member inline gridColumn(start: string, end': string): JSX.Style =
-        "grid-column", (start + " / " + end')
+        "gridColumn", (start + " / " + end')
     /// Determines a grid item’s location within the grid by referring to specific grid lines.
     /// start is the line where the item begins, end' is the line where it ends.
     /// They can be one of the following options:
@@ -1907,7 +1907,7 @@ type Css =
     /// style.gridColumn (1, 3)
     /// ```
     static member inline gridColumn(start: int, end': int): JSX.Style =
-        "grid-column", (asString start + " / " + asString end')
+        "gridColumn", (asString start + " / " + asString end')
     /// Determines a grid item’s location within the grid by referring to specific grid lines.
     /// start is the line where the item begins, end' is the line where it ends.
     /// They can be one of the following options:
@@ -1928,7 +1928,7 @@ type Css =
     /// style.gridColumn (gridColumn.span 2, gridColumn.span 3)
     /// ```
     static member inline gridColumn(start: IGridSpan, end': IGridSpan): JSX.Style =
-        "grid-column", (asString start + " / " + asString end')
+        "gridColumn", (asString start + " / " + asString end')
     /// Determines a grid item’s location within the grid by referring to specific grid lines.
     /// start is the line where the item begins, end' is the line where it ends.
     /// They can be one of the following options:
@@ -1946,10 +1946,10 @@ type Css =
     /// ```
     /// **F#**
     /// ```f#
-    /// style.gridRow ("row-2", "row-4")
+    /// style.gridRow ("row2", "row4")
     /// ```
     static member inline gridRow(start: string, end': string): JSX.Style =
-        "grid-row", (start + " / " + end')
+        "gridRow", (start + " / " + end')
     /// Determines a grid item’s location within the grid by referring to specific grid lines.
     /// start is the line where the item begins, end' is the line where it ends.
     /// They can be one of the following options:
@@ -1970,7 +1970,7 @@ type Css =
     /// style.gridRow (2, 4)
     /// ```
     static member inline gridRow(start: int, end': int): JSX.Style =
-        "grid-row", (asString start + " / " + asString end')
+        "gridRow", (asString start + " / " + asString end')
     /// Determines a grid item’s location within the grid by referring to specific grid lines.
     /// start is the line where the item begins, end' is the line where it ends.
     /// They can be one of the following options:
@@ -1991,7 +1991,7 @@ type Css =
     /// style.gridRow (gridRow.span 2, gridRow.span 3)
     /// ```
     static member inline gridRow(start: IGridSpan, end': IGridSpan): JSX.Style =
-        "grid-row", (asString start + " / " + asString end')
+        "gridRow", (asString start + " / " + asString end')
     /// Sets the named grid area the item is placed in
     ///
     /// **CSS**
@@ -2003,7 +2003,7 @@ type Css =
     /// style.gridArea "header"
     /// ```
     static member inline gridArea(value: string): JSX.Style =
-        "grid-area", (asString value)
+        "gridArea", (asString value)
     /// Shorthand for `grid-template-areas`, `grid-template-columns` and `grid-template-rows`.
     ///
     /// Documentation: https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template
@@ -2021,85 +2021,85 @@ type Css =
     ///                                "/ auto 1fr auto"
     /// ```
     static member inline gridTemplate(value: string): JSX.Style =
-        "grid-template", (asString value)
+        "gridTemplate", (asString value)
     static member inline transition(value: string): JSX.Style =
         "transition", value
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDuration(timespan: TimeSpan): JSX.Style =
-        "transition-duration", (asString timespan.TotalMilliseconds + "ms")
+        "transitionDuration", (asString timespan.TotalMilliseconds + "ms")
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDurationSeconds(n: float): JSX.Style =
-        "transition-duration", (asString n + "s")
+        "transitionDuration", (asString n + "s")
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDurationMilliseconds(n: float): JSX.Style =
-        "transition-duration", (asString n + "ms")
+        "transitionDuration", (asString n + "ms")
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDurationSeconds(n: int): JSX.Style =
-        "transition-duration", (asString n + "s")
+        "transitionDuration", (asString n + "s")
     /// Sets the length of time a transition animation should take to complete. By default, the
     /// value is 0s, meaning that no animation will occur.
     static member inline transitionDurationMilliseconds(n: int): JSX.Style =
-        "transition-duration", (asString n + "ms")
+        "transitionDuration", (asString n + "ms")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelay(timespan: TimeSpan): JSX.Style =
-        "transition-delay", (asString timespan.TotalMilliseconds + "ms")
+        "transitionDelay", (asString timespan.TotalMilliseconds + "ms")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelaySeconds(n: float): JSX.Style =
-        "transition-delay", (asString n + "s")
+        "transitionDelay", (asString n + "s")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelayMilliseconds(n: float): JSX.Style =
-        "transition-delay", (asString n + "ms")
+        "transitionDelay", (asString n + "ms")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelaySeconds(n: int): JSX.Style =
-        "transition-delay", (asString n + "s")
+        "transitionDelay", (asString n + "s")
     /// Specifies the duration to wait before starting a property's transition effect when its value changes.
     static member inline transitionDelayMilliseconds(n: int): JSX.Style =
-        "transition-delay", (asString n + "ms")
+        "transitionDelay", (asString n + "ms")
     /// Sets the CSS properties to which a transition effect should be applied.
     static member inline transitionProperty ([<ParamArray>] properties: ITransitionProperty[]): JSX.Style =
-        "transition-property", (String.concat "," (properties |> Array.map asString))
+        "transitionProperty", (String.concat "," (properties |> Array.map asString))
     /// Sets the CSS properties to which a transition effect should be applied.
     static member inline transitionProperty (properties: ITransitionProperty list): JSX.Style =
-        "transition-property", (String.concat "," (properties |> List.map asString))
+        "transitionProperty", (String.concat "," (properties |> List.map asString))
     /// Sets the CSS properties to which a transition effect should be applied.
     static member inline transitionProperty (property: ITransitionProperty): JSX.Style =
-        "transition-property", (asString property)
+        "transitionProperty", (asString property)
     /// Sets the CSS properties to which a transition effect should be applied.
     static member inline transitionProperty (property: string): JSX.Style =
-        "transition-property", property
+        "transitionProperty", property
 
     /// Sets the size of the font.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
-    static member inline fontSize(size: int): JSX.Style = "font-size", (asString size + "px")
+    static member inline fontSize(size: int): JSX.Style = "fontSize", (asString size + "px")
     /// Sets the size of the font.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
-    static member inline fontSize(size: ICssUnit): JSX.Style = "font-size", (asString size)
+    static member inline fontSize(size: ICssUnit): JSX.Style = "fontSize", (asString size)
     /// Specifies the height of a text lines.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
     ///
     /// Note: Negative values are not allowed.
-    static member inline lineHeight(size: int): JSX.Style = "line-height", (asString size + "px")
+    static member inline lineHeight(size: int): JSX.Style = "lineHeight", (asString size + "px")
     /// Specifies the height of a text lines.
     ///
     /// This property is also used to compute the size of em, ex, and other relative <length> units.
     ///
     /// Note: Negative values are not allowed.
-    static member inline lineHeight(size: ICssUnit): JSX.Style = "line-height", (asString size)
+    static member inline lineHeight(size: ICssUnit): JSX.Style = "lineHeight", (asString size)
     /// Sets the background color of an element.
-    static member inline backgroundColor (color: string): JSX.Style = "background-color", color
+    static member inline backgroundColor (color: string): JSX.Style = "backgroundColor", color
     /// Sets the color of the insertion caret, the visible marker where the next character typed will be inserted.
     ///
     /// This is sometimes referred to as the text input cursor. The caret appears in elements such as <input> or
     /// those with the contenteditable attribute. The caret is typically a thin vertical line that flashes to
     /// help make it more noticeable. By default, it is black, but its color can be altered with this property.
-    static member inline caretColor (color: string): JSX.Style = "caret-color", color
+    static member inline caretColor (color: string): JSX.Style = "caretColor", color
     /// Sets the foreground color value of an element's text and text decorations, and sets the
     /// `currentcolor` value. `currentcolor` may be used as an indirect value on other properties
     /// and is the default for other color properties, such as border-color.
@@ -2124,7 +2124,7 @@ type Css =
     /// Sets an element's bottom border. It sets the values of border-bottom-width,
     /// border-bottom-style and border-bottom-color.
     static member inline borderBottom(width: ICssUnit, style: IBorderStyle, color: string): JSX.Style =
-        "border-bottom", (
+        "borderBottom", (
             (asString width) + " " +
             (asString style) + " " +
             color
@@ -2141,7 +2141,7 @@ type Css =
     ///  - An outline may be non-rectangular
     ///
     static member inline outlineOffset (offset:int): JSX.Style =
-        "outline-width", (asString offset + "px")
+        "outlineWidth", (asString offset + "px")
 
     /// The outline-offset property adds space between an outline and the edge or border of an element.
     ///
@@ -2154,7 +2154,7 @@ type Css =
     ///  - An outline may be non-rectangular
     ///
     static member inline outlineOffset (offset: ICssUnit): JSX.Style =
-        "outline-width", (asString offset)
+        "outlineWidth", (asString offset)
 
     /// An outline is a line that is drawn around elements (outside the borders) to make the element "stand out".
     ///
@@ -2162,69 +2162,69 @@ type Css =
 
     /// **Note**: Always declare the outline-style property before the outline-color property. An element must have an outline before you change the color of it.
     static member inline outlineColor (color: string): JSX.Style =
-        "outline-color", color
+        "outlineColor", color
 
     /// Set an element's left border.
     static member inline borderLeft(width: ICssUnit, style: IBorderStyle, color: string): JSX.Style =
-        "border-left", (
+        "borderLeft", (
             (asString width) + " " +
             (asString style) + " " +
             color
         )
     /// Set an element's right border.
     static member inline borderRight(width: ICssUnit, style: IBorderStyle, color: string): JSX.Style =
-        "border-right", (
+        "borderRight", (
             (asString width) + " " +
             (asString style) + " " +
             color
         )
     /// Set an element's top border.
     static member inline borderTop(width: ICssUnit, style: IBorderStyle, color: string): JSX.Style =
-        "border-top", (
+        "borderTop", (
             (asString width) + " " +
             (asString style) + " " +
             color
         )
     /// Sets the line style of an element's bottom border.
-    static member inline borderBottomStyle(style: IBorderStyle): JSX.Style = "border-bottom-style", (asString style)
+    static member inline borderBottomStyle(style: IBorderStyle): JSX.Style = "borderBottomStyle", (asString style)
     /// Sets the width of the bottom border of an element.
-    static member inline borderBottomWidth (width: int): JSX.Style = "border-bottom-width", (asString width + "px")
+    static member inline borderBottomWidth (width: int): JSX.Style = "borderBottomWidth", (asString width + "px")
     /// Sets the width of the bottom border of an element.
-    static member inline borderBottomWidth (width: ICssUnit): JSX.Style = "border-bottom-width", (asString width)
+    static member inline borderBottomWidth (width: ICssUnit): JSX.Style = "borderBottomWidth", (asString width)
     /// Sets the color of an element's bottom border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
-    static member inline borderBottomColor (color: string): JSX.Style = "border-bottom-color", color
+    static member inline borderBottomColor (color: string): JSX.Style = "borderBottomColor", color
     /// Sets the line style of an element's top border.
-    static member inline borderTopStyle(style: IBorderStyle): JSX.Style = "border-top-style", (asString style)
+    static member inline borderTopStyle(style: IBorderStyle): JSX.Style = "borderTopStyle", (asString style)
     /// Sets the width of the top border of an element.
-    static member inline borderTopWidth (width: int): JSX.Style = "border-top-width", (asString width + "px")
+    static member inline borderTopWidth (width: int): JSX.Style = "borderTopWidth", (asString width + "px")
     /// Sets the width of the top border of an element.
-    static member inline borderTopWidth (width: ICssUnit): JSX.Style = "border-top-width", (asString width)
+    static member inline borderTopWidth (width: ICssUnit): JSX.Style = "borderTopWidth", (asString width)
     /// Sets the color of an element's top border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
-    static member inline borderTopColor (color: string): JSX.Style = "border-top-color", color
+    static member inline borderTopColor (color: string): JSX.Style = "borderTopColor", color
     /// Sets the line style of an element's right border.
-    static member inline borderRightStyle(style: IBorderStyle): JSX.Style = "border-right-style", (asString style)
+    static member inline borderRightStyle(style: IBorderStyle): JSX.Style = "borderRightStyle", (asString style)
     /// Sets the width of the right border of an element.
-    static member inline borderRightWidth (width: int): JSX.Style = "border-right-width", (asString width + "px")
+    static member inline borderRightWidth (width: int): JSX.Style = "borderRightWidth", (asString width + "px")
     /// Sets the width of the right border of an element.
-    static member inline borderRightWidth (width: ICssUnit): JSX.Style = "border-right-width", (asString width)
+    static member inline borderRightWidth (width: ICssUnit): JSX.Style = "borderRightWidth", (asString width)
     /// Sets the color of an element's right border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
-    static member inline borderRightColor (color: string): JSX.Style = "border-right-color", color
+    static member inline borderRightColor (color: string): JSX.Style = "borderRightColor", color
     /// Sets the line style of an element's left border.
-    static member inline borderLeftStyle(style: IBorderStyle): JSX.Style = "border-left-style", (asString style)
+    static member inline borderLeftStyle(style: IBorderStyle): JSX.Style = "borderLeftStyle", (asString style)
     /// Sets the width of the left border of an element.
-    static member inline borderLeftWidth (width: int): JSX.Style = "border-left-width", (asString width + "px")
+    static member inline borderLeftWidth (width: int): JSX.Style = "borderLeftWidth", (asString width + "px")
     /// Sets the width of the left border of an element.
-    static member inline borderLeftWidth (width: ICssUnit): JSX.Style = "border-left-width", (asString width)
+    static member inline borderLeftWidth (width: ICssUnit): JSX.Style = "borderLeftWidth", (asString width)
     /// Sets the color of an element's left border.
     ///
     /// It can also be set with the shorthand CSS properties border-color or border-bottom.
-    static member inline borderLeftColor (color: string): JSX.Style = "border-left-color", color
+    static member inline borderLeftColor (color: string): JSX.Style = "borderLeftColor", color
     /// Sets an element's border.
     ///
     /// It sets the values of border-width, border-style, and border-color.
@@ -2244,51 +2244,51 @@ type Css =
             color
         )
     /// Sets the color of an element's border.
-    static member inline borderColor (color: string): JSX.Style = "border-color", color
+    static member inline borderColor (color: string): JSX.Style = "borderColor", color
     /// Rounds the corners of an element's outer border edge. You can set a single radius to make
     /// circular corners, or two radii to make elliptical corners.
-    static member inline borderRadius (radius: int): JSX.Style = "border-radius", (asString radius + "px")
+    static member inline borderRadius (radius: int): JSX.Style = "borderRadius", (asString radius + "px")
     /// Rounds the corners of an element's outer border edge. You can set a single radius to make
     /// circular corners, or two radii to make elliptical corners.
-    static member inline borderRadius (radius: ICssUnit): JSX.Style = "border-radius", (asString radius)
+    static member inline borderRadius (radius: ICssUnit): JSX.Style = "borderRadius", (asString radius)
     /// Sets the width of an element's border.
-    static member inline borderWidth (width: int): JSX.Style = "border-width", (asString width + "px")
+    static member inline borderWidth (width: int): JSX.Style = "borderWidth", (asString width + "px")
     /// Sets the width of an element's border.
     static member inline borderWidth (top: ICssUnit, ?right: ICssUnit): JSX.Style =
-        "border-width", (
+        "borderWidth", (
             asString top + (match right with Some x -> " " + asString x | None -> ""))
     /// Sets the width of an element's border.
     static member inline borderWidth (top: ICssUnit, right: ICssUnit, bottom: ICssUnit, ?left: ICssUnit): JSX.Style =
-        "border-width", (
+        "borderWidth", (
             (asString top) + " " +
             (asString right) + " " +
             (asString bottom) +
             (match left with Some x -> " " + asString x | None -> ""))
     /// Sets one or more animations to apply to an element. Each name is an @keyframes at-rule that
     /// sets the property values for the animation sequence.
-    static member inline animationName(keyframeName: string): JSX.Style = "animation-name", keyframeName
+    static member inline animationName(keyframeName: string): JSX.Style = "animationName", keyframeName
     /// Sets the length of time that an animation takes to complete one cycle.
-    static member inline animationDuration(timespan: TimeSpan): JSX.Style = "animation-duration", (asString timespan.TotalMilliseconds + "ms")
+    static member inline animationDuration(timespan: TimeSpan): JSX.Style = "animationDuration", (asString timespan.TotalMilliseconds + "ms")
     /// Sets the length of time that an animation takes to complete one cycle.
-    static member inline animationDuration(seconds: int): JSX.Style = "animation-duration", (asString seconds + "s")
+    static member inline animationDuration(seconds: int): JSX.Style = "animationDuration", (asString seconds + "s")
     /// Sets when an animation starts.
     ///
     /// The animation can start later, immediately from its beginning, or immediately and partway through the animation.
-    static member inline animationDelay(timespan: TimeSpan): JSX.Style = "animation-delay", (asString timespan.TotalMilliseconds + "ms")
+    static member inline animationDelay(timespan: TimeSpan): JSX.Style = "animationDelay", (asString timespan.TotalMilliseconds + "ms")
     /// Sets when an animation starts.
     ///
     /// The animation can start later, immediately from its beginning, or immediately and partway through the animation.
-    static member inline animationDelay(seconds: int): JSX.Style = "animation-delay", (asString seconds + "s")
+    static member inline animationDelay(seconds: int): JSX.Style = "animationDelay", (asString seconds + "s")
     /// The number of times the animation runs.
-    static member inline animationDurationCount(count: int): JSX.Style = "animation-duration-count", (asString count)
+    static member inline animationDurationCount(count: int): JSX.Style = "animationDurationCount", (asString count)
     /// Sets the font family for the font specified in a @font-face rule.
-    static member inline fontFamily (family: string): JSX.Style = "font-family", family
+    static member inline fontFamily (family: string): JSX.Style = "fontFamily", family
     /// Sets the color of decorations added to text by text-decoration-line.
-    static member inline textDecorationColor(color: string): JSX.Style = "text-decoration-color", color
+    static member inline textDecorationColor(color: string): JSX.Style = "textDecorationColor", color
     /// Sets the length of empty space (indentation) that is put before lines of text in a block.
-    static member inline textIndent(value: int): JSX.Style = "text-indent", (asString value)
+    static member inline textIndent(value: int): JSX.Style = "textIndent", (asString value)
     /// Sets the length of empty space (indentation) that is put before lines of text in a block.
-    static member inline textIndent(value: string): JSX.Style = "text-indent", (asString value)
+    static member inline textIndent(value: string): JSX.Style = "textIndent", (asString value)
     /// Sets the opacity of an element.
     ///
     /// Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.
@@ -2296,23 +2296,23 @@ type Css =
     /// Sets the minimum width of an element.
     ///
     /// It prevents the used value of the width property from becoming smaller than the value specified for min-width.
-    static member inline minWidth (value: int): JSX.Style = "min-width", (asString value + "px")
+    static member inline minWidth (value: int): JSX.Style = "minWidth", (asString value + "px")
     /// Sets the minimum width of an element.
     ///
     /// It prevents the used value of the width property from becoming smaller than the value specified for min-width.
-    static member inline minWidth (value: ICssUnit): JSX.Style = "min-width", (asString value)
+    static member inline minWidth (value: ICssUnit): JSX.Style = "minWidth", (asString value)
     /// Sets the minimum width of an element.
     ///
     /// It prevents the used value of the width property from becoming smaller than the value specified for min-width.
-    static member inline minWidth (value: string): JSX.Style = "min-width", (asString value)
+    static member inline minWidth (value: string): JSX.Style = "minWidth", (asString value)
     /// Sets the maximum width of an element.
     ///
     /// It prevents the used value of the width property from becoming larger than the value specified by max-width.
-    static member inline maxWidth (value: int): JSX.Style = "max-width", (asString value + "px")
+    static member inline maxWidth (value: int): JSX.Style = "maxWidth", (asString value + "px")
     /// Sets the maximum width of an element.
     ///
     /// It prevents the used value of the width property from becoming larger than the value specified by max-width.
-    static member inline maxWidth (value: ICssUnit): JSX.Style = "max-width", (asString value)
+    static member inline maxWidth (value: ICssUnit): JSX.Style = "maxWidth", (asString value)
     /// Sets the width of an element.
     ///
     /// By default, the property defines the width of the content area.
@@ -2323,9 +2323,9 @@ type Css =
     static member inline width (value: ICssUnit): JSX.Style = "width", (asString value)
 
     /// Sets one or more background images on an element.
-    static member inline backgroundImage (value: string): JSX.Style = "background-image", (asString value)
+    static member inline backgroundImage (value: string): JSX.Style = "backgroundImage", (asString value)
     /// Short-hand for `style.backgroundImage(sprintf "url('%s')" value)` to set the backround image using a url.
-    static member inline backgroundImageUrl (value: string): JSX.Style = "background-image", ("url('" + value + "')")
+    static member inline backgroundImageUrl (value: string): JSX.Style = "backgroundImage", ("url('" + value + "')")
 
     /// Sets the color of an SVG shape.
     static member inline fill (color: string): JSX.Style = "fill", color
@@ -2550,7 +2550,7 @@ module font =
     let [<Literal>] daunPenh = "DaunPenh"
     let [<Literal>] david = "David"
     let [<Literal>] dengXian = "DengXian"
-    let [<Literal>] dfKaiSB = "DFKai-SB"
+    let [<Literal>] dfKaiSB = "DFKaiSB"
     let [<Literal>] didot = "Didot"
     let [<Literal>] dilleniaUPC = "DilleniaUPC"
     let [<Literal>] dokChampa = "DokChampa"
@@ -2635,8 +2635,8 @@ module font =
     let [<Literal>] microsoftYiBaiti = "Microsoft Yi Baiti"
     let [<Literal>] mingLiU = "MingLiU"
     let [<Literal>] mingLiUHKSCS = "MingLiU_HKSCS"
-    let [<Literal>] mingLiUHKSCSExtB = "MingLiU_HKSCS-ExtB"
-    let [<Literal>] mingLiUExtB = "MingLiU-ExtB"
+    let [<Literal>] mingLiUHKSCSExtB = "MingLiU_HKSCSExtB"
+    let [<Literal>] mingLiUExtB = "MingLiUExtB"
     let [<Literal>] miriam = "Miriam"
     let [<Literal>] monaco = "Monaco"
     let [<Literal>] mongolianBaiti = "Mongolian Baiti"
@@ -2689,7 +2689,7 @@ module font =
     let [<Literal>] simplifiedArabic = "Simplified Arabic"
     let [<Literal>] simplifiedChinese = "Simplified Chinese"
     let [<Literal>] simSun = "SimSun"
-    let [<Literal>] simSunExtB = "SimSun-ExtB"
+    let [<Literal>] simSunExtB = "SimSunExtB"
     let [<Literal>] sitka = "Sitka"
     let [<Literal>] snellRoundhan = "Snell Roundhan"
     let [<Literal>] stencilStd = "Stencil Std"
@@ -2883,7 +2883,7 @@ type textDecorationLine =
     static member inline none : ITextDecorationLine = newTextDecorationLine "none"
     static member inline underline : ITextDecorationLine = newTextDecorationLine "underline"
     static member inline overline : ITextDecorationLine = newTextDecorationLine "overline"
-    static member inline lineThrough : ITextDecorationLine = newTextDecorationLine "line-through"
+    static member inline lineThrough : ITextDecorationLine = newTextDecorationLine "lineThrough"
     static member inline initial : ITextDecorationLine = newTextDecorationLine "initial"
     static member inline inheritFromParent : ITextDecorationLine = newTextDecorationLine "inherit"
 
@@ -3074,157 +3074,157 @@ type transform =
 
 type transitionProperty =
     static member inline all = newTransitionProperty "all"
-    static member inline backdropFilter = newTransitionProperty "backdrop-filter"
+    static member inline backdropFilter = newTransitionProperty "backdropFilter"
     static member inline background = newTransitionProperty "background"
-    static member inline backgroundColor = newTransitionProperty "background-color"
-    static member inline backgroundPosition = newTransitionProperty "background-position"
-    static member inline backgroundSize = newTransitionProperty "background-size"
+    static member inline backgroundColor = newTransitionProperty "backgroundColor"
+    static member inline backgroundPosition = newTransitionProperty "backgroundPosition"
+    static member inline backgroundSize = newTransitionProperty "backgroundSize"
     static member inline border = newTransitionProperty "border"
-    static member inline borderBottom = newTransitionProperty "border-bottom"
-    static member inline borderBottomColor = newTransitionProperty "border-bottom-color"
-    static member inline borderBottomLeftRadius = newTransitionProperty "border-bottom-left-radius"
-    static member inline borderBottomRightRadius = newTransitionProperty "border-bottom-right-radius"
-    static member inline borderBottomWidth = newTransitionProperty "border-bottom-width"
-    static member inline borderColor = newTransitionProperty "border-color"
-    static member inline borderEndEndRadius = newTransitionProperty "border-end-end-radius"
-    static member inline borderEndStartRadius = newTransitionProperty "border-end-start-radius"
-    static member inline borderLeft = newTransitionProperty "border-left"
-    static member inline borderLeftColor = newTransitionProperty "border-left-color"
-    static member inline borderLeftWidth = newTransitionProperty "border-left-width"
-    static member inline borderRadius = newTransitionProperty "border-radius"
-    static member inline borderRight = newTransitionProperty "border-right"
-    static member inline borderRightColor = newTransitionProperty "border-right-color"
-    static member inline borderRightWidth = newTransitionProperty "border-right-width"
-    static member inline borderStartEndRadius = newTransitionProperty "border-start-end-radius"
-    static member inline borderStartStartRadius = newTransitionProperty "border-start-start-radius"
-    static member inline borderTop = newTransitionProperty "border-top"
-    static member inline borderTopColor = newTransitionProperty "border-top-color"
-    static member inline borderTopLeftRadius = newTransitionProperty "border-top-left-radius"
-    static member inline borderTopRightRadius = newTransitionProperty "border-top-right-radius"
-    static member inline borderTopWidth = newTransitionProperty "border-top-width"
-    static member inline borderWidth = newTransitionProperty "border-width"
+    static member inline borderBottom = newTransitionProperty "borderBottom"
+    static member inline borderBottomColor = newTransitionProperty "borderBottomColor"
+    static member inline borderBottomLeftRadius = newTransitionProperty "borderBottomLeftRadius"
+    static member inline borderBottomRightRadius = newTransitionProperty "borderBottomRightRadius"
+    static member inline borderBottomWidth = newTransitionProperty "borderBottomWidth"
+    static member inline borderColor = newTransitionProperty "borderColor"
+    static member inline borderEndEndRadius = newTransitionProperty "borderEndEndRadius"
+    static member inline borderEndStartRadius = newTransitionProperty "borderEndStartRadius"
+    static member inline borderLeft = newTransitionProperty "borderLeft"
+    static member inline borderLeftColor = newTransitionProperty "borderLeftColor"
+    static member inline borderLeftWidth = newTransitionProperty "borderLeftWidth"
+    static member inline borderRadius = newTransitionProperty "borderRadius"
+    static member inline borderRight = newTransitionProperty "borderRight"
+    static member inline borderRightColor = newTransitionProperty "borderRightColor"
+    static member inline borderRightWidth = newTransitionProperty "borderRightWidth"
+    static member inline borderStartEndRadius = newTransitionProperty "borderStartEndRadius"
+    static member inline borderStartStartRadius = newTransitionProperty "borderStartStartRadius"
+    static member inline borderTop = newTransitionProperty "borderTop"
+    static member inline borderTopColor = newTransitionProperty "borderTopColor"
+    static member inline borderTopLeftRadius = newTransitionProperty "borderTopLeftRadius"
+    static member inline borderTopRightRadius = newTransitionProperty "borderTopRightRadius"
+    static member inline borderTopWidth = newTransitionProperty "borderTopWidth"
+    static member inline borderWidth = newTransitionProperty "borderWidth"
     static member inline bottom = newTransitionProperty "bottom"
-    static member inline boxShadow = newTransitionProperty "box-shadow"
-    static member inline caretColor = newTransitionProperty "caret-color"
+    static member inline boxShadow = newTransitionProperty "boxShadow"
+    static member inline caretColor = newTransitionProperty "caretColor"
     static member inline clip = newTransitionProperty "clip"
-    static member inline clipPath = newTransitionProperty "clip-path"
+    static member inline clipPath = newTransitionProperty "clipPath"
     static member inline color = newTransitionProperty "color"
-    static member inline columnCount = newTransitionProperty "column-count"
-    static member inline columnGap = newTransitionProperty "column-gap"
-    static member inline columnRule = newTransitionProperty "column-rule"
-    static member inline columnRuleColor = newTransitionProperty "column-rule-color"
-    static member inline columnRuleWidth = newTransitionProperty "column-rule-width"
-    static member inline columnWidth = newTransitionProperty "column-width"
+    static member inline columnCount = newTransitionProperty "columnCount"
+    static member inline columnGap = newTransitionProperty "columnGap"
+    static member inline columnRule = newTransitionProperty "columnRule"
+    static member inline columnRuleColor = newTransitionProperty "columnRuleColor"
+    static member inline columnRuleWidth = newTransitionProperty "columnRuleWidth"
+    static member inline columnWidth = newTransitionProperty "columnWidth"
     static member inline columns = newTransitionProperty "columns"
     static member inline filter = newTransitionProperty "filter"
     static member inline flex = newTransitionProperty "flex"
-    static member inline flexBasis = newTransitionProperty "flex-basis"
-    static member inline flexGrow = newTransitionProperty "flex-grow"
-    static member inline flexShrink = newTransitionProperty "flex-shrink"
+    static member inline flexBasis = newTransitionProperty "flexBasis"
+    static member inline flexGrow = newTransitionProperty "flexGrow"
+    static member inline flexShrink = newTransitionProperty "flexShrink"
     static member inline font = newTransitionProperty "font"
-    static member inline fontSize = newTransitionProperty "font-size"
-    static member inline fontSizeAdjust = newTransitionProperty "font-size-adjust"
-    static member inline fontStretch = newTransitionProperty "font-stretch"
-    static member inline fontVariationSettings = newTransitionProperty "font-variation-settings"
-    static member inline fontWeight = newTransitionProperty "font-weight"
+    static member inline fontSize = newTransitionProperty "fontSize"
+    static member inline fontSizeAdjust = newTransitionProperty "fontSizeAdjust"
+    static member inline fontStretch = newTransitionProperty "fontStretch"
+    static member inline fontVariationSettings = newTransitionProperty "fontVariationSettings"
+    static member inline fontWeight = newTransitionProperty "fontWeight"
     static member inline gap = newTransitionProperty "gap"
-    static member inline gridColumnGap = newTransitionProperty "grid-column-gap"
-    static member inline gridGap = newTransitionProperty "grid-gap"
-    static member inline gridRowGap = newTransitionProperty "grid-row-gap"
-    static member inline gridTemplateColumns = newTransitionProperty "grid-template-columns"
-    static member inline gridTemplateRows = newTransitionProperty "grid-template-rows"
+    static member inline gridColumnGap = newTransitionProperty "gridColumnGap"
+    static member inline gridGap = newTransitionProperty "gridGap"
+    static member inline gridRowGap = newTransitionProperty "gridRowGap"
+    static member inline gridTemplateColumns = newTransitionProperty "gridTemplateColumns"
+    static member inline gridTemplateRows = newTransitionProperty "gridTemplateRows"
     static member inline height = newTransitionProperty "height"
     static member inline inset = newTransitionProperty "inset"
-    static member inline insetBlock = newTransitionProperty "inset-block"
-    static member inline insetBlockEnd = newTransitionProperty "inset-block-end"
-    static member inline insetBlockStart = newTransitionProperty "inset-block-start"
-    static member inline insetInline = newTransitionProperty "inset-inline"
-    static member inline insetInlineEnd = newTransitionProperty "inset-inline-end"
-    static member inline insetInlineStart = newTransitionProperty "inset-inline-start"
+    static member inline insetBlock = newTransitionProperty "insetBlock"
+    static member inline insetBlockEnd = newTransitionProperty "insetBlockEnd"
+    static member inline insetBlockStart = newTransitionProperty "insetBlockStart"
+    static member inline insetInline = newTransitionProperty "insetInline"
+    static member inline insetInlineEnd = newTransitionProperty "insetInlineEnd"
+    static member inline insetInlineStart = newTransitionProperty "insetInlineStart"
     static member inline left = newTransitionProperty "left"
-    static member inline letterSpacing = newTransitionProperty "letter-spacing"
-    static member inline lineClamp = newTransitionProperty "line-clamp"
-    static member inline lineHeight = newTransitionProperty "line-height"
+    static member inline letterSpacing = newTransitionProperty "letterSpacing"
+    static member inline lineClamp = newTransitionProperty "lineClamp"
+    static member inline lineHeight = newTransitionProperty "lineHeight"
     static member inline margin = newTransitionProperty "margin"
-    static member inline marginBottom = newTransitionProperty "margin-bottom"
-    static member inline marginLeft = newTransitionProperty "margin-left"
-    static member inline marginRight = newTransitionProperty "margin-right"
-    static member inline marginTop = newTransitionProperty "margin-top"
+    static member inline marginBottom = newTransitionProperty "marginBottom"
+    static member inline marginLeft = newTransitionProperty "marginLeft"
+    static member inline marginRight = newTransitionProperty "marginRight"
+    static member inline marginTop = newTransitionProperty "marginTop"
     static member inline mask = newTransitionProperty "mask"
-    static member inline maskBorder = newTransitionProperty "mask-border"
-    static member inline maskPosition = newTransitionProperty "mask-position"
-    static member inline maskSize = newTransitionProperty "mask-size"
-    static member inline maxHeight = newTransitionProperty "max-height"
-    static member inline maxLines = newTransitionProperty "max-lines"
-    static member inline maxWidth = newTransitionProperty "max-width"
-    static member inline minHeight = newTransitionProperty "min-height"
-    static member inline minWidth = newTransitionProperty "min-width"
-    static member inline objectPosition = newTransitionProperty "object-position"
+    static member inline maskBorder = newTransitionProperty "maskBorder"
+    static member inline maskPosition = newTransitionProperty "maskPosition"
+    static member inline maskSize = newTransitionProperty "maskSize"
+    static member inline maxHeight = newTransitionProperty "maxHeight"
+    static member inline maxLines = newTransitionProperty "maxLines"
+    static member inline maxWidth = newTransitionProperty "maxWidth"
+    static member inline minHeight = newTransitionProperty "minHeight"
+    static member inline minWidth = newTransitionProperty "minWidth"
+    static member inline objectPosition = newTransitionProperty "objectPosition"
     static member inline offset = newTransitionProperty "offset"
-    static member inline offsetAnchor = newTransitionProperty "offset-anchor"
-    static member inline offsetDistance = newTransitionProperty "offset-distance"
-    static member inline offsetPath = newTransitionProperty "offset-path"
-    static member inline offsetPosition = newTransitionProperty "offset-position"
-    static member inline offsetRotate = newTransitionProperty "offset-rotate"
+    static member inline offsetAnchor = newTransitionProperty "offsetAnchor"
+    static member inline offsetDistance = newTransitionProperty "offsetDistance"
+    static member inline offsetPath = newTransitionProperty "offsetPath"
+    static member inline offsetPosition = newTransitionProperty "offsetPosition"
+    static member inline offsetRotate = newTransitionProperty "offsetRotate"
     static member inline opacity = newTransitionProperty "opacity"
     static member inline order = newTransitionProperty "order"
     static member inline outline = newTransitionProperty "outline"
-    static member inline outlineColor = newTransitionProperty "outline-color"
-    static member inline outlineOffset = newTransitionProperty "outline-offset"
-    static member inline outlineWidth = newTransitionProperty "outline-width"
+    static member inline outlineColor = newTransitionProperty "outlineColor"
+    static member inline outlineOffset = newTransitionProperty "outlineOffset"
+    static member inline outlineWidth = newTransitionProperty "outlineWidth"
     static member inline padding = newTransitionProperty "padding"
-    static member inline paddingBottom = newTransitionProperty "padding-bottom"
-    static member inline paddingLeft = newTransitionProperty "padding-left"
-    static member inline paddingRight = newTransitionProperty "padding-right"
-    static member inline paddingTop = newTransitionProperty "padding-top"
+    static member inline paddingBottom = newTransitionProperty "paddingBottom"
+    static member inline paddingLeft = newTransitionProperty "paddingLeft"
+    static member inline paddingRight = newTransitionProperty "paddingRight"
+    static member inline paddingTop = newTransitionProperty "paddingTop"
     static member inline perspective = newTransitionProperty "perspective"
-    static member inline perspectiveOrigin = newTransitionProperty "perspective-origin"
+    static member inline perspectiveOrigin = newTransitionProperty "perspectiveOrigin"
     static member inline right = newTransitionProperty "right"
     static member inline rotate = newTransitionProperty "rotate"
-    static member inline rowGap = newTransitionProperty "row-gap"
+    static member inline rowGap = newTransitionProperty "rowGap"
     static member inline scale = newTransitionProperty "scale"
-    static member inline scrollMargin = newTransitionProperty "scroll-margin"
-    static member inline scrollMarginBlock = newTransitionProperty "scroll-margin-block"
-    static member inline scrollMarginBlockEnd = newTransitionProperty "scroll-margin-block-end"
-    static member inline scrollMarginBlockStart = newTransitionProperty "scroll-margin-block-start"
-    static member inline scrollMarginBottom = newTransitionProperty "scroll-margin-bottom"
-    static member inline scrollMarginInline = newTransitionProperty "scroll-margin-inline"
-    static member inline scrollMarginInlineEnd = newTransitionProperty "scroll-margin-inline-end"
-    static member inline scrollMarginInlineStart = newTransitionProperty "scroll-margin-inline-start"
-    static member inline scrollMarginLeft = newTransitionProperty "scroll-margin-left"
-    static member inline scrollMarginRight = newTransitionProperty "scroll-margin-right"
-    static member inline scrollMarginTop = newTransitionProperty "scroll-margin-top"
-    static member inline scrollPadding = newTransitionProperty "scroll-padding"
-    static member inline scrollPaddingBlock = newTransitionProperty "scroll-padding-block"
-    static member inline scrollPaddingBlockEnd = newTransitionProperty "scroll-padding-block-end"
-    static member inline scrollPaddingBlockStart = newTransitionProperty "scroll-padding-block-start"
-    static member inline scrollPaddingBottom = newTransitionProperty "scroll-padding-bottom"
-    static member inline scrollPaddingInline = newTransitionProperty "scroll-padding-inline"
-    static member inline scrollPaddingInlineEnd = newTransitionProperty "scroll-padding-inline-end"
-    static member inline scrollPaddingInlineStart = newTransitionProperty "scroll-padding-inline-start"
-    static member inline scrollPaddingLeft = newTransitionProperty "scroll-padding-left"
-    static member inline scrollPaddingRight = newTransitionProperty "scroll-padding-right"
-    static member inline scrollPaddingTop = newTransitionProperty "scroll-padding-top"
-    static member inline scrollSnapCoordinate = newTransitionProperty "scroll-snap-coordinate"
-    static member inline scrollSnapDestination = newTransitionProperty "scroll-snap-destination"
-    static member inline scrollbarColor = newTransitionProperty "scrollbar-color"
-    static member inline shapeImageThreshold = newTransitionProperty "shape-image-threshold"
-    static member inline shapeMargin = newTransitionProperty "shape-margin"
-    static member inline shapeOutside = newTransitionProperty "shape-outside"
-    static member inline tabSize = newTransitionProperty "tab-size"
-    static member inline textDecoration = newTransitionProperty "text-decoration"
-    static member inline textDecorationColor = newTransitionProperty "text-decoration-color"
-    static member inline textEmphasis = newTransitionProperty "text-emphasis"
-    static member inline textEmphasisColor = newTransitionProperty "text-emphasis-color"
-    static member inline textIndent = newTransitionProperty "text-indent"
-    static member inline textShadow = newTransitionProperty "text-shadow"
+    static member inline scrollMargin = newTransitionProperty "scrollMargin"
+    static member inline scrollMarginBlock = newTransitionProperty "scrollMarginBlock"
+    static member inline scrollMarginBlockEnd = newTransitionProperty "scrollMarginBlockEnd"
+    static member inline scrollMarginBlockStart = newTransitionProperty "scrollMarginBlockStart"
+    static member inline scrollMarginBottom = newTransitionProperty "scrollMarginBottom"
+    static member inline scrollMarginInline = newTransitionProperty "scrollMarginInline"
+    static member inline scrollMarginInlineEnd = newTransitionProperty "scrollMarginInlineEnd"
+    static member inline scrollMarginInlineStart = newTransitionProperty "scrollMarginInlineStart"
+    static member inline scrollMarginLeft = newTransitionProperty "scrollMarginLeft"
+    static member inline scrollMarginRight = newTransitionProperty "scrollMarginRight"
+    static member inline scrollMarginTop = newTransitionProperty "scrollMarginTop"
+    static member inline scrollPadding = newTransitionProperty "scrollPadding"
+    static member inline scrollPaddingBlock = newTransitionProperty "scrollPaddingBlock"
+    static member inline scrollPaddingBlockEnd = newTransitionProperty "scrollPaddingBlockEnd"
+    static member inline scrollPaddingBlockStart = newTransitionProperty "scrollPaddingBlockStart"
+    static member inline scrollPaddingBottom = newTransitionProperty "scrollPaddingBottom"
+    static member inline scrollPaddingInline = newTransitionProperty "scrollPaddingInline"
+    static member inline scrollPaddingInlineEnd = newTransitionProperty "scrollPaddingInlineEnd"
+    static member inline scrollPaddingInlineStart = newTransitionProperty "scrollPaddingInlineStart"
+    static member inline scrollPaddingLeft = newTransitionProperty "scrollPaddingLeft"
+    static member inline scrollPaddingRight = newTransitionProperty "scrollPaddingRight"
+    static member inline scrollPaddingTop = newTransitionProperty "scrollPaddingTop"
+    static member inline scrollSnapCoordinate = newTransitionProperty "scrollSnapCoordinate"
+    static member inline scrollSnapDestination = newTransitionProperty "scrollSnapDestination"
+    static member inline scrollbarColor = newTransitionProperty "scrollbarColor"
+    static member inline shapeImageThreshold = newTransitionProperty "shapeImageThreshold"
+    static member inline shapeMargin = newTransitionProperty "shapeMargin"
+    static member inline shapeOutside = newTransitionProperty "shapeOutside"
+    static member inline tabSize = newTransitionProperty "tabSize"
+    static member inline textDecoration = newTransitionProperty "textDecoration"
+    static member inline textDecorationColor = newTransitionProperty "textDecorationColor"
+    static member inline textEmphasis = newTransitionProperty "textEmphasis"
+    static member inline textEmphasisColor = newTransitionProperty "textEmphasisColor"
+    static member inline textIndent = newTransitionProperty "textIndent"
+    static member inline textShadow = newTransitionProperty "textShadow"
     static member inline top = newTransitionProperty "top"
     static member inline transform = newTransitionProperty "transform"
-    static member inline transformOrigin = newTransitionProperty "transform-origin"
+    static member inline transformOrigin = newTransitionProperty "transformOrigin"
     static member inline translate = newTransitionProperty "translate"
-    static member inline verticalAlign = newTransitionProperty "vertical-align"
+    static member inline verticalAlign = newTransitionProperty "verticalAlign"
     static member inline visibility = newTransitionProperty "visibility"
     static member inline width = newTransitionProperty "width"
-    static member inline wordSpacing = newTransitionProperty "word-spacing"
-    static member inline zIndex = newTransitionProperty "z-index"
+    static member inline wordSpacing = newTransitionProperty "wordSpacing"
+    static member inline zIndex = newTransitionProperty "zIndex"
     static member inline zoom = newTransitionProperty "zoom"

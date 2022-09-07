@@ -4,11 +4,11 @@ open System
 open Fable.Core
 open Fable.Core.JsInterop
 
-// module AttrUtil =
-//     let concatClasses classList =
-//         classList |> Seq.choose (function false, _ -> None | true, c -> Some c) |> String.concat " "
+module AttrUtil =
+    let concatClasses classList =
+        classList |> Seq.choose (function _, false -> None | c, true -> Some c) |> String.concat " "
 
-// open AttrUtil
+open AttrUtil
 
 /// <summary>HTML Attribute generator API.</summary>
 type Attr =
@@ -24,7 +24,7 @@ type Attr =
     static member inline accept (value: string): JSX.Prop = "accept", value
 
     /// List of supported charsets.
-    static member inline acceptCharset (value: string): JSX.Prop = "accept-charset", value
+    static member inline acceptCharset (value: string): JSX.Prop = "acceptCharset", value
 
     /// Defines a keyboard shortcut to activate or add focus to the element.
     static member inline accessKey (value: string): JSX.Prop = "accesskey", value
@@ -356,8 +356,8 @@ type Attr =
     /// `prop.classes [ "one"; "two" ]` => `prop.className "one two"`
     static member inline classes (names: seq<string>): JSX.Prop = "className", box(String.concat " " names)
 
-    // static member inline classes (names: seq<bool * string>): JSX.Prop =
-    //     "className", box(concatClasses names)
+    static member inline classes (names: seq<string * bool>): JSX.Prop =
+        "className", box(concatClasses names)
 
     /// Defines the number of columns in a textarea.
     static member inline cols (value: int): JSX.Prop = "cols", box(Util.asString value)
@@ -491,16 +491,16 @@ type Attr =
     // static member inline files (value: FileList): JSX.Prop = "files", value
 
     /// SVG attribute to define the opacity of the paint server (color, gradient, pattern, etc) applied to a shape.
-    static member inline fillOpacity (value: float): JSX.Prop = "fill-opacity", box(Util.asString value)
+    static member inline fillOpacity (value: float): JSX.Prop = "fillOpacity", box(Util.asString value)
     /// SVG attribute to define the opacity of the paint server (color, gradient, pattern, etc) applied to a shape.
-    static member inline fillOpacity (value: int): JSX.Prop = "fill-opacity", box(Util.asString value)
+    static member inline fillOpacity (value: int): JSX.Prop = "fillOpacity", box(Util.asString value)
 
     /// SVG attribute to define the size of the font from baseline to baseline when multiple
     /// lines of text are set solid in a multiline layout environment.
-    static member inline fontSize (value: float): JSX.Prop = "font-size", box(Util.asString value)
+    static member inline fontSize (value: float): JSX.Prop = "fontSize", box(Util.asString value)
     /// SVG attribute to define the size of the font from baseline to baseline when multiple
     /// lines of text are set solid in a multiline layout environment.
-    static member inline fontSize (value: int): JSX.Prop = "font-size", box(Util.asString value)
+    static member inline fontSize (value: int): JSX.Prop = "fontSize", box(Util.asString value)
 
     /// A space-separated list of other elements’ ids, indicating that those elements contributed input
     /// values to (or otherwise affected) the calculation.
@@ -729,7 +729,7 @@ type Attr =
     static member inline lang (value: string): JSX.Prop = "lang", value
 
     /// Defines the color of the light source for lighting filter primitives.
-    static member inline lightingColor (value: string): JSX.Prop = "lighting-color", value
+    static member inline lightingColor (value: string): JSX.Prop = "lightingColor", value
 
     /// Represents the angle in degrees between the spot light axis (i.e. the axis between the
     /// light source and the point to which it is pointing at) and the spot light cone. So it
@@ -845,20 +845,20 @@ type Attr =
     /// Represents the ideal vertical position of the overline.
     ///
     /// The overline position is expressed in the font's coordinate system.
-    static member inline overlinePosition (value: float): JSX.Prop = "overline-position", box(Util.asString value)
+    static member inline overlinePosition (value: float): JSX.Prop = "overlinePosition", box(Util.asString value)
     /// Represents the ideal vertical position of the overline.
     ///
     /// The overline position is expressed in the font's coordinate system.
-    static member inline overlinePosition (value: int): JSX.Prop = "overline-position", box(Util.asString value)
+    static member inline overlinePosition (value: int): JSX.Prop = "overlinePosition", box(Util.asString value)
 
     /// Represents the ideal thickness of the overline.
     ///
     /// The overline thickness is expressed in the font's coordinate system.
-    static member inline overlineThickness (value: float): JSX.Prop = "overline-thickness", box(Util.asString value)
+    static member inline overlineThickness (value: float): JSX.Prop = "overlineThickness", box(Util.asString value)
     /// Represents the ideal thickness of the overline.
     ///
     /// The overline thickness is expressed in the font's coordinate system.
-    static member inline overlineThickness (value: int): JSX.Prop = "overline-thickness", box(Util.asString value)
+    static member inline overlineThickness (value: int): JSX.Prop = "overlineThickness", box(Util.asString value)
 
     // /// It either defines a text path along which the characters of a text are rendered, or a motion
     // /// path along which a referenced element is animated.
@@ -1159,38 +1159,38 @@ type Attr =
     /// The slot global attribute assigns a slot in a shadow DOM shadow tree to an element: An element with a slot attribute is assigned to the slot created by the slot element whose name attribute's value matches that slot attribute's value.
     static member inline slot(value: string): JSX.Prop = "slot", value
     /// SVG attribute to indicate what color to use at a gradient stop.
-    static member inline stopColor (value: string): JSX.Prop = "stop-color", value
+    static member inline stopColor (value: string): JSX.Prop = "stopColor", value
 
     /// SVG attribute to define the opacity of a given color gradient stop.
-    static member inline stopOpacity (value: float): JSX.Prop = "stop-opacity", box(Util.asString value)
+    static member inline stopOpacity (value: float): JSX.Prop = "stopOpacity", box(Util.asString value)
     /// SVG attribute to define the opacity of a given color gradient stop.
-    static member inline stopOpacity (value: int): JSX.Prop = "stop-opacity", box(Util.asString value)
+    static member inline stopOpacity (value: int): JSX.Prop = "stopOpacity", box(Util.asString value)
 
     /// Represents the ideal vertical position of the strikethrough.
     ///
     /// The strikethrough position is expressed in the font's coordinate system.
-    static member inline strikethroughPosition (value: float): JSX.Prop = "strikethrough-position", box(Util.asString value)
+    static member inline strikethroughPosition (value: float): JSX.Prop = "strikethroughPosition", box(Util.asString value)
     /// Represents the ideal vertical position of the strikethrough.
     ///
     /// The strikethrough position is expressed in the font's coordinate system.
-    static member inline strikethroughPosition (value: int): JSX.Prop = "strikethrough-position", box(Util.asString value)
+    static member inline strikethroughPosition (value: int): JSX.Prop = "strikethroughPosition", box(Util.asString value)
 
     /// Represents the ideal vertical position of the strikethrough.
     ///
     /// The strikethrough position is expressed in the font's coordinate system.
-    static member inline strikethroughThickness (value: float): JSX.Prop = "strikethrough-thickness", box(Util.asString value)
+    static member inline strikethroughThickness (value: float): JSX.Prop = "strikethroughThickness", box(Util.asString value)
     /// Represents the ideal thickness of the strikethrough.
     ///
     /// The strikethrough thickness is expressed in the font's coordinate system.
-    static member inline strikethroughThickness (value: int): JSX.Prop = "strikethrough-thickness", box(Util.asString value)
+    static member inline strikethroughThickness (value: int): JSX.Prop = "strikethroughThickness", box(Util.asString value)
 
     /// SVG attribute to define the color (or any SVG paint servers like gradients or patterns) used to paint the outline of the shape.
     static member inline stroke (color: string): JSX.Prop = "stroke", color
 
     /// SVG attribute to define the width of the stroke to be applied to the shape.
-    static member inline strokeWidth (value: ICssUnit): JSX.Prop = "stroke-width", box(Util.asString value)
+    static member inline strokeWidth (value: ICssUnit): JSX.Prop = "strokeWidth", box(Util.asString value)
     /// SVG attribute to define the width of the stroke to be applied to the shape.
-    static member inline strokeWidth (value: int): JSX.Prop = "stroke-width", box(Util.asString value + "px")
+    static member inline strokeWidth (value: int): JSX.Prop = "strokeWidth", box(Util.asString value + "px")
 
     static member inline style (css: string): JSX.Prop = "style", css
     // static member inline style (properties: #IStyleAttribute list): JSX.Prop = "style", box(createObj !!properties)
@@ -1319,20 +1319,20 @@ type Attr =
     /// Represents the ideal vertical position of the underline.
     ///
     /// The underline position is expressed in the font's coordinate system.
-    static member inline underlinePosition (value: float): JSX.Prop = "underline-position", box(Util.asString value)
+    static member inline underlinePosition (value: float): JSX.Prop = "underlinePosition", box(Util.asString value)
     /// Represents the ideal vertical position of the underline.
     ///
     /// The underline position is expressed in the font's coordinate system.
-    static member inline underlinePosition (value: int): JSX.Prop = "underline-position", box(Util.asString value)
+    static member inline underlinePosition (value: int): JSX.Prop = "underlinePosition", box(Util.asString value)
 
     /// Represents the ideal thickness of the underline.
     ///
     /// The underline thickness is expressed in the font's coordinate system.
-    static member inline underlineThickness (value: float): JSX.Prop = "underline-thickness", box(Util.asString value)
+    static member inline underlineThickness (value: float): JSX.Prop = "underlineThickness", box(Util.asString value)
     /// Represents the ideal thickness of the underline.
     ///
     /// The underline thickness is expressed in the font's coordinate system.
-    static member inline underlineThickness (value: int): JSX.Prop = "underline-thickness", box(Util.asString value)
+    static member inline underlineThickness (value: int): JSX.Prop = "underlineThickness", box(Util.asString value)
 
     /// A hash-name reference to a <map> element; that is a '#' followed by the value of a name of a map element.
     static member inline usemap (value: string): JSX.Prop = "usemap", value
@@ -1451,46 +1451,46 @@ type Attr =
 
     /// Uses the dominant baseline choice of the parent. Matches the box’s
     /// corresponding baseline to that of its parent.
-    static member inline alignmentBaselineAlphabetic: JSX.Prop = "alignment-baseline", "alphabetic"
+    static member inline alignmentBaselineAlphabetic: JSX.Prop = "alignmentBaseline", "alphabetic"
     /// Uses the dominant baseline choice of the parent. Matches the box’s
     /// corresponding baseline to that of its parent.
-    static member inline alignmentBaselineBaseline: JSX.Prop = "alignment-baseline", "baseline"
+    static member inline alignmentBaselineBaseline: JSX.Prop = "alignmentBaseline", "baseline"
     /// Uses the dominant baseline choice of the parent. Matches the box’s
     /// corresponding baseline to that of its parent.
-    static member inline alignmentBaselineBottom: JSX.Prop = "alignment-baseline", "bottom"
+    static member inline alignmentBaselineBottom: JSX.Prop = "alignmentBaseline", "bottom"
     /// Specifies that the animation will add to the underlying value of
     /// the attribute and other lower priority animations.
-    static member inline alignmentBaselineCenter: JSX.Prop = "alignment-baseline", "center"
+    static member inline alignmentBaselineCenter: JSX.Prop = "alignmentBaseline", "center"
     /// Uses the dominant baseline choice of the parent. Matches the box’s
     /// corresponding baseline to that of its parent.
-    static member inline alignmentBaselineCentral: JSX.Prop = "alignment-baseline", "central"
+    static member inline alignmentBaselineCentral: JSX.Prop = "alignmentBaseline", "central"
     /// Specifies that the animation will add to the underlying value of
     /// the attribute and other lower priority animations.
-    static member inline alignmentBaselineHanging: JSX.Prop = "alignment-baseline", "hanging"
+    static member inline alignmentBaselineHanging: JSX.Prop = "alignmentBaseline", "hanging"
     /// Specifies that the animation will add to the underlying value of
     /// the attribute and other lower priority animations.
-    static member inline alignmentBaselineIdeographic: JSX.Prop = "alignment-baseline", "ideographic"
+    static member inline alignmentBaselineIdeographic: JSX.Prop = "alignmentBaseline", "ideographic"
     /// Uses the dominant baseline choice of the parent. Matches the box’s
     /// corresponding baseline to that of its parent.
-    static member inline alignmentBaselineMathematical: JSX.Prop = "alignment-baseline", "mathematical"
+    static member inline alignmentBaselineMathematical: JSX.Prop = "alignmentBaseline", "mathematical"
     /// Specifies that the animation will add to the underlying value of
     /// the attribute and other lower priority animations.
-    static member inline alignmentBaselineMiddle: JSX.Prop = "alignment-baseline", "middle"
+    static member inline alignmentBaselineMiddle: JSX.Prop = "alignmentBaseline", "middle"
     /// Uses the dominant baseline choice of the parent. Matches the box’s
     /// corresponding baseline to that of its parent.
-    static member inline alignmentBaselineTextAfterEdge: JSX.Prop = "alignment-baseline", "text-after-edge"
+    static member inline alignmentBaselineTextAfterEdge: JSX.Prop = "alignmentBaseline", "text-after-edge"
     /// Uses the dominant baseline choice of the parent. Matches the box’s
     /// corresponding baseline to that of its parent.
-    static member inline alignmentBaselineTextBeforeEdge: JSX.Prop = "alignment-baseline", "text-before-edge"
+    static member inline alignmentBaselineTextBeforeEdge: JSX.Prop = "alignmentBaseline", "text-before-edge"
     /// Specifies that the animation will add to the underlying value of
     /// the attribute and other lower priority animations.
-    static member inline alignmentBaselineTextBottom: JSX.Prop = "alignment-baseline", "text-bottom"
+    static member inline alignmentBaselineTextBottom: JSX.Prop = "alignmentBaseline", "text-bottom"
     /// Specifies that the animation will add to the underlying value of
     /// the attribute and other lower priority animations.
-    static member inline alignmentBaselineTextTop: JSX.Prop = "alignment-baseline", "text-top"
+    static member inline alignmentBaselineTextTop: JSX.Prop = "alignmentBaseline", "text-top"
     /// Specifies that the animation will add to the underlying value of
     /// the attribute and other lower priority animations.
-    static member inline alignmentBaselineTop: JSX.Prop = "alignment-baseline", "top"
+    static member inline alignmentBaselineTop: JSX.Prop = "alignmentBaseline", "top"
 
     /// Controls whether the current document is allowed to gather information about the acceleration of
     /// the device through the Accelerometer interface.
@@ -1736,46 +1736,46 @@ type Attr =
 
     /// Indicates that all coordinates inside the <clipPath> element refer to the user
     /// coordinate system as defined when the clipping path was created.
-    static member inline clipPathUserSpaceOnUse: JSX.Prop = "clip-path", "userSpaceOnUse"
+    static member inline clipPathUserSpaceOnUse: JSX.Prop = "clipPath", "userSpaceOnUse"
     /// Indicates that all coordinates inside the <clipPath> element are relative to
     /// the bounding box of the element the clipping path is applied to.
     ///
     /// It means that the origin of the coordinate system is the top left corner of the
     /// object bounding box and the width and height of the object bounding box are
     /// considered to have a length of 1 unit value.
-    static member inline clipPathObjectBoundingBox: JSX.Prop = "clip-path", "objectBoundingBox"
+    static member inline clipPathObjectBoundingBox: JSX.Prop = "clipPath", "objectBoundingBox"
 
     /// Determines the "insideness" of a point in the shape by drawing a ray from that
     /// point to infinity in any direction and counting the number of path segments
     /// from the given shape that the ray crosses.
     ///
     /// If this number is odd, the point is inside; if even, the point is outside.
-    static member inline clipRuleEvenodd: JSX.Prop = "clip-rule", "evenodd"
-    static member inline clipRuleInheritFromParent: JSX.Prop = "clip-rule", "inherit"
+    static member inline clipRuleEvenodd: JSX.Prop = "clipRule", "evenodd"
+    static member inline clipRuleInheritFromParent: JSX.Prop = "clipRule", "inherit"
     /// Determines the "insideness" of a point in the shape by drawing a ray from that
     /// point to infinity in any direction, and then examining the places where a
     /// segment of the shape crosses the ray.
-    static member inline clipRuleNonzero: JSX.Prop = "clip-rule", "nonzero"
+    static member inline clipRuleNonzero: JSX.Prop = "clipRule", "nonzero"
 
     /// Indicates that the user agent can choose either the sRGB or linearRGB spaces
     /// for color interpolation. This option indicates that the author doesn't require
     /// that color interpolation occur in a particular color space.
-    static member inline colorInterpolationAuto: JSX.Prop = "color-interpolation", "auto"
+    static member inline colorInterpolationAuto: JSX.Prop = "colorInterpolation", "auto"
     /// Indicates that color interpolation should occur in the linearized RGB color
     /// space as described in the sRGB specification.
-    static member inline colorInterpolationLinearRGB: JSX.Prop = "color-interpolation", "linearRGB"
+    static member inline colorInterpolationLinearRGB: JSX.Prop = "colorInterpolation", "linearRGB"
     /// Indicates that color interpolation should occur in the sRGB color space.
-    static member inline colorInterpolationSRGB: JSX.Prop = "color-interpolation", "sRGB"
+    static member inline colorInterpolationSRGB: JSX.Prop = "colorInterpolation", "sRGB"
 
     /// Indicates that the user agent can choose either the sRGB or linearRGB spaces
     /// for color interpolation. This option indicates that the author doesn't require
     /// that color interpolation occur in a particular color space.
-    static member inline colorInterpolationFiltersAuto: JSX.Prop = "color-interpolation-filters", "auto"
+    static member inline colorInterpolationFiltersAuto: JSX.Prop = "colorInterpolationFilters", "auto"
     /// Indicates that color interpolation should occur in the linearized RGB color
     /// space as described in the sRGB specification.
-    static member inline colorInterpolationFiltersLinearRGB: JSX.Prop = "color-interpolation-filters", "linearRGB"
+    static member inline colorInterpolationFiltersLinearRGB: JSX.Prop = "colorInterpolationFilters", "linearRGB"
     /// Indicates that color interpolation should occur in the sRGB color space.
-    static member inline colorInterpolationFiltersSRGB: JSX.Prop = "color-interpolation-filters", "sRGB"
+    static member inline colorInterpolationFiltersSRGB: JSX.Prop = "colorInterpolationFilters", "sRGB"
 
     static member inline coordsRect (left: int, top: int, right: int, bottom: int): JSX.Prop =
         "coords", box((Util.asString left) + "," +
@@ -1815,7 +1815,7 @@ type Attr =
     /// The baseline-identifier for the dominant-baseline is set to be alphabetic, the derived baseline-table is constructed
     /// using the alphabetic baseline-table in the font, and the baseline-table font-size is changed to the value of the
     /// font-size attribute on this element.
-    static member inline dominantBaselineAlphabetic: JSX.Prop = "dominant-baseline", "alphabetic"
+    static member inline dominantBaselineAlphabetic: JSX.Prop = "dominantBaseline", "alphabetic"
     /// If this property occurs on a <text> element, then the computed value depends on the value of the writing-mode attribute.
     ///
     /// If the writing-mode is horizontal, then the value of the dominant-baseline component is alphabetic, else if the writing-mode
@@ -1831,40 +1831,40 @@ type Attr =
     ///
     /// If there is no parent text content
     /// element, the scaled-baseline-table value is constructed as above for <text> elements.
-    static member inline dominantBaselineAuto: JSX.Prop = "dominant-baseline", "auto"
+    static member inline dominantBaselineAuto: JSX.Prop = "dominantBaseline", "auto"
     /// The baseline-identifier for the dominant-baseline is set to be central. The derived baseline-table is constructed from the
     /// defined baselines in a baseline-table in the font. That font baseline-table is chosen using the following priority order of
     /// baseline-table names: ideographic, alphabetic, hanging, mathematical. The baseline-table font-size is changed to the value
     /// of the font-size attribute on this element.
-    static member inline dominantBaselineCentral: JSX.Prop = "dominant-baseline", "central"
+    static member inline dominantBaselineCentral: JSX.Prop = "dominantBaseline", "central"
     /// The baseline-identifier for the dominant-baseline is set to be hanging, the derived baseline-table is constructed using the
     /// hanging baseline-table in the font, and the baseline-table font-size is changed to the value of the font-size attribute on
     /// this element.
-    static member inline dominantBaselineHanging: JSX.Prop = "dominant-baseline", "hanging"
+    static member inline dominantBaselineHanging: JSX.Prop = "dominantBaseline", "hanging"
     /// The baseline-identifier for the dominant-baseline is set to be ideographic, the derived baseline-table is constructed using
     /// the ideographic baseline-table in the font, and the baseline-table font-size is changed to the value of the font-size
     /// attribute on this element.
-    static member inline dominantBaselineIdeographic: JSX.Prop = "dominant-baseline", "ideographic"
+    static member inline dominantBaselineIdeographic: JSX.Prop = "dominantBaseline", "ideographic"
     /// The baseline-identifier for the dominant-baseline is set to be mathematical, the derived baseline-table is constructed using
     /// the mathematical baseline-table in the font, and the baseline-table font-size is changed to the value of the font-size
     /// attribute on this element.
-    static member inline dominantBaselineMathematical: JSX.Prop = "dominant-baseline", "mathematical"
+    static member inline dominantBaselineMathematical: JSX.Prop = "dominantBaseline", "mathematical"
     /// The baseline-identifier for the dominant-baseline is set to be middle. The derived baseline-table is constructed from the
     /// defined baselines in a baseline-table in the font. That font baseline-table is chosen using the following priority order
     /// of baseline-table names: alphabetic, ideographic, hanging, mathematical. The baseline-table font-size is changed to the value
     /// of the font-size attribute on this element.
-    static member inline dominantBaselineMiddle: JSX.Prop = "dominant-baseline", "middle"
+    static member inline dominantBaselineMiddle: JSX.Prop = "dominantBaseline", "middle"
     /// The baseline-identifier for the dominant-baseline is set to be text-after-edge. The derived baseline-table is constructed
     /// from the defined baselines in a baseline-table in the font. The choice of which font baseline-table to use from the
     /// baseline-tables in the font is browser dependent. The baseline-table font-size is changed to the value of the font-size
     /// attribute on this element.
-    static member inline dominantBaselineTextAfterEdge: JSX.Prop = "dominant-baseline", "text-after-edge"
+    static member inline dominantBaselineTextAfterEdge: JSX.Prop = "dominantBaseline", "text-after-edge"
     /// The baseline-identifier for the dominant-baseline is set to be text-before-edge. The derived baseline-table is constructed
     /// from the defined baselines in a baseline-table in the font. The choice of which baseline-table to use from the baseline-tables
     /// in the font is browser dependent. The baseline-table font-size is changed to the value of the font-size attribute on this element.
-    static member inline dominantBaselineTextBeforeEdge: JSX.Prop = "dominant-baseline", "text-before-edge"
+    static member inline dominantBaselineTextBeforeEdge: JSX.Prop = "dominantBaseline", "text-before-edge"
     /// This value uses the top of the em box as the baseline.
-    static member inline dominantBaselineTextTop: JSX.Prop = "dominant-baseline", "text-top"
+    static member inline dominantBaselineTextTop: JSX.Prop = "dominantBaseline", "text-top"
 
     // /// This value specifies the length of the simple duration.
     // static member inline clockValue (duration: System.TimeSpan): JSX.Prop =
@@ -1924,21 +1924,21 @@ type Attr =
     ///
     /// Content policies mostly specify allowed server origins and script endpoints which help guard against cross-site
     /// scripting attacks.
-    static member inline httpEquivContentSecurityPolicy: JSX.Prop = "http-equiv", "content-security-policy"
+    static member inline httpEquivContentSecurityPolicy: JSX.Prop = "httpEquiv", "content-security-policy"
     /// If specified, the content attribute must have the value "text/html; charset=utf-8".
     ///
     /// Note: Can only be used in documents served with a text/html MIME type — not in documents served with an XML MIME type.
-    static member inline httpEquivContentType: JSX.Prop = "http-equiv", "content-type"
+    static member inline httpEquivContentType: JSX.Prop = "httpEquiv", "content-type"
     /// Sets the name of the default CSS style sheet set.
-    static member inline httpEquivDefaultStyle: JSX.Prop = "http-equiv", "default-style"
+    static member inline httpEquivDefaultStyle: JSX.Prop = "httpEquiv", "default-style"
     /// This instruction specifies:
     ///
     /// The number of seconds until the page should be reloaded - only if the content attribute contains a positive integer.
     ///
     /// The number of seconds until the page should redirect to another - only if the content attribute contains a positive integer followed by the string ';url=', and a valid URL.
-    static member inline httpEquivRefresh: JSX.Prop = "http-equiv", "refresh"
+    static member inline httpEquivRefresh: JSX.Prop = "httpEquiv", "refresh"
     /// If specified, the content attribute must have the value "IE=edge". User agents are required to ignore this pragma.
-    static member inline httpEquivXUaCompatible: JSX.Prop = "http-equiv", "x-ua-compatible"
+    static member inline httpEquivXUaCompatible: JSX.Prop = "httpEquiv", "x-ua-compatible"
 
     /// Represents an image snapshot of the SVG document under the filter region at the time that the
     /// <filter> element was invoked, except only the alpha channel is used.
@@ -2967,14 +2967,14 @@ type Attr =
     /// element with a vertical primary text direction (often typical for
     /// Asian text), the bottom of the text is rendered at the initial text
     /// position.
-    static member inline textAnchorEndOfText: JSX.Prop = "text-anchor", "end"
+    static member inline textAnchorEndOfText: JSX.Prop = "textAnchor", "end"
     /// The rendered characters are aligned such that the middle of the text
     /// string is at the current text position. (For text on a path,
     /// conceptually the text string is first laid out in a straight line.
     /// The midpoint between the start of the text string and the end of the
     /// text string is determined. Then, the text string is mapped onto the
     /// path with this midpoint placed at the current text position.)
-    static member inline textAnchorMiddle: JSX.Prop = "text-anchor", "middle"
+    static member inline textAnchorMiddle: JSX.Prop = "textAnchor", "middle"
     /// The rendered characters are aligned such that the start of the text
     /// string is at the initial current text position. For an element with
     /// a `direction` property value of `ltr` (typical for most European
@@ -2984,7 +2984,7 @@ type Attr =
     /// rendered at the initial text position. For an element with a
     /// vertical primary text direction (often typical for Asian text), the
     /// top side of the text is rendered at the initial text position.
-    static member inline textAnchorStartOfText: JSX.Prop = "text-anchor", "start"
+    static member inline textAnchorStartOfText: JSX.Prop = "textAnchor", "start"
 
     /// Defines a clickable button (mostly used with a JavaScript code to activate a script)
     static member inline typeButton: JSX.Prop = "type", "button"
