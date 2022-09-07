@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2470B2E6-E86
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.JSX", "src\Feliz.JSX\Feliz.JSX.fsproj", "{816EDF3E-DC38-4867-AF33-9835897A1E93}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "App", "src\App\App.fsproj", "{F10236F0-0626-4A7C-B3BD-50F37CC40AFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +22,13 @@ Global
 		{816EDF3E-DC38-4867-AF33-9835897A1E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{816EDF3E-DC38-4867-AF33-9835897A1E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{816EDF3E-DC38-4867-AF33-9835897A1E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F10236F0-0626-4A7C-B3BD-50F37CC40AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10236F0-0626-4A7C-B3BD-50F37CC40AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10236F0-0626-4A7C-B3BD-50F37CC40AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10236F0-0626-4A7C-B3BD-50F37CC40AFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{816EDF3E-DC38-4867-AF33-9835897A1E93} = {2470B2E6-E86A-430F-9F47-74C1247C8F50}
+		{F10236F0-0626-4A7C-B3BD-50F37CC40AFF} = {2470B2E6-E86A-430F-9F47-74C1247C8F50}
 	EndGlobalSection
 EndGlobal
