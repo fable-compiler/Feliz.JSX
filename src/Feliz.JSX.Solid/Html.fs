@@ -4,8 +4,8 @@ open Fable.Core
 
 module HtmlUtil =
     let inline childrenToProp (children: JSX.Element list): JSX.Prop = "children", children
-    let inline childToProp (child: JSX.Element): JSX.Prop = "child", child
-    let inline childStrToProp (child: string): JSX.Prop = "child", child
+    let inline childToProp (child: JSX.Element): JSX.Prop = "children", [child]
+    let inline childStrToProp (child: string): JSX.Prop = "children", [child]
 
 open HtmlUtil
 
@@ -24,9 +24,6 @@ type Html =
 
     /// To be used only with static list literals (no generators)
     static member inline children (children: JSX.Element list): JSX.Prop = "children", children
-
-    /// To be used when passing children from props
-    static member inline propsChildren (children: JSX.Element list): JSX.Element = unbox children
 
     static member inline a (props: JSX.Prop list) = JSX.create "a" props
 

@@ -1,3 +1,3 @@
-### 0.0.0-alpha-001
+### 1.0.0-beta-001
 
-* First alpha release
+* First beta release

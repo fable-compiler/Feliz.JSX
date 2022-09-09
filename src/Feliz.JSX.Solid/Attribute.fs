@@ -4,12 +4,6 @@ open System
 open Fable.Core
 open Fable.Core.JsInterop
 
-// module AttrUtil =
-//     let concatClasses classList =
-//         classList |> Seq.choose (function _, false -> None | c, true -> Some c) |> String.concat " "
-
-open AttrUtil
-
 /// <summary>HTML Attribute generator API.</summary>
 type Attr =
     /// Create a custom attribute
