@@ -1,4 +1,4 @@
-﻿namespace Feliz.JSX
+﻿namespace Feliz.JSX.React
 
 open System
 open Fable.Core
@@ -342,21 +342,24 @@ type Attr =
 
     /// Specifies a CSS class for this element.
     static member inline className (value: string): JSX.Prop = "className", value
-    /// Takes a `seq<string>` and joins them using a space to combine the classses into a single class property.
+    /// Takes a `seq<string>` and joins them using a space to combine the classes into a single class property.
     ///
     /// `prop.className [ "one"; "two" ]`
     ///
     /// is the same as
     ///
-    /// `prop.className "one two"`
+    /// `Attr.className "one two"`
     static member inline className (names: seq<string>): JSX.Prop = "className", box(String.concat " " names)
 
-    /// Takes a `seq<string>` and joins them using a space to combine the classses into a single class property.
+    /// Takes a `seq<string>` and joins them using a space to combine the classes into a single class property.
     ///
-    /// `prop.classes [ "one"; "two" ]` => `prop.className "one two"`
-    static member inline classes (names: seq<string>): JSX.Prop = "className", box(String.concat " " names)
+    /// `Attr.classList [ "one"; "two" ]` => `Attr.className "one two"`
+    static member inline classList (names: seq<string>): JSX.Prop = "className", box(String.concat " " names)
 
-    static member inline classes (names: seq<string * bool>): JSX.Prop =
+    /// Takes a `seq<string * bool>`, filters them and joins them using a space to combine the classes into a single class property.
+    ///
+    /// `Attr.classList [ "one", true; "two", false; "three", true ]` => `Attr.class "one three"`
+    static member inline classList (names: seq<string * bool>): JSX.Prop =
         "className", box(concatClasses names)
 
     /// Defines the number of columns in a textarea.
@@ -1236,7 +1239,7 @@ type Attr =
     static member inline testId(value: string): JSX.Prop = "data-testid", value
 
     // /// Defines the text content of the element. Alias for `children [ Html.text (sprintf ...) ]`
-    // static member inline textf fmt = Printf.kprintf prop.text fmt
+    // static member inline textf fmt = Printf.kprintf Attr.text fmt
 
     /// Specifies the width of the space into which the text will draw.
     ///

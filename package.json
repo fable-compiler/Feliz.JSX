@@ -2,11 +2,13 @@
     "private": "true",
     "scripts": {
         "postinstall": "dotnet tool restore",
-        "start": "dotnet run -c Release --project ../Fable/src/Fable.Cli -- watch src/App -s -o dist -e .jsx --run vite"
+        "start": "dotnet fable watch src/App -s -o dist -e .jsx --run vite",
+        "publish": "dotnet fsi build.fsx publish"
     },
     "dependencies": {
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "@shoelace-style/shoelace": "^2.0.0-beta.82"
     },
     "devDependencies": {
         "vite": "^3.1.0",

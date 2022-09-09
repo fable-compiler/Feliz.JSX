@@ -1,4 +1,4 @@
-﻿namespace Feliz.JSX
+﻿namespace Feliz.JSX.React
 
 open System
 open Fable.Core

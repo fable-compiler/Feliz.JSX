@@ -1,4 +1,4 @@
-﻿namespace Feliz.JSX
+﻿namespace Feliz.JSX.Solid
 
 open Fable.Core
 open Browser.Types

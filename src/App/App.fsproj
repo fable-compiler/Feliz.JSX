@@ -10,11 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Feliz.JSX\Feliz.JSX.fsproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Feliz" Version="2.0.0-prerelease-002" />
+    <ProjectReference Include="..\Feliz.JSX.React\Feliz.JSX.React.fsproj" />
   </ItemGroup>
 
 </Project>

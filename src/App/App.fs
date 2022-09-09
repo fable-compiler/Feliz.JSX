@@ -1,8 +1,9 @@
 module App
 
 open Feliz
-open Feliz.JSX
+open Feliz.JSX.React
 open Fable.Core
+open Fable.React
 open Components
 
 // Entry point must be in a separate file
@@ -13,18 +14,18 @@ type Tab =
     | Counter
     | Svg
     | Sketch
-    // | Shoelace
+    | Shoelace
     member this.Name =
         match this with
         | Counter -> "Counter"
         | Svg -> "Svg"
         | Sketch -> "Sketch"
-        // | Shoelace -> "Shoelace Web Components"
+        | Shoelace -> "Shoelace Web Components"
 
 [<JSX.Component>]
 let TabEl(tab: Tab, activeTab, setActiveTab) =
     Html.li [
-        Attr.classes ["is-active", tab = activeTab]
+        Attr.classList ["is-active", tab = activeTab]
         Html.children [
             Html.a [
                 Ev.onClick (fun _ -> tab |> setActiveTab)
@@ -37,7 +38,7 @@ let TabEl(tab: Tab, activeTab, setActiveTab) =
 
 [<JSX.Component>]
 let Tabs() =
-    let activeTab, setActiveTab = React.useState(Tab.Sketch)
+    let activeTab, setActiveTab = Hooks.useState(Tab.Sketch) |> asTuple
     Html.fragment [
         Html.div [
             Attr.className "tabs"
@@ -50,7 +51,7 @@ let Tabs() =
                         TabEl(Tab.Counter, activeTab, setActiveTab)
                         TabEl(Tab.Svg, activeTab, setActiveTab)
                         TabEl(Tab.Sketch, activeTab, setActiveTab)
-                        // TabEl(Tab.Shoelace, activeTab, setActiveTab)
+                        TabEl(Tab.Shoelace, activeTab, setActiveTab)
                     ]
                 ]
             ]
@@ -66,22 +67,13 @@ let Tabs() =
                 | Tab.Counter ->  Counter()
                 | Tab.Svg -> Svg()
                 | Tab.Sketch -> Sketch.App(10.)
-                // | Tab.Shoelace -> Shoelace.App()
+                | Tab.Shoelace -> Shoelace.App()
             )]
         ]
     ]
 
 
 open Browser
-open Browser.Types
-open Fable.React
-open Fable.Core.JsInterop
 
-type ReactRoot =
-    abstract render: ReactElement -> unit
-
-let createRoot (el: HTMLElement): ReactRoot = importMember "react-dom/client"
-let inline toReact (jsxEl: JSX.Element): ReactElement = unbox jsxEl
-
-let root = createRoot(document.getElementById("app-container"))
+let root = ReactDomBindings.ReactDomClient.createRoot(document.getElementById("app-container"))
 root.render(Tabs() |> toReact)
