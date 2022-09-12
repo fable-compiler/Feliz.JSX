@@ -223,9 +223,7 @@ module Shoelace =
                 Ev.onTextChange setValue
             ]
             Html.div [
-                JSX.html $"""
-                    <SlQrCode value={value} radius="0.5"></SlQrCode>
-                """
+                JSX.html $"""<SlQrCode value={value} radius="0.5"></SlQrCode>"""
             ]
         ]
 

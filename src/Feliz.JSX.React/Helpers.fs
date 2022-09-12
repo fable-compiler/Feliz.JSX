@@ -17,3 +17,4 @@ module Helpers =
         static member inline ref<'El when 'El :> Element>(f: 'El option -> unit): JSX.Prop = "ref", f
 
     let inline toReact (jsxEl: JSX.Element): ReactElement = unbox jsxEl
+    let inline toJsx (reactEl: ReactElement): JSX.Element = unbox reactEl

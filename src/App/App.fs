@@ -75,5 +75,5 @@ let Tabs() =
 
 open Browser
 
-let root = ReactDomBindings.ReactDomClient.createRoot(document.getElementById("app-container"))
+let root = ReactDomClient.createRoot(document.getElementById("app-container"))
 root.render(Tabs() |> toReact)
