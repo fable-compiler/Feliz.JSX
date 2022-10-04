@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Feliz.JSX.React\Feliz.JSX.React.fsproj" />
+    <PackageReference Include="Fable.Core" Version="4.0.0-theta-005" />
   </ItemGroup>
 
 </Project>

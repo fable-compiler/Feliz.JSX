@@ -169,11 +169,10 @@ module Sketch =
         ]
 
 module Shoelace =
-    let SlImageComparer: obj = importMember "@shoelace-style/shoelace/dist/react"
-    let SlQrCode: obj = importMember "@shoelace-style/shoelace/dist/react"
 
     [<JSX.Component>]
     let ImageComparer() =
+        let SlImageComparer = importMember "@shoelace-style/shoelace/dist/react"
         let position, setPosition = Hooks.useState(25) |> asTuple
 
         Html.fragment [
@@ -223,7 +222,10 @@ module Shoelace =
                 Ev.onTextChange setValue
             ]
             Html.div [
-                JSX.html $"""<SlQrCode value={value} radius="0.5"></SlQrCode>"""
+                JSX.jsx $"""
+                import {{ SlQrCode }} from "@shoelace-style/shoelace/dist/react"
+                <SlQrCode value={value} radius="0.5"></SlQrCode>
+                """
             ]
         ]
 
