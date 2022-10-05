@@ -280,13 +280,13 @@ type Attr =
 
     /// Indicates whether controls in this form can by default have their values
     /// automatically completed by the browser.
-    static member inline autoComplete (value: string): JSX.Prop = "autocomplete", value
+    static member inline autoComplete (value: string): JSX.Prop = "autoComplete", value
 
     /// The element should be automatically focused after the page loaded.
-    static member inline autoFocus (value: bool): JSX.Prop = "autofocus", value
+    static member inline autoFocus (value: bool): JSX.Prop = "autoFocus", value
 
     /// The audio or video should play as soon as possible.
-    static member inline autoPlay (value: bool): JSX.Prop = "autoplay", value
+    static member inline autoPlay (value: bool): JSX.Prop = "autoPlay", value
 
     /// Specifies the direction angle for the light source on the XY plane (clockwise),
     /// in degrees from the x axis.

@@ -15,12 +15,14 @@ type Tab =
     | Svg
     | Sketch
     | Shoelace
+    | TodoMVC
     member this.Name =
         match this with
         | Counter -> "Counter"
         | Svg -> "Svg"
         | Sketch -> "Sketch"
         | Shoelace -> "Shoelace Web Components"
+        | TodoMVC -> "Todo MVC"
 
 [<JSX.Component>]
 let TabEl(tab: Tab, activeTab, setActiveTab) =
@@ -52,6 +54,7 @@ let Tabs() =
                         TabEl(Tab.Svg, activeTab, setActiveTab)
                         TabEl(Tab.Sketch, activeTab, setActiveTab)
                         TabEl(Tab.Shoelace, activeTab, setActiveTab)
+                        TabEl(Tab.TodoMVC, activeTab, setActiveTab)
                     ]
                 ]
             ]
@@ -68,6 +71,7 @@ let Tabs() =
                 | Tab.Svg -> Svg()
                 | Tab.Sketch -> Sketch.App(10.)
                 | Tab.Shoelace -> Shoelace.App()
+                | Tab.TodoMVC -> TodoMVC.TodoMVC.App() |> toJsx
             )]
         ]
     ]
