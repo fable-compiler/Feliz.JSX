@@ -41,6 +41,7 @@ let TabEl(tab: Tab, activeTab, setActiveTab) =
 [<JSX.Component>]
 let Tabs() =
     let activeTab, setActiveTab = Hooks.useState(Tab.Sketch) |> asTuple
+    // let count, setCount = Hooks.useState(0) |> asTuple
     Html.fragment [
         Html.div [
             Attr.className "tabs"
@@ -49,13 +50,11 @@ let Tabs() =
             ]
             Html.children [
                 Html.ul [
-                    Html.children [
-                        TabEl(Tab.Counter, activeTab, setActiveTab)
-                        TabEl(Tab.Svg, activeTab, setActiveTab)
-                        TabEl(Tab.Sketch, activeTab, setActiveTab)
-                        TabEl(Tab.Shoelace, activeTab, setActiveTab)
-                        TabEl(Tab.TodoMVC, activeTab, setActiveTab)
-                    ]
+                    TabEl(Tab.Counter, activeTab, setActiveTab)
+                    TabEl(Tab.Svg, activeTab, setActiveTab)
+                    TabEl(Tab.Sketch, activeTab, setActiveTab)
+                    TabEl(Tab.Shoelace, activeTab, setActiveTab)
+                    TabEl(Tab.TodoMVC, activeTab, setActiveTab)
                 ]
             ]
         ]
@@ -65,14 +64,21 @@ let Tabs() =
                 Css.maxWidth 800
                 Css.padding 20
             ]
-            Html.children [(
+            Html.children [
+                // Html.button [
+                //     Ev.onClick (fun _ -> count + 1 |> setCount)
+                //     Html.children [
+                //         Html.text $"Click me! {count}"
+                //     ]
+                // ]
+
                 match activeTab with
                 | Tab.Counter ->  Counter()
                 | Tab.Svg -> Svg()
                 | Tab.Sketch -> Sketch.App(10.)
                 | Tab.Shoelace -> Shoelace.App()
-                | Tab.TodoMVC -> TodoMVC.TodoMVC.App() |> toJsx
-            )]
+                | Tab.TodoMVC -> TodoMVC.App()
+            ]
         ]
     ]
 
