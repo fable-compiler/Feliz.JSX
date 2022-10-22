@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="UseElmish.fs" />
     <Compile Include="TodoMVC.fs" />
     <Compile Include="Components.fs" />
     <Compile Include="App.fs" />
@@ -14,6 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Fable.Elmish" Version="4.0.0-beta-5" />
     <PackageReference Include="Fable.React.Types" Version="18.1.0" />
+    <PackageReference Include="Fable.React.UseElmish" Version="1.0.0-beta-001" />
     <PackageReference Include="Fable.ReactDom.Types" Version="18.0.0" />
     <PackageReference Include="Feliz" Version="2.0.0-prerelease-003" />
     <ProjectReference Include="..\Feliz.JSX.React\Feliz.JSX.React.fsproj" />

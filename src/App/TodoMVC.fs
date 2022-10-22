@@ -1,10 +1,10 @@
 module TodoMVC
 
+open Fable.Core
+open Fable.React
+open Browser.Types
 open Feliz
 open Feliz.JSX
-open Feliz.UseElmish
-open Browser.Types
-open Fable.Core
 
 module private Elmish =
     open System
