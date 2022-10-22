@@ -3,9 +3,9 @@
 open Fable.Core
 
 module HtmlUtil =
-    let inline childrenToProp (children: JSX.Element list): JSX.Prop = "children", children
-    let inline childToProp (child: JSX.Element): JSX.Prop = "children", [child]
-    let inline childStrToProp (child: string): JSX.Prop = "children", [child]
+    let inline childrenToProp (children: JSX.Element list): JSX.Prop = "children", List.toArray children
+    let inline childToProp (child: JSX.Element): JSX.Prop = "children", [|child|]
+    let inline childStrToProp (child: string): JSX.Prop = "children", [|child|]
 
 open HtmlUtil
 
@@ -20,10 +20,10 @@ type Html =
     static member inline none : JSX.Element = null
 
     /// Cast multiple elements into one
-    static member inline fragment (children: JSX.Element list): JSX.Element = JSX.create "" ["children", children]
+    static member inline fragment (children: JSX.Element list): JSX.Element = JSX.create "" ["children", List.toArray children]
 
     /// To be used only with static list literals (no generators)
-    static member inline children (children: JSX.Element list): JSX.Prop = "children", children
+    static member inline children (children: JSX.Element list): JSX.Prop = "children", List.toArray children
 
     static member inline a (props: JSX.Prop list) = JSX.create "a" props
 
