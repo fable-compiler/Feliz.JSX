@@ -10,17 +10,16 @@ module private Elmish =
     open System
     open Elmish
 
-    type Todo = {
-        Id: Guid
-        Description: string
-        Completed: bool
-    }
+    type Todo =
+        {
+            Id: Guid
+            Description: string
+            Completed: bool
+        }
 
-    type State =
-        { Todos: Todo list }
+    type State = { Todos: Todo list }
 
     type Msg =
-        | Tick
         | AddNewTodo of string
         | DeleteTodo of Guid
         | ToggleCompleted of Guid
@@ -33,22 +32,23 @@ module private Elmish =
             Completed = false
         }
 
-    let initTodos(count: int) = [
-        newTodo "Learn F#"
-        { newTodo $"Learn Elmish  in {count} days" with Completed = true }
-    ]
+    let initTodos (count: int) =
+        [
+            newTodo "Learn F#"
+            { newTodo $"Learn Elmish  in {count} days" with
+                Completed = true
+            }
+        ]
 
-    let init (count: int) =
-        { Todos = initTodos count }, Cmd.none
+    let init (count: int) = { Todos = initTodos count }, Cmd.none
 
     let update (msg: Msg) (state: State) =
         match msg with
-        | Tick ->
-            printf "Tick"
-            state, Cmd.none
-
         | AddNewTodo txt ->
-            { state with Todos = (newTodo txt)::state.Todos }, Cmd.none
+            { state with
+                Todos = (newTodo txt) :: state.Todos
+            },
+            Cmd.none
 
         | DeleteTodo todoId ->
             state.Todos
@@ -57,28 +57,28 @@ module private Elmish =
 
         | ToggleCompleted todoId ->
             state.Todos
-            |> List.map
-                (fun todo ->
-                    if todo.Id = todoId then
-                        let completed = not todo.Completed
-                        { todo with
-                            Completed = completed }
-                    else
-                        todo)
+            |> List.map (fun todo ->
+                if todo.Id = todoId then
+                    let completed = not todo.Completed
+                    { todo with Completed = completed }
+                else
+                    todo)
             |> fun todos -> { state with Todos = todos }, Cmd.none
 
-        | ApplyEdit(todoId, txt) ->
-            state.Todos |> List.map (fun todo ->
+        | ApplyEdit (todoId, txt) ->
+            state.Todos
+            |> List.map (fun todo ->
                 if todo.Id = todoId then
                     { todo with Description = txt }
-                else todo)
+                else
+                    todo)
             |> fun todos -> { state with Todos = todos }, Cmd.none
 
 module private Util =
     open Elmish
 
-    let inline toJsx (el: ReactElement): JSX.Element = unbox el
-    let inline toStyle (styles: IStyleAttribute list): obj = JsInterop.createObj(unbox styles)
+    let inline toJsx (el: ReactElement) : JSX.Element = unbox el
+    let inline toStyle (styles: IStyleAttribute list) : obj = JsInterop.createObj (unbox styles)
 
     let onEnterOrEscape dispatchOnEnter dispatchOnEscape (ev: KeyboardEvent) =
         let el = ev.target :?> HTMLInputElement
@@ -88,17 +88,17 @@ module private Util =
             dispatchOnEnter el.value
             el.value <- ""
         | "Escape" ->
-            dispatchOnEscape()
+            dispatchOnEscape ()
             el.value <- ""
             el.blur ()
         | _ -> ()
 
-
     [<JSX.Component>]
     let InputField (dispatch: Msg -> unit) =
-        let inputRef = React.useRef<HTMLInputElement option>(None)
+        let inputRef = React.useRef<HTMLInputElement option> (None)
 
-        JSX.jsx $"""
+        JSX.jsx
+            $"""
         <div className="field has-addons">
             <div className="control is-expanded">
                 <input ref={inputRef}
@@ -110,9 +110,9 @@ module private Util =
             <div className="control">
                 <button className="button is-primary is-medium"
                     onClick={fun _ ->
-                        let txt = inputRef.current.Value.value
-                        inputRef.current.Value.value <- ""
-                        txt |> AddNewTodo |> dispatch}>
+                                 let txt = inputRef.current.Value.value
+                                 inputRef.current.Value.value <- ""
+                                 txt |> AddNewTodo |> dispatch}>
                     <i className="fa fa-plus"></i>
                 </button>
             </div>
@@ -121,111 +121,97 @@ module private Util =
 
     [<JSX.Component>]
     let Button isVisible (iconClass: string) (classes: (string * bool) list) dispatch =
-        let style = toStyle [
-            style.marginRight(length.px 4)
-        ]
-
-        let className = String.concat " " [
-            "button"
-            if not isVisible then
-                "is-invisible"
-            for class', b in classes do
-                if b then class'
-        ]
-
-        JSX.jsx $"""
-        <button type="button" className={className} style={style}
-            onClick={fun _ -> dispatch()}>
+        JSX.jsx
+            $"""
+        <button type="button"
+            className=
+            {String.concat
+                 " "
+                 [
+                     "button"
+                     if not isVisible then
+                         "is-invisible"
+                     for class', b in classes do
+                         if b then
+                             class'
+                 ]}
+            style=
+            {toStyle [ style.marginRight (length.px 4); style.marginLeft (length.px 4) ]}
+            onClick={fun _ -> dispatch ()}
+        >
             <i className={iconClass}></i>
         </button>
         """
 
     [<JSX.Component>]
     let TodoView dispatch (todo: Todo) =
-        let inputRef = React.useRef<HTMLInputElement option>(None)
-        let edit, setEdit = React.useState<string option>(None)
+        let inputRef = React.useRef<HTMLInputElement option> (None)
+        let edit, setEdit = React.useState<string option> (None)
         let isEditing = Option.isSome edit
         let isNotEditing = Option.isNone edit
+
         let applyEdit edit =
             ApplyEdit(todo.Id, edit) |> dispatch
             setEdit None
 
-        React.useEffect((fun () ->
-            if isEditing then
-                inputRef.current.Value.select()
-                inputRef.current.Value.focus()
-            None), [|box isEditing|])
+        React.useEffect (
+            (fun () ->
+                if isEditing then
+                    inputRef.current.Value.select ()
+                    inputRef.current.Value.focus ()
 
-        JSX.jsx $"""
+                None),
+            [| box isEditing |]
+        )
+
+        JSX.jsx
+            $"""
         <li className="box">
             <div className="columns">
                 <div className="column is-7">
-                {
-                    match edit with
-                    | Some edit ->
-                        // Feliz code
-                        Html.input [
-                            prop.ref inputRef
-                            prop.classes [ "input"; "is-medium" ]
-                            prop.value edit
-                            prop.onChange (Some >> setEdit)
-                            prop.onKeyDown (onEnterOrEscape applyEdit (fun _ -> setEdit None))
-                            prop.onBlur (fun _ -> setEdit None)
-                        ]
-                    | None ->
-                        Html.p [
-                            prop.className "subtitle"
-                            prop.onDoubleClick (fun _ -> Some todo.Description |> setEdit)
-                            prop.style [
-                                style.userSelect.none
-                                style.cursor.pointer
-                            ]
-                            prop.children [
-                                Html.text todo.Description
-                            ]
-                        ]
-                }
+                {match edit with
+                 | Some edit ->
+                     // Feliz code
+                     Html.input
+                         [
+                             prop.ref inputRef
+                             prop.classes [ "input"; "is-medium" ]
+                             prop.value edit
+                             prop.onChange (Some >> setEdit)
+                             prop.onKeyDown (onEnterOrEscape applyEdit (fun _ -> setEdit None))
+                             prop.onBlur (fun _ -> setEdit None)
+                         ]
+                 | None ->
+                     Html.p
+                         [
+                             prop.className "subtitle"
+                             prop.onDoubleClick (fun _ -> Some todo.Description |> setEdit)
+                             prop.style [ style.userSelect.none; style.cursor.pointer ]
+                             prop.children [ Html.text todo.Description ]
+                         ]}
                 </div>
-            </div>
-            <div className="columns">
-                <div className="column is-4">
-                    {Button isEditing "fa fa-save" [ "is-primary", true ] (fun () ->
-                        applyEdit edit.Value)}
+                <div className="column is-5">
+                    {Button isEditing "fa fa-save" [ "is-primary", true ] (fun () -> applyEdit edit.Value)}
 
-                    {Button isNotEditing "fa fa-check" [ "is-success", todo.Completed ] (fun () ->
-                        ToggleCompleted todo.Id |> dispatch)}
+                    {Button isNotEditing "fa fa-check" [ "is-success", todo.Completed ] (fun () -> ToggleCompleted todo.Id |> dispatch)}
 
-                    {Button isNotEditing "fa fa-edit" [ "is-primary", true ] (fun () ->
-                        Some todo.Description |> setEdit)}
+                    {Button isNotEditing "fa fa-edit" [ "is-primary", true ] (fun () -> Some todo.Description |> setEdit)}
 
-                    {Button isNotEditing "fa fa-times" [ "is-danger", true ] (fun () ->
-                        DeleteTodo todo.Id |> dispatch)}
+                    {Button isNotEditing "fa fa-times" [ "is-danger", true ] (fun () -> DeleteTodo todo.Id |> dispatch)}
                 </div>
             </div>
         </li>
         """
 
-    let mkProgram() =
-        Program.mkProgram init update (fun _ _ -> ())
-        // |> Program.withSubscription (fun _model ->
-        //     [
-        //         ["interval"],
-        //         fun dispatch ->
-        //             let id = JS.setInterval (fun () -> dispatch Tick) 1000
-        //             { new System.IDisposable with
-        //                 member _.Dispose() =
-        //                     JS.clearInterval id }
-        //     ]
-        // )
-
 open Elmish
 open Util
 
 [<JSX.Component>]
-let App() =
-    let model, dispatch = React.useElmish(init, update, arg=2)
+let App () =
+    let model, dispatch = React.useElmish (init, update, arg = 2)
 
-    JSX.jsx $"""
+    JSX.jsx
+        $"""
     <>
         <p className="title">Elmish.React To-Do List</p>
         {InputField dispatch}
